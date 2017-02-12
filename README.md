@@ -14,7 +14,7 @@ Bad or not, that's a common practice by the community that generate kotlin libra
 * TinyMission/kara;
 * kohesive/kovert;
   
-So, why 'kodando' and not 'koding'? That's why I'm brazilian and here, in Brazil, the 'ing' at
+So, why 'kodando' and not 'koding'? That's because I'm brazilian and here, in Brazil, the 'ing' at
 the end of words can be translated directly like 'ando', so some guys will say 'Estou codando!',
 that is, 'I'm coding!'. The rest of the history is the same, 'c' to 'k' and we have 'kodando'.
 
