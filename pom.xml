@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.kodando</groupId>
+    <artifactId>kodando</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <modules>
+        <module>external</module>
+        <module>lib</module>
+        <module>test</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.version>1.1.0-beta-38</kotlin.version>
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-kotlin-kotlin-eap-1.1</id>
+            <name>bintray</name>
+            <url>http://dl.bintray.com/kotlin/kotlin-eap-1.1</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-kotlin-kotlin-eap-1.1</id>
+            <name>bintray-plugins</name>
+            <url>http://dl.bintray.com/kotlin/kotlin-eap-1.1</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-js</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>js</goal>
+                        </goals>
+                        <configuration>
+                            <moduleKind>umd</moduleKind>
+                            <sourceMap>true</sourceMap>
+                            <outputFile>${project.build.outputDirectory}/${project.artifactId}.js</outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <forceCreation>true</forceCreation>
+                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
+                    <includes>
+                        <include>**/*.js</include>
+                        <include>**/*.js.map</include>
+                        <include>**/*.kjsm</include>
+                        <include>**/*.kotlin_classes</include>
+                        <include>**/*.kotlin_string_table</include>
+                        <include>**/*.kotlin_file_table</include>
+                    </includes>
+                    <archive>
+                        <forced/>
+                        <manifestEntries>
+                            <Built-By>${user.name}</Built-By>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

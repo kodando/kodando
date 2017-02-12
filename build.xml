@@ -1,0 +1,34 @@
+<project>
+    <target name="default">
+        <mkdir dir="build"/>
+
+        <copy tofile="build/kotlin/index.js" flatten="true">
+            <file basedir="kodan-es6/target/classes/lib" name="kotlin.js"/>
+        </copy>
+
+        <copy tofile="build/kotlin-test-js/index.js" flatten="true">
+            <file basedir="kodan-es6/target/test-classes/lib" name="kotlin-test-js.js"/>
+        </copy>
+
+        <copy todir="build/kodan-es6" flatten="true">
+            <fileset dir="kodan-es6/target/classes">
+                <include name="*.*"/>
+                <exclude name="kodan-es6/**"/>
+                <exclude name="lib/**"/>
+            </fileset>
+        </copy>
+
+        <copy todir="build/kodan-rxjs" flatten="true">
+            <fileset dir="kodan-rxjs/target/classes">
+                <include name="*.*"/>
+                <exclude name="kodan-rxjs/**"/>
+                <exclude name="lib/**"/>
+            </fileset>
+        </copy>
+
+        <copy tofile="build/__test__/kodan-rxjs.spec.js">
+            <file basedir="kodan-rxjs/target/test-classes" name="kodan-rxjs.js" />
+        </copy>
+
+    </target>
+</project>

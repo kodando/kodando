@@ -1,0 +1,28 @@
+{
+  "name": "kodan",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/danfma/kodan.git",
+  "author": "danfma <danfma@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^18.1.0"
+  },
+  "jest": {
+    "automock": false,
+    "moduleDirectories": [
+      "node_modules",
+      "external/target/classes/lib/",
+      "lib/kodando-es6/target/classes",
+      "lib/kodando-rxjs/target/classes",
+      "lib/kodando-jest/target/classes"
+    ],
+    "testRegex": "(test|spec)\\.js$"
+  },
+  "dependencies": {
+    "rxjs": "^5.1.0"
+  }
+}

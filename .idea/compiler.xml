@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="external" />
+        <module name="kodando-es6" />
+        <module name="kodando-es6-test" />
+        <module name="kodando-jest" />
+        <module name="kodando-rxjs" />
+        <module name="kodando-rxjs-test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="external" target="1.5" />
+      <module name="kodan-es6" target="1.5" />
+      <module name="kodan-rxjs" target="1.5" />
+      <module name="kodan-test-jest" target="1.5" />
+      <module name="kodando" target="1.5" />
+      <module name="kodando-es6" target="1.5" />
+      <module name="kodando-es6-test" target="1.5" />
+      <module name="kodando-jest" target="1.5" />
+      <module name="kodando-rxjs" target="1.5" />
+      <module name="kodando-rxjs-test" target="1.5" />
+      <module name="kodando-test-jest" target="1.5" />
+      <module name="lib" target="1.5" />
+      <module name="test" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
