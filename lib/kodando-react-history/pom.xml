@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>lib</artifactId>
-        <groupId>io.kodando</groupId>
-        <version>0.1.0-SNAPSHOT</version>
+        <groupId>br.danfma</groupId>
+        <version>0.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,15 +13,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.kodando</groupId>
+            <groupId>br.danfma</groupId>
             <artifactId>kodando-es6</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <version>0.1.0</version>
         </dependency>
 
         <dependency>
-            <groupId>io.kodando</groupId>
+            <groupId>br.danfma</groupId>
             <artifactId>kodando-react</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <version>0.1.0</version>
         </dependency>
     </dependencies>
 
