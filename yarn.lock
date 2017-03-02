@@ -1213,6 +1213,10 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
+kotlin@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/kotlin/-/kotlin-1.1.0.tgz#32d08fa29c5302fc5986467e8cc37447ecb252e7"
+
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"

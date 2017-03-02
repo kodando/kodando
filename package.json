@@ -15,7 +15,6 @@
     "automock": false,
     "moduleDirectories": [
       "node_modules",
-      "external/target/classes/lib/",
       "lib/kodando-es6/target/classes",
       "lib/kodando-rxjs/target/classes",
       "lib/kodando-jest/target/classes"
@@ -23,6 +22,7 @@
     "testRegex": "(test|spec)\\.js$"
   },
   "dependencies": {
+    "kotlin": "^1.1.0",
     "rxjs": "^5.1.0"
   }
 }

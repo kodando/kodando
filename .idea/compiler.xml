@@ -6,26 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="external" />
         <module name="kodando-es6" />
         <module name="kodando-es6-test" />
+        <module name="kodando-history" />
         <module name="kodando-jest" />
+        <module name="kodando-mobx" />
+        <module name="kodando-mobx-location" />
+        <module name="kodando-mobx-react" />
+        <module name="kodando-react" />
+        <module name="kodando-react-dom" />
+        <module name="kodando-react-history" />
+        <module name="kodando-react-router" />
         <module name="kodando-rxjs" />
         <module name="kodando-rxjs-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="external" target="1.5" />
-      <module name="kodan-es6" target="1.5" />
-      <module name="kodan-rxjs" target="1.5" />
-      <module name="kodan-test-jest" target="1.5" />
       <module name="kodando" target="1.5" />
       <module name="kodando-es6" target="1.5" />
       <module name="kodando-es6-test" target="1.5" />
+      <module name="kodando-history" target="1.5" />
       <module name="kodando-jest" target="1.5" />
+      <module name="kodando-mobx" target="1.5" />
+      <module name="kodando-mobx-location" target="1.5" />
+      <module name="kodando-mobx-react" target="1.5" />
+      <module name="kodando-react" target="1.5" />
+      <module name="kodando-react-dom" target="1.5" />
+      <module name="kodando-react-history" target="1.5" />
+      <module name="kodando-react-router" target="1.5" />
       <module name="kodando-rxjs" target="1.5" />
       <module name="kodando-rxjs-test" target="1.5" />
-      <module name="kodando-test-jest" target="1.5" />
       <module name="lib" target="1.5" />
       <module name="test" target="1.5" />
     </bytecodeTargetLevel>

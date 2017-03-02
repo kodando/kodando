@@ -2,10 +2,17 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/external" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/kodando-es6" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-history" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/kodando-jest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-mobx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-mobx-location" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-mobx-react" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-react" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-react-dom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-react-history" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/kodando-react-router" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/kodando-rxjs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/kodando-es6-test" charset="UTF-8" />

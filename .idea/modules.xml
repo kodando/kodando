@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/external/external.iml" filepath="$PROJECT_DIR$/external/external.iml" />
       <module fileurl="file://$PROJECT_DIR$/kodando.iml" filepath="$PROJECT_DIR$/kodando.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-es6/kodando-es6.iml" filepath="$PROJECT_DIR$/lib/kodando-es6/kodando-es6.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/kodando-es6-test/kodando-es6-test.iml" filepath="$PROJECT_DIR$/test/kodando-es6-test/kodando-es6-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-history/kodando-history.iml" filepath="$PROJECT_DIR$/lib/kodando-history/kodando-history.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-jest/kodando-jest.iml" filepath="$PROJECT_DIR$/lib/kodando-jest/kodando-jest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-mobx/kodando-mobx.iml" filepath="$PROJECT_DIR$/lib/kodando-mobx/kodando-mobx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-mobx-location/kodando-mobx-location.iml" filepath="$PROJECT_DIR$/lib/kodando-mobx-location/kodando-mobx-location.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-mobx-react/kodando-mobx-react.iml" filepath="$PROJECT_DIR$/lib/kodando-mobx-react/kodando-mobx-react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-react/kodando-react.iml" filepath="$PROJECT_DIR$/lib/kodando-react/kodando-react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-react-dom/kodando-react-dom.iml" filepath="$PROJECT_DIR$/lib/kodando-react-dom/kodando-react-dom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-react-history/kodando-react-history.iml" filepath="$PROJECT_DIR$/lib/kodando-react-history/kodando-react-history.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-react-router/kodando-react-router.iml" filepath="$PROJECT_DIR$/lib/kodando-react-router/kodando-react-router.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-rxjs/kodando-rxjs.iml" filepath="$PROJECT_DIR$/lib/kodando-rxjs/kodando-rxjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/kodando-rxjs-test/kodando-rxjs-test.iml" filepath="$PROJECT_DIR$/test/kodando-rxjs-test/kodando-rxjs-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />

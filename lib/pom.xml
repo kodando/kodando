@@ -6,6 +6,7 @@
         <artifactId>kodando</artifactId>
         <groupId>io.kodando</groupId>
         <version>0.1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,6 +17,14 @@
         <module>kodando-es6</module>
         <module>kodando-rxjs</module>
         <module>kodando-jest</module>
+        <module>kodando-react</module>
+        <module>kodando-react-dom</module>
+        <module>kodando-history</module>
+        <module>kodando-mobx</module>
+        <module>kodando-mobx-location</module>
+        <module>kodando-mobx-react</module>
+        <module>kodando-react-history</module>
+        <module>kodando-react-router</module>
     </modules>
 
 
