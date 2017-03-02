@@ -1,0 +1,11 @@
+{
+  "name": "with-webpack",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/webpack"
+  }
+}

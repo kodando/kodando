@@ -131,6 +131,9 @@ inline fun <T, TResult> Rx.IObservable<T>.scan(
 inline fun <T> Rx.IObservable<T>.delay(time: Int): Rx.IObservable<T> =
 	this.asDynamic().delay(time)
 
+inline fun <T> Rx.IObservable<T>.take(count: Int): Rx.IObservable<T> =
+    this.asDynamic().take(count)
+
 inline fun <T> Rx.IObservable<T>.toPromise(): Promise<T> =
 	this.asDynamic().toPromise()
 

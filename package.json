@@ -1,11 +1,12 @@
 {
-  "name": "kodan",
+  "name": "kodando",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/danfma/kodan.git",
   "author": "danfma <danfma@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "node ./node_modules/.bin/webpack",
     "test": "jest"
   },
   "devDependencies": {

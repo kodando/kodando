@@ -10,6 +10,7 @@
     <modules>
         <module>lib</module>
         <module>test</module>
+        <module>samples</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -70,6 +71,7 @@
                             <moduleKind>umd</moduleKind>
                             <sourceMap>true</sourceMap>
                             <outputFile>${project.build.outputDirectory}/${project.artifactId}.js</outputFile>
+                            <multiPlatform>false</multiPlatform>
                         </configuration>
                     </execution>
                 </executions>

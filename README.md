@@ -24,7 +24,9 @@ Ok, maybe I had should thinking a little more, but...
 ## About the libraries
 
 I have built some bindings and libraries to allow kotlin developers to code in kotlin but to use,
-if they want, existing and good libraries in JS.
+if they want, existing and good libraries in JS. All this related js libraries should be used with a bundler to
+import directly from npm, or provided manually by you. I personally use the webpack, but the fuse-box 
+is very attractive too. The SystemJS works as a loader too.
 
 Every library will be published in https://bintray.com/danfma/maven, so you will be able to use
 it with Maven, Gradle or other.
@@ -32,8 +34,17 @@ it with Maven, Gradle or other.
 Right now, we have:
 
 * **kodando-es6** - ES6 libraries and utilities;
-* **kodando-rxjs** - Support to the Rxjs library;
-* **kodando-jest** - Support to the Jest library;
+* **kodando-rxjs** - Support to the `rxjs` library;
+* **kodando-jest** - Support to the `jest` library;
+* **kodando-history** - Support to the `history` library;
+* **kodando-mobx** - Support to the `mobx` Library;
+* **kodando-mobx-location** - Support to the `mobx-location` library;
+* **kodando-mobx-react** - Support to the `mobx-react` library;
+* **kodando-react** - Support to the `react` library;
+* **kodando-react-dom** - Support to the `react-dom` library;
+* **kodando-react-history** - Support to the `react-history` library;
+* **kodando-react-router** - Support to the `react-router` library;
+* **kodando-LIBRARY** - I think you understood the idea if you read until here... :D
 
 More will be published. Almost all of these libraries are incomplete, but some are already useful 
 and you are welcome to **contribute** to them and put what you need! So, let's make a huge
@@ -77,3 +88,7 @@ The kotlin ecosystem is not very friendly for pure JS developers right now, but 
 are working hard to make it better for us. In the end, you have some options and most of the time, 
 the IDE and the language will make your job very pleasant, but
 you need to keep in mind that there are some untamed problems around yet.
+
+## SAMPLES
+
+Give a look at the samples directory to see to how use these beasts!

@@ -14,6 +14,10 @@
     <file url="file://$PROJECT_DIR$/lib/kodando-react-history" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/kodando-react-router" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lib/kodando-rxjs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/samples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/samples/rxjs-nodejs-sample" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/samples/with-webpack" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/samples/with-webpack/rxjs-usage" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/kodando-es6-test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/kodando-rxjs-test" charset="UTF-8" />

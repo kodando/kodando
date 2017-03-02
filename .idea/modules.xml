@@ -17,7 +17,10 @@
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-rxjs/kodando-rxjs.iml" filepath="$PROJECT_DIR$/lib/kodando-rxjs/kodando-rxjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/kodando-rxjs-test/kodando-rxjs-test.iml" filepath="$PROJECT_DIR$/test/kodando-rxjs-test/kodando-rxjs-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samples/with-webpack/rxjs-usage/rxjs-usage.iml" filepath="$PROJECT_DIR$/samples/with-webpack/rxjs-usage/rxjs-usage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samples/samples.iml" filepath="$PROJECT_DIR$/samples/samples.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samples/with-webpack/with-webpack.iml" filepath="$PROJECT_DIR$/samples/with-webpack/with-webpack.iml" />
     </modules>
   </component>
 </project>
