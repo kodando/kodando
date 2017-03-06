@@ -92,3 +92,5 @@ you need to keep in mind that there are some untamed problems around yet.
 ## SAMPLES
 
 Give a look at the samples directory to see to how use these beasts!
+
+This can be useful too: https://github.com/danfma/kodando-playground.
