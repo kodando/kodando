@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kodando-jest</artifactId>
+    <version>${kodando.jest.version</version>
 
     <properties>
         <skipDeploy>false</skipDeploy>
@@ -20,7 +21,7 @@
         <dependency>
             <groupId>br.danfma</groupId>
             <artifactId>kodando-es6</artifactId>
-            <version>0.1.0</version>
+            <version>${kodando.es6.version}</version>
         </dependency>
     </dependencies>
 

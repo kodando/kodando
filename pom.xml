@@ -16,9 +16,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.1.0</kotlin.version>
+        <kotlin.version>1.1.1</kotlin.version>
         <junit.version>4.12</junit.version>
         <skipDeploy>true</skipDeploy>
+
+        <!-- VERSIONS -->
+        <kodando.es6.version>0.2.1</kodando.es6.version>
+        <kodando.rxjs.version>5.0.0-v1</kodando.rxjs.version>
+        <kodando.react.version>15.4.3-v1</kodando.react.version>
+        <kodando.jest.version>18.0.0-v1</kodando.jest.version>
     </properties>
 
     <repositories>

@@ -1,9 +1,9 @@
 package kodando.es6.test
 
-import kodando.es6.Promise
 import kodando.jest.describe
 import kodando.jest.expect
 import kodando.jest.it
+import kotlin.js.Promise
 
 /**
  * Created by danfm on 12/02/2017.

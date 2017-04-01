@@ -11,13 +11,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kodando-react</artifactId>
+    <version>${kodando.react.version}</version>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>br.danfma</groupId>
             <artifactId>kodando-es6</artifactId>
-            <version>0.1.0</version>
+            <version>${kodando.es6.version}</version>
         </dependency>
     </dependencies>
+
+    <properties>
+        <skipDeploy>false</skipDeploy>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-danfma-maven</id>
+            <name>danfma-maven</name>
+            <url>https://api.bintray.com/maven/danfma/maven/kodando-react/;publish=1</url>
+        </repository>
+    </distributionManagement>
 
 </project>

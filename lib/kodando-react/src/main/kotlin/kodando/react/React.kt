@@ -11,6 +11,18 @@ external object React {
 
     @JsName("createElement")
     fun createElement(
+        function: (Json) -> ReactElement?,
+        props: Json,
+        vararg children: Any?): ReactElement
+
+    @JsName("createElement")
+    fun <TProps : ReactProps> createElement(
+        function: (TProps) -> ReactElement?,
+        props: TProps,
+        vararg children: Any?): ReactElement
+
+    @JsName("createElement")
+    fun createElement(
         elementName: String,
         props: ReactProps?,
         vararg children: Any?): ReactElement

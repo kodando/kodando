@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kodando-es6</artifactId>
+    <version>${kodando.es6.version}</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -20,7 +21,7 @@
         <repository>
             <id>bintray-danfma-maven</id>
             <name>danfma-maven</name>
-            <url>https://api.bintray.com/maven/danfma/maven/kodando-es6/;publish=1</url>
+            <url>https://api.bintray.com/maven/danfma/maven/kodando-es6/;publish=1;override=1</url>
         </repository>
     </distributionManagement>
 

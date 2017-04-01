@@ -1,0 +1,8 @@
+target/classes/kodando-es6/**
+src
+
+# MAVEN + IDEA
+*.iml
+*.jar
+target/maven**
+pom.xml
