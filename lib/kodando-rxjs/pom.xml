@@ -26,12 +26,4 @@
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>bintray-danfma-maven</id>
-            <name>danfma-maven</name>
-            <url>https://api.bintray.com/maven/danfma/maven/kodando-rxjs/;publish=1</url>
-        </repository>
-    </distributionManagement>
-
 </project>

@@ -10,16 +10,16 @@ import kodando.react.objectOf
  */
 
 operator fun <TProps : HTMLElementAttributes> ElementBuilder<TProps>.invoke(className: String): ReactElement? =
-    this.invoke {
-        this.className = className
-    }
+	this.invoke {
+		this.className = className
+	}
 
 operator fun <TProps : HTMLElementAttributes> ElementBuilder<TProps>.invoke(className: String, propSetter: PropSetter<TProps>): ReactElement? =
-    this.invoke {
-        this.className = className
-        this.propSetter()
-    }
+	this.invoke {
+		this.className = className
+		this.propSetter()
+	}
 
 fun styleOf(setter: CSSProperties.() -> Unit): CSSProperties {
-    return objectOf(setter)
+	return objectOf(setter)
 }

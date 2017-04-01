@@ -1,4 +1,4 @@
-package lugare.history
+package kodando.history
 
 /**
  * Created by danfma on 26/01/17.

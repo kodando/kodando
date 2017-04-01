@@ -6,18 +6,12 @@
         <artifactId>lib</artifactId>
         <groupId>br.danfma</groupId>
         <version>0.1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kodando-mobx</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>br.danfma</groupId>
-            <artifactId>kodando-es6</artifactId>
-            <version>0.1.0</version>
-        </dependency>
-    </dependencies>
+    <artifactId>kodando-crossroads</artifactId>
+    <version>${kodando.crossroads.version}</version>
 
     <properties>
         <skipDeploy>false</skipDeploy>

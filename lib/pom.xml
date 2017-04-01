@@ -25,6 +25,16 @@
         <module>kodando-mobx-react</module>
         <module>kodando-react-history</module>
         <module>kodando-react-router</module>
+        <module>kodando-crossroads</module>
+        <module>kodando-hasher</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-danfma-maven</id>
+            <name>danfma-maven</name>
+            <url>https://api.bintray.com/maven/danfma/maven/${artifactId}/;publish=1;override=1</url>
+        </repository>
+    </distributionManagement>
 
 </project>

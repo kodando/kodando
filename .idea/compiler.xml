@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="kodando-crossroads" />
         <module name="kodando-es6" />
         <module name="kodando-es6-test" />
+        <module name="kodando-hasher" />
         <module name="kodando-history" />
         <module name="kodando-jest" />
         <module name="kodando-mobx" />
@@ -24,8 +26,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kodando" target="1.5" />
+      <module name="kodando-crossroads" target="1.5" />
       <module name="kodando-es6" target="1.5" />
       <module name="kodando-es6-test" target="1.5" />
+      <module name="kodando-hasher" target="1.5" />
       <module name="kodando-history" target="1.5" />
       <module name="kodando-jest" target="1.5" />
       <module name="kodando-mobx" target="1.5" />

@@ -1,4 +1,4 @@
-package lugare.history
+package kodando.history
 
 data class HashOptions(
 	val basename: String = "",

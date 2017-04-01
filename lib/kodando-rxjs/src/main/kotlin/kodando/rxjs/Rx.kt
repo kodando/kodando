@@ -38,29 +38,32 @@ external object Rx {
     }
 
 
-    open class Observable<out T>(publisher: (IObserver<T>) -> ISubscription?) : IObservable<T> {
+    open class Observable<out T>(publisher: (IObserver<T>) -> Rx.ISubscription?) : IObservable<T> {
 
         override fun subscribe(observer: IObserver<T>): ISubscription
 
         companion object {
 
             @JsName("of")
-            fun <T> of(value: T): IObservable<T>
+            fun <T> of(value: T): Rx.IObservable<T>
 
             @JsName("from")
-            fun <T> from(promise: Promise<T>): IObservable<T>
+            fun <T> from(promise: Promise<T>): Rx.IObservable<T>
 
             @JsName("from")
-            fun <T> from(promise: Array<T>): IObservable<T>
+            fun <T> from(promise: Array<T>): Rx.IObservable<T>
 
             @JsName("from")
-            fun <T> from(promise: IObservable<T>): IObservable<T>
+            fun <T> from(promise: Rx.IObservable<T>): Rx.IObservable<T>
 
             @JsName("merge")
-            fun <T> merge(vararg observables: IObservable<T>): IObservable<T>
+            fun <T> merge(vararg observables: IObservable<T>): Rx.IObservable<T>
 
             @JsName("throw")
-            fun throwError(error: Error): IObservable<*>
+            fun throwError(error: Error): Rx.IObservable<*>
+
+            @JsName("empty")
+            fun <T> empty(): Rx.IObservable<T>
         }
     }
 
@@ -123,6 +126,9 @@ inline fun <T> Rx.IObservable<T>.on(
     noinline complete: CompleteHandler? = null): Rx.IObservable<T> =
     this.asDynamic().`do`(next, error, complete)
 
+inline fun <T> Rx.IObservable<T>.onNext(noinline next: NextHandler<T>): Rx.IObservable<T> =
+    this.asDynamic()["do"](next)
+
 inline fun <T, TResult> Rx.IObservable<T>.scan(
     handler: (TResult, T) -> TResult,
     seed: TResult): Rx.IObservable<TResult> =
@@ -131,8 +137,17 @@ inline fun <T, TResult> Rx.IObservable<T>.scan(
 inline fun <T> Rx.IObservable<T>.delay(time: Int): Rx.IObservable<T> =
     this.asDynamic().delay(time)
 
-inline fun <T> Rx.IObservable<T>.take(count: Int): Rx.IObservable<T> =
-    this.asDynamic().take(count)
+inline fun <T> Rx.IObservable<T>.retry(times: Int): Rx.IObservable<T> =
+    this.asDynamic()["retry"](times)
+
+inline fun <T> Rx.IObservable<T>.distinctUntilChanged(): Rx.IObservable<T> =
+    this.asDynamic()["distinctUntilChanged"]()
+
+inline fun <T> Rx.IObservable<T>.distinctUntilChanged(mapper: (T) -> Any): Rx.IObservable<T> =
+    this.asDynamic()["distinctUntilChanged"]()
+
+inline fun <T, MappedValue> Rx.IObservable<T>.distinctUntilChanged(mapper: (T) -> MappedValue, equalityHandler: (MappedValue, MappedValue) -> Boolean): Rx.IObservable<T> =
+    this.asDynamic()["distinctUntilChanged"]()
 
 inline fun <T> Rx.IObservable<T>.toPromise(): Promise<T> =
     this.asDynamic().toPromise()

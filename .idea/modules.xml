@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kodando.iml" filepath="$PROJECT_DIR$/kodando.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-crossroads/kodando-crossroads.iml" filepath="$PROJECT_DIR$/lib/kodando-crossroads/kodando-crossroads.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-es6/kodando-es6.iml" filepath="$PROJECT_DIR$/lib/kodando-es6/kodando-es6.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/kodando-es6-test/kodando-es6-test.iml" filepath="$PROJECT_DIR$/test/kodando-es6-test/kodando-es6-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/kodando-hasher/kodando-hasher.iml" filepath="$PROJECT_DIR$/lib/kodando-hasher/kodando-hasher.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-history/kodando-history.iml" filepath="$PROJECT_DIR$/lib/kodando-history/kodando-history.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-jest/kodando-jest.iml" filepath="$PROJECT_DIR$/lib/kodando-jest/kodando-jest.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/kodando-mobx/kodando-mobx.iml" filepath="$PROJECT_DIR$/lib/kodando-mobx/kodando-mobx.iml" />

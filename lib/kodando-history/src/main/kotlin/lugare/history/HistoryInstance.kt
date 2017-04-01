@@ -1,4 +1,4 @@
-package lugare.history
+package kodando.history
 
 external interface HistoryInstance {
 	val location: Location

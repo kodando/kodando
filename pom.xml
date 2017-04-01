@@ -22,9 +22,12 @@
 
         <!-- VERSIONS -->
         <kodando.es6.version>0.2.1</kodando.es6.version>
-        <kodando.rxjs.version>5.0.0-v1</kodando.rxjs.version>
-        <kodando.react.version>15.4.3-v1</kodando.react.version>
+        <kodando.rxjs.version>5.0.0-v2</kodando.rxjs.version>
+        <kodando.react.version>15.4.3-v2</kodando.react.version>
         <kodando.jest.version>18.0.0-v1</kodando.jest.version>
+        <kodando.history.version>4.5.1-v1</kodando.history.version>
+        <kodando.crossroads.version>0.12.2-v1</kodando.crossroads.version>
+        <kodando.hasher.version>1.2.0-v1</kodando.hasher.version>
     </properties>
 
     <repositories>
