@@ -1,0 +1,10 @@
+{
+  "name": "@artifactId@",
+  "version": "@version@",
+  "main": "@artifactId@.js",
+  "dependencies": {
+    "kotlin": "^@kotlinVersion@",
+    "kodando-mobx": "^@kodandoMobxVersion@",
+    "kodando-react": "^@kodandoReactVersion@"
+  }
+}

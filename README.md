@@ -31,24 +31,6 @@ is very attractive too. The SystemJS works as a loader too.
 Every library will be published in https://bintray.com/danfma/maven, so you will be able to use
 it with Maven, Gradle or other.
 
-Right now, we have:
-
-* **kodando-es6** - ES6 libraries and utilities;
-* **kodando-rxjs** - Support to the `rxjs` library;
-* **kodando-jest** - Support to the `jest` library;
-* **kodando-history** - Support to the `history` library;
-* **kodando-mobx** - Support to the `mobx` Library;
-* **kodando-mobx-location** - Support to the `mobx-location` library;
-* **kodando-mobx-react** - Support to the `mobx-react` library;
-* **kodando-react** - Support to the `react` library;
-* **kodando-react-dom** - Support to the `react-dom` library;
-* **kodando-react-history** - Support to the `react-history` library;
-* **kodando-react-router** - Support to the `react-router` library;
-* **kodando-LIBRARY** - I think you understood the idea if you read until here... :D
-
-More will be published. Almost all of these libraries are incomplete, but some are already useful 
-and you are welcome to **contribute** to them and put what you need! So, let's make a huge
-collection of JS libraries to kotlin here.
 
 
 ## The experience of Kotlin as a front-end language

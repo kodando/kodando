@@ -6,28 +6,42 @@
 
     <groupId>br.danfma</groupId>
     <artifactId>kodando</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
+
     <modules>
-        <module>lib</module>
-        <module>test</module>
-        <module>samples</module>
+        <module>kodando-crossroads</module>
+        <module>kodando-hasher</module>
+        <module>kodando-es6</module>
+        <module>kodando-history</module>
+        <module>kodando-rxjs</module>
+        <module>kodando-jest</module>
+        <module>kodando-react</module>
+        <module>kodando-react-dom</module>
+        <module>kodando-react-history</module>
+        <module>kodando-mobx</module>
+        <module>kodando-mobx-location</module>
+        <module>kodando-mobx-react</module>
     </modules>
+
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.version>1.1.1</kotlin.version>
         <junit.version>4.12</junit.version>
-        <skipDeploy>true</skipDeploy>
 
         <!-- VERSIONS -->
-        <kodando.es6.version>0.2.1</kodando.es6.version>
-        <kodando.rxjs.version>5.0.0-v2</kodando.rxjs.version>
-        <kodando.react.version>15.4.3-v2</kodando.react.version>
-        <kodando.jest.version>18.0.0-v1</kodando.jest.version>
-        <kodando.history.version>4.5.1-v1</kodando.history.version>
-        <kodando.crossroads.version>0.12.2-v1</kodando.crossroads.version>
-        <kodando.hasher.version>1.2.0-v1</kodando.hasher.version>
+        <kodando.es6.version>0.2.4</kodando.es6.version>
+        <kodando.rxjs.version>5.0.0-v5</kodando.rxjs.version>
+        <kodando.react.version>15.4.3-v4</kodando.react.version>
+        <kodando.react.history.version>0.18.2-v3</kodando.react.history.version>
+        <kodando.jest.version>18.0.0-v3</kodando.jest.version>
+        <kodando.history.version>4.5.1-v3</kodando.history.version>
+        <kodando.crossroads.version>0.12.2-v3</kodando.crossroads.version>
+        <kodando.hasher.version>1.2.0-v3</kodando.hasher.version>
+        <kodando.mobx.version>3.1.7-v3</kodando.mobx.version>
+        <kodando.mobx.react.version>4.1.5-v3</kodando.mobx.react.version>
+        <kodando.mobx.location.version>0.2.0-v3</kodando.mobx.location.version>
     </properties>
 
     <repositories>
@@ -78,6 +92,14 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray-danfma-maven</id>
+            <name>danfma-maven</name>
+            <url>https://api.bintray.com/maven/danfma/maven/${artifactId}/;publish=1;override=1</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
 
@@ -102,6 +124,50 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <file>${project.build.outputDirectory}/package.json</file>
+                    <ignoreMissingFile>true</ignoreMissingFile>
+                    <replacements>
+                        <replacement>
+                            <token>@artifactId@</token>
+                            <value>${project.artifactId}</value>
+                        </replacement>
+                        <replacement>
+                            <token>@version@</token>
+                            <value>${project.version}</value>
+                        </replacement>
+                        <replacement>
+                            <token>@kotlinVersion@</token>
+                            <value>${kotlin.version}</value>
+                        </replacement>
+                        <replacement>
+                            <token>@kodandoEs6Version@</token>
+                            <value>${kodando.es6.version}</value>
+                        </replacement>
+                        <replacement>
+                            <token>@kodandoMobxVersion@</token>
+                            <value>${kodando.mobx.version}</value>
+                        </replacement>
+                        <replacement>
+                            <token>@kodandoReactVersion@</token>
+                            <value>${kodando.react.version}</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
             </plugin>
 
             <plugin>

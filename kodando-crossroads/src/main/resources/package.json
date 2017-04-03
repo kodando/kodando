@@ -1,0 +1,9 @@
+{
+  "name": "@artifactId@",
+  "version": "@version@",
+  "main": "@artifactId@.js",
+  "dependencies": {
+    "kotlin": "^@kotlinVersion@",
+    "crossroads": "^0.12.2"
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "name": "kodando-es6",
-  "version": "0.2.1",
-  "main": "target/classes/kodando-es6.js",
-  "license": "MIT",
-  "dependencies": {
-    "kotlin": "1.1.0"
-  }
-}

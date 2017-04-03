@@ -2,25 +2,18 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-crossroads" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-es6" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-hasher" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-history" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-jest" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-mobx" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-mobx-location" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-mobx-react" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-react" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-react-dom" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-react-history" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-react-router" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lib/kodando-rxjs" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/samples" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/samples/with-webpack" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/samples/with-webpack/rxjs-usage" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/test/kodando-es6-test" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/test/kodando-rxjs-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-crossroads" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-es6" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-hasher" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-history" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-jest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-mobx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-mobx-location" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-mobx-react" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-react" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-react-dom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-react-history" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-react-router" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kodando-rxjs" charset="UTF-8" />
   </component>
 </project>

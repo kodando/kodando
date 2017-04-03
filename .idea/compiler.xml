@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="kodando-crossroads" />
         <module name="kodando-es6" />
-        <module name="kodando-es6-test" />
         <module name="kodando-hasher" />
         <module name="kodando-history" />
         <module name="kodando-jest" />
@@ -18,10 +17,7 @@
         <module name="kodando-react" />
         <module name="kodando-react-dom" />
         <module name="kodando-react-history" />
-        <module name="kodando-react-router" />
         <module name="kodando-rxjs" />
-        <module name="kodando-rxjs-test" />
-        <module name="rxjs-usage" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
