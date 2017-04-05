@@ -1,0 +1,24 @@
+package kodando.react.router
+
+import kodando.react.*
+
+/**
+ * Created by danfma on 04/04/17.
+ */
+
+@JsName("promptWithText")
+fun prompt(message: String, matched: Boolean = false): ReactElement? {
+    return React.createElement(Module.PromptClass, propsBy<PromptProps> {
+        this.messageText = message
+        this.matched = matched
+    })
+}
+
+
+@JsName("promptWithFunc")
+fun prompt(messageFactory: (Location) -> String, matched: Boolean = false): ReactElement? {
+    return React.createElement(Module.PromptClass, propsBy<PromptProps> {
+        this.messageFunc = messageFunc
+        this.matched = matched
+    })
+}

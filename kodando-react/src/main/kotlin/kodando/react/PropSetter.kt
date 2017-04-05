@@ -5,3 +5,5 @@ package kodando.react
  */
 
 typealias PropSetter<T> = T.() -> Unit
+
+fun <T> propsBy(propSetter: PropSetter<T>): T = objectOf(propSetter)

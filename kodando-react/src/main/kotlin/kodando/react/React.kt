@@ -24,12 +24,6 @@ external object React {
     @JsName("createElement")
     fun createElement(
         elementName: String,
-        props: ReactProps?,
-        vararg children: Any?): ReactElement
-
-    @JsName("createElement")
-    fun createElement(
-        elementName: String,
         props: Json,
         vararg children: Any?): ReactElement
 

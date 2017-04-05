@@ -15,7 +15,8 @@
     "publish:kodando-crossroads": "npm publish ./kodando-crossroads/target/classes/",
     "publish:kodando-hasher": "npm publish ./kodando-hasher/target/classes/",
     "publish:kodando-history": "npm publish ./kodando-history/target/classes/",
-    "publish:all": "npm run publish:kodando-es6 && npm run publish:kodando-rxjs && npm run publish:kodando-react && npm run publish:kodando-react-dom && npm run publish:kodando-crossroads && npm run publish:kodando-hasher && npm run publish kodando:history"
+    "publish:kodando-react-router": "npm publish ./kodando-react-router/target/classes/",
+    "publish:all": "npm run publish:kodando-es6 && npm run publish:kodando-rxjs && npm run publish:kodando-react && npm run publish:kodando-react-dom && npm run publish:kodando-crossroads && npm run publish:kodando-hasher && npm run publish kodando:history && npm run publish:kodando-react-router"
   },
   "devDependencies": {
     "jest": "^18.1.0",
