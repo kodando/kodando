@@ -6,7 +6,7 @@
 
     <groupId>br.danfma</groupId>
     <artifactId>kodando</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.5</version>
 
     <modules>
         <module>kodando-crossroads</module>
@@ -34,15 +34,15 @@
         <!-- VERSIONS -->
         <kodando.es6.version>0.2.4</kodando.es6.version>
         <kodando.rxjs.version>5.0.0-v5</kodando.rxjs.version>
-        <kodando.react.version>15.4.3-v6</kodando.react.version>
-        <kodando.react.history.version>0.18.2-v3</kodando.react.history.version>
-        <kodando.react.router.version>4.0.0-v1</kodando.react.router.version>
+        <kodando.react.version>15.4.3-v8</kodando.react.version>
+        <kodando.react.history.version>0.18.2-v4</kodando.react.history.version>
+        <kodando.react.router.version>4.0.0-v2</kodando.react.router.version>
         <kodando.jest.version>18.0.0-v3</kodando.jest.version>
         <kodando.history.version>4.5.1-v3</kodando.history.version>
         <kodando.crossroads.version>0.12.2-v3</kodando.crossroads.version>
         <kodando.hasher.version>1.2.0-v3</kodando.hasher.version>
         <kodando.mobx.version>3.1.7-v3</kodando.mobx.version>
-        <kodando.mobx.react.version>4.1.5-v3</kodando.mobx.react.version>
+        <kodando.mobx.react.version>4.1.5-v4</kodando.mobx.react.version>
         <kodando.mobx.location.version>0.2.0-v3</kodando.mobx.location.version>
     </properties>
 

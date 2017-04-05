@@ -6,4 +6,5 @@ package kodando.react
 
 typealias PropSetter<T> = T.() -> Unit
 
-fun <T> propsBy(propSetter: PropSetter<T>): T = objectOf(propSetter)
+@JsName("propsBy")
+fun <T : ReactProps> propsBy(propSetter: PropSetter<T>): T = emptyPropsOf(propSetter)
