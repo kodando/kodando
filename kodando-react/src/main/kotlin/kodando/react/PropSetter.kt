@@ -5,6 +5,3 @@ package kodando.react
  */
 
 typealias PropSetter<T> = T.() -> Unit
-
-@JsName("propsBy")
-fun <T : ReactProps> propsBy(propSetter: PropSetter<T>): T = emptyPropsOf(propSetter)

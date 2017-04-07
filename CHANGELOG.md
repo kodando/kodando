@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## 0.1.7
+
+### BREAKING CHANGES
+
+* Renamed the function `<T> objectOf(): T` to `<T> objectWithShapeOf(setter: PropSetter<T>): T`;
+* Renamed the function `<T> objectOf(setter: PropSetter<T>): T` to `<T> objectWithShapeBy(setter: PropSetter<T>): T`;
+* Renamed the function `<T> emptyPropsOf(): T` to `<T> unsafePropsOf(): T`;
+* Renamed the function `<T> emptyPropsOf(setter: PropSetter<T>): T` to `<T> emptyPropsBy(setter: PropSetter<T>): T`;
+* Renamed type `EmptyProps` to `BaseProps` and make it an open class;
+
+### NEW
+
+* Added a two functions to work with props:
+  * `fun <T : ReactProps> propsBy(factory: () -> T, setter: PropSetter<T>): T` - which will receive a factory and a props setter;
+  * `fun <T : ReactProps> propSetterOf(factory: KFunction<T>): (PropSetter<T>) -> T` - which will return a props setter function from a props factory function;
+
+
+
 ## 0.1.3
 
 ### NEW

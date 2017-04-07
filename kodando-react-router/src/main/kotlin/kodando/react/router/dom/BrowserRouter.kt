@@ -1,4 +1,4 @@
-package kodando.react.router
+package kodando.react.router.dom
 
 import kodando.react.*
 
@@ -7,5 +7,5 @@ import kodando.react.*
  */
 
 fun browserRouter(setter: PropSetter<BrowserRouterProps>): ReactElement? {
-    return React.createElement(Module.BrowserRouterClass, propsBy(setter))
+    return React.createElement(Module.BrowserRouterClass, unsafePropsBy(setter))
 }

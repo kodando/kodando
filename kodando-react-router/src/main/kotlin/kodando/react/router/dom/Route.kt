@@ -1,4 +1,4 @@
-package kodando.react.router
+package kodando.react.router.dom
 
 import kodando.react.*
 
@@ -8,7 +8,7 @@ import kodando.react.*
 
 @JsName("route")
 fun route(propSetter: PropSetter<RouteProps>): ReactElement? {
-    return React.createElement(Module.RouteClass, propsBy(propSetter))
+    return React.createElement(Module.RouteClass, unsafePropsBy(propSetter))
 }
 
 

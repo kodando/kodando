@@ -8,7 +8,7 @@ open class ComponentBuilder<TProps : ReactProps>(
     constructor(componentType: KClass<out Component<TProps, *>>) : this(componentType.js)
 
     override operator fun invoke(propsSetter: PropSetter<TProps>): ReactElement? {
-        val (children, props) = extractChildren(emptyPropsOf(propsSetter))
+        val (children, props) = extractChildren(unsafePropsBy(propsSetter))
 
         return React.createElement(componentType, props, *children)
     }

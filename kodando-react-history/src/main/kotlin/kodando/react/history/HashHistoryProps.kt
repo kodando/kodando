@@ -13,7 +13,7 @@ interface HashHistoryProps : ReactProps {
 }
 
 fun hashHistory(propSetter: PropSetter<HashHistoryProps>): ReactElement? {
-    val (children, props) = extractChildren(emptyPropsOf(propSetter))
+    val (children, props) = extractChildren(unsafePropsBy(propSetter))
 
     return React.createElement(ReactHistory.HashHistory::class.js, props, *children)
 }

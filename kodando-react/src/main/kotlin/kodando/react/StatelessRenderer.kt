@@ -1,23 +1,41 @@
 package kodando.react
 
-import kotlin.js.Promise
-
 /**
- * Created by danfma on 03/04/17.
+ * This is a base class for creating simple stateless components from an object factory.
+ *
+ * Definition:
+ *
+ * ```
+ * object MyComponent : StatelessRenderer<MyComponent.Props>(::Props) {
+ *   class Props : BaseProps() {
+ *     var message = "This is the default message"
+ *   }
+ *
+ *   override fun render(props: Props): ReactElement? {
+ *     return div("ui message") {
+ *       +props.message
+ *     }
+ *   }
+ * }
+ * ```
+ *
+ * Usage:
+ *
+ * ```
+ * MyComponent {
+ *   message = "Hello"
+ * }
+ * ```
+ *
  */
-abstract class StatelessRenderer<TProps>(private val factory: () -> TProps)
-where TProps : ReactProps, TProps : Any {
+abstract class StatelessRenderer<TProps>(factory: () -> TProps) where TProps : ReactProps, TProps : Any {
+    private val renderer = makeComponent(this::class.simpleName!!, factory, this::render)
 
-    internal val renderer = this::render
-
-    init {
-        Promise
-        renderer.asDynamic()["displayName"] = this::class.simpleName
-    }
-
+    /**
+     * Renders a new component using the received props.
+     */
     abstract fun render(props: TProps): ReactElement?
 
-    operator fun invoke(configure: TProps.() -> Unit): ReactElement? {
-        return React.createElement(renderer, factory().apply(configure))
-    }
+    operator fun invoke(setter: TProps.() -> Unit): ReactElement? = renderer(setter)
+
 }

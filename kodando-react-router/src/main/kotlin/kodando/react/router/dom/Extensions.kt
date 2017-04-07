@@ -1,4 +1,4 @@
-package kodando.react.router
+package kodando.react.router.dom
 
 /**
  * Created by danfma on 04/04/17.

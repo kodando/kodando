@@ -6,7 +6,7 @@ package kodando.react
 
 object ksx : ElementBuilder<ReactProps>() {
 	override operator fun invoke(propsSetter: ReactProps.() -> Unit): ReactElement? {
-		val props = emptyPropsOf(propsSetter)
+		val props = unsafePropsBy(propsSetter)
 		val children = props.children
 
 		return childrenAsElement(children)

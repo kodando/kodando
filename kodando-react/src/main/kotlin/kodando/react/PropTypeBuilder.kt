@@ -20,7 +20,7 @@ class PropTypeBuilder<T : Component<TProps, *>, TProps> {
 	}
 
 	fun applyTo(factory: JsClass<T>) {
-		val props = objectOf<PropTypeDefinition>()
+		val props = objectWithShapeOf<PropTypeDefinition>()
 
 		for ((key, value) in restrictions) {
 			props[key] = value

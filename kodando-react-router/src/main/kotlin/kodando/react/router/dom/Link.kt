@@ -1,4 +1,4 @@
-package kodando.react.router
+package kodando.react.router.dom
 
 import kodando.react.*
 
@@ -6,8 +6,8 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-internal fun link(propSetter: PropSetter<LinkProps>): ReactElement? {
-    return React.createElement(Module.LinkClass, propsBy(propSetter))
+internal fun link(setter: PropSetter<LinkProps>): ReactElement? {
+    return React.createElement(Module.LinkClass, unsafePropsBy(setter))
 }
 
 

@@ -6,6 +6,6 @@
     "kotlin": "^@kotlinVersion@",
     "kodando-es6": "^@kodandoEs6Version@",
     "kodando-react": "^@kodandoReactVersion@",
-    "react-router": "^4.0.0"
+    "react-router-dom": "^4.0.0"
   }
 }

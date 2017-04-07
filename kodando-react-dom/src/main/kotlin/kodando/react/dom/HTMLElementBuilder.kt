@@ -5,7 +5,7 @@ import kodando.react.*
 open class HTMLElementBuilder<out TProps : HTMLElementAttributes>(val tagName: String) : ElementBuilder<TProps>() {
 
 	override fun invoke(propsSetter: TProps.() -> Unit): ReactElement? {
-		val (children, props) = extractChildren(emptyPropsOf(propsSetter))
+		val (children, props) = extractChildren(unsafePropsBy(propsSetter))
 
 		return React.createElement(tagName, props, *children)
 	}

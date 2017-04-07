@@ -1,4 +1,4 @@
-package kodando.react.router
+package kodando.react.router.dom
 
 import kodando.react.*
 
@@ -7,5 +7,5 @@ import kodando.react.*
  */
 
 fun switch(propSetter: PropSetter<SwitchProps>): ReactElement? {
-    return React.createElement(Module.SwitchClass, propsBy(propSetter))
+    return React.createElement(Module.SwitchClass, unsafePropsBy(propSetter))
 }

@@ -1,4 +1,4 @@
-package kodando.react.router
+package kodando.react.router.dom
 
 import kodando.history.History
 import kodando.react.*
@@ -93,7 +93,7 @@ interface Match {
 }
 
 
-@JsModule("react-router")
+@JsModule("react-router-dom")
 @JsNonModule
 external object Module {
 
