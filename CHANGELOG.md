@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.1.8
+
+Changed the changelog to reflect the libraries individually.
+
+### kodando-rxjs@5.0.0-v6
+
+- [NEW] - Added operator concatMap;
+- [BREAKING CHANGE] - Renamed generated JS name of Rxjs operators (just recompile your project);
+
+
+
 ## 0.1.7
 
 ### BREAKING CHANGES
