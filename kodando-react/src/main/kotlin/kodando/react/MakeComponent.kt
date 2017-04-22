@@ -13,7 +13,7 @@ package kodando.react
  * @return A function what will receive a props extension method (to configure the props of the element)
  *         and returns the element.
  */
-fun <TProps : ReactProps> makeComponent(
+fun <TProps : ReactProps> makeNamedComponent(
     name: String,
     propFactory: () -> TProps,
     renderer: (TProps) -> ReactElement?): (TProps.() -> Unit) -> ReactElement? {
@@ -23,7 +23,8 @@ fun <TProps : ReactProps> makeComponent(
     val propSetter = propSetterOf(propFactory)
 
     return { setter ->
-        React.createElement(renderer, propSetter(setter))
+        val props = propSetter(setter)
+
+        createElement(renderer, props)
     }
 }
-

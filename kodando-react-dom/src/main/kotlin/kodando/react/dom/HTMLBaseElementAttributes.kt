@@ -1,10 +1,7 @@
 package kodando.react.dom
 
-interface HTMLBaseElementAttributes : HTMLElementAttributes {
-	@JsName("href")
-	var href: String?
-
-	@JsName("target")
-	var target: String?
+open class HTMLBaseElementAttributes : HTMLElementAttributes() {
+    var href: String? by jsonProperty
+    var target: String? by jsonProperty
 }
 

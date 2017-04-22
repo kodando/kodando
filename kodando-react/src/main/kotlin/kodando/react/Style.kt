@@ -7,4 +7,3 @@ import kotlin.js.Json
  */
 
 external interface Style : Json
-

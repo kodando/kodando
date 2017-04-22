@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## 0.1.9
+
+### kodando-react@15.4.3-v10
+
+- [BREAKING CHANGES] - To many breaking changes to a single line:
+    - Lifecycle interfaces moved to package `kodando.react.lifecycle`;
+    - **If you are using `React.createElement` this will affect you**! Relaxed `React.createElement` definitions to a single generic definition. But
+    all the safe functions continue to exist but out of the module as simple functions,
+    named: `createElement`;
+    - ReactProps now is an abstract class which holds a JSON (the real props) to be 
+    passed to React;
+    - Normalization of props. Now a single element isn´t anymore an array with one element.
+    This would allow to use `react-router` and other libraries that check for this. 
+
+### kodando-react-dom@15.4.3-v10
+
+- [BREAKING CHANGES] - Changes in types to reflect the new `kodando-react` changes.
+
+### kodando-react-router@4.0.0-v5
+
+- [BREAKING CHANGES] - Changes in types to reflect the new `kodando-react` changes.
+- [FIX] - Now the routers are working as demanded.
+
+### kodando-mobx-react@4.1.5-v6
+
+- [BREAKING CHANGES] - Changes in types to reflect the new `kodando-react` changes.
+
+
+
 ## 0.1.8
 
 Changed the changelog to reflect the libraries individually.

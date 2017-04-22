@@ -1,6 +1,7 @@
 package kodando.react.router.dom
 
-import kodando.react.*
+import kodando.react.ReactElement
+import kodando.react.createElement
 
 /**
  * Created by danfma on 04/04/17.
@@ -8,7 +9,7 @@ import kodando.react.*
 
 @JsName("promptWithText")
 fun prompt(message: String, matched: Boolean = false): ReactElement? {
-    return React.createElement(Module.PromptClass, unsafePropsBy<PromptProps> {
+    return createElement(Module.PromptClass, PromptProps().apply {
         this.messageText = message
         this.matched = matched
     })
@@ -17,7 +18,7 @@ fun prompt(message: String, matched: Boolean = false): ReactElement? {
 
 @JsName("promptWithFunc")
 fun prompt(messageFactory: (Location) -> String, matched: Boolean = false): ReactElement? {
-    return React.createElement(Module.PromptClass, unsafePropsBy<PromptProps> {
+    return createElement(Module.PromptClass, PromptProps().apply {
         this.messageFunc = messageFactory
         this.matched = matched
     })

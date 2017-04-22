@@ -1,6 +1,7 @@
 package kodando.react.router.dom
 
-import kodando.react.*
+import kodando.react.ReactElement
+import kodando.react.createElement
 
 /**
  * Created by danfma on 04/04/17.
@@ -9,7 +10,7 @@ import kodando.react.*
 
 @JsName("redirectToUrl")
 fun redirect(to: String, from: String? = null, push: Boolean? = null): ReactElement? {
-    return React.createElement(Module.RedirectClass, unsafePropsBy<RedirectProps> {
+    return createElement(Module.RedirectClass, RedirectProps().apply {
         this.toUrl = to
         this.from = from ?: undefined
         this.push = push ?: undefined
@@ -19,7 +20,7 @@ fun redirect(to: String, from: String? = null, push: Boolean? = null): ReactElem
 
 @JsName("redirectToLocation")
 fun redirect(location: Location, from: String? = null, push: Boolean? = null): ReactElement? {
-    return React.createElement(Module.RedirectClass, unsafePropsBy<RedirectProps> {
+    return createElement(Module.RedirectClass, RedirectProps().apply {
         this.toLocation = location
         this.from = from ?: undefined
         this.push = push ?: undefined

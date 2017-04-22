@@ -18,7 +18,7 @@ fun <T> objectWithShapeBy(setter: T.() -> Unit): T {
  * Prefer the propsBy or propSetterOf functions.
  */
 fun <T : ReactProps> unsafePropsOf(): T {
-    return BaseProps().asDynamic()
+    return ReactProps().asDynamic()
 }
 
 /**

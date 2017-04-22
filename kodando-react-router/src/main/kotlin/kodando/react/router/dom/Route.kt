@@ -1,6 +1,9 @@
 package kodando.react.router.dom
 
-import kodando.react.*
+import kodando.react.Component
+import kodando.react.PropSetter
+import kodando.react.ReactElement
+import kodando.react.createElement
 
 /**
  * Created by danfma on 04/04/17.
@@ -8,7 +11,7 @@ import kodando.react.*
 
 @JsName("route")
 fun route(propSetter: PropSetter<RouteProps>): ReactElement? {
-    return React.createElement(Module.RouteClass, unsafePropsBy(propSetter))
+    return createElement(Module.RouteClass, RouteProps().apply(propSetter))
 }
 
 

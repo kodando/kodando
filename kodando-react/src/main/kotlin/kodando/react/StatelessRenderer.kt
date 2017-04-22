@@ -7,7 +7,7 @@ package kodando.react
  *
  * ```
  * object MyComponent : StatelessRenderer<MyComponent.Props>(::Props) {
- *   class Props : BaseProps() {
+ *   class Props : ReactProps() {
  *     var message = "This is the default message"
  *   }
  *
@@ -28,8 +28,8 @@ package kodando.react
  * ```
  *
  */
-abstract class StatelessRenderer<TProps>(factory: () -> TProps) where TProps : ReactProps, TProps : Any {
-    private val renderer = makeComponent(this::class.simpleName!!, factory, this::render)
+abstract class StatelessRenderer<TProps : ReactProps>(factory: () -> TProps = { unsafePropsOf<TProps>() }) {
+    private val renderer = makeNamedComponent(this::class.simpleName!!, factory, this::render)
 
     /**
      * Renders a new component using the received props.

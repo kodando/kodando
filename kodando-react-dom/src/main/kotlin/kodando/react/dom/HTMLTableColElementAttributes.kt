@@ -1,7 +1,7 @@
 package kodando.react.dom
 
-interface HTMLTableColElementAttributes : HTMLElementAttributes {
-    var align: String?
-    var span: String?
+open class HTMLTableColElementAttributes : HTMLElementAttributes() {
+    var align: String? by jsonProperty
+    var span: String? by jsonProperty
 }
 

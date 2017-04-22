@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>samples</artifactId>
+        <groupId>br.danfma</groupId>
+        <version>0.1.9</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>react-showroom</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>br.danfma</groupId>
+            <artifactId>kodando-react</artifactId>
+            <version>15.4.3-v10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.danfma</groupId>
+            <artifactId>kodando-react-dom</artifactId>
+            <version>15.4.3-v10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.danfma</groupId>
+            <artifactId>kodando-react-router</artifactId>
+            <version>4.0.0-v5</version>
+        </dependency>
+    </dependencies>
+
+</project>

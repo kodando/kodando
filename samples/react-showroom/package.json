@@ -1,0 +1,24 @@
+{
+  "name": "react-showroom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "kodando-es6": "^0.2.4",
+    "kodando-react": "^15.4.3-v10",
+    "kodando-react-dom": "^15.4.3-v10",
+    "kodando-react-router": "^4.0.0-v5",
+    "kotlin": "^1.1.0"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server",
+    "build": "./node_modules/.bin/webpack -p"
+  }
+}

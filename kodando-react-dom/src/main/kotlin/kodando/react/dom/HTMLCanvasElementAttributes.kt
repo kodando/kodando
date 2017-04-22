@@ -1,6 +1,4 @@
 package kodando.react.dom
 
-interface HTMLCanvasElementAttributes : HTMLElementAttributes {
-
-}
+open class HTMLCanvasElementAttributes : HTMLElementAttributes()
 

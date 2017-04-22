@@ -1,14 +1,14 @@
 package kodando.react.dom
 
-interface HTMLLinkElementAttributes : HTMLElementAttributes {
-    var charset: String?
-    var disabled: Boolean?
-    var href: String?
-    var hreflang: String?
-    var media: String?
-    var rel: String?
-    var rev: String?
-    var target: String?
-    var type: String?
+open class HTMLLinkElementAttributes : HTMLElementAttributes() {
+    var charset: String? by jsonProperty
+    var disabled: Boolean? by jsonProperty
+    var href: String? by jsonProperty
+    var hreflang: String? by jsonProperty
+    var media: String? by jsonProperty
+    var rel: String? by jsonProperty
+    var rev: String? by jsonProperty
+    var target: String? by jsonProperty
+    var type: String? by jsonProperty
 }
 

@@ -1,10 +1,7 @@
 package kodando.react.dom
 
-interface HTMLAreaElementAttributes : HTMLElementAttributes {
-	@JsName("alt")
-	var alt: String?
-
-	@JsName("href")
-	var href: String?
+open class HTMLAreaElementAttributes : HTMLElementAttributes() {
+    var alt: String? by jsonProperty
+    var href: String? by jsonProperty
 }
 

@@ -1,9 +1,9 @@
 package kodando.react.dom
 
-interface HTMLMetaElementAttributes : HTMLElementAttributes {
-    var charset: String?
-    var content: String?
-    var scheme: String?
-    var url: String?
+open class HTMLMetaElementAttributes : HTMLElementAttributes() {
+    var charset: String? by jsonProperty
+    var content: String? by jsonProperty
+    var scheme: String? by jsonProperty
+    var url: String? by jsonProperty
 }
 

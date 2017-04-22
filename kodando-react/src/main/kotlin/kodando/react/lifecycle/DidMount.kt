@@ -1,4 +1,4 @@
-package kodando.react
+package kodando.react.lifecycle
 
 external interface DidMount {
 	fun componentDidMount()

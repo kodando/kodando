@@ -1,3 +1,3 @@
 package kodando.react.dom
 
-interface HTMLVideoElementAttributes : HTMLElementAttributes
+open class HTMLVideoElementAttributes : HTMLElementAttributes()

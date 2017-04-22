@@ -1,3 +1,3 @@
 package kodando.react
 
-external interface TypedReactElement<T> : ReactElement
+external interface TypedReactElement<T : Component<*, *>> : ReactElement

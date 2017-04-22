@@ -1,4 +1,4 @@
-package kodando.react
+package kodando.react.lifecycle
 
 /**
  * Invoked immediately after the component's updates are flushed to the DOM. This method is not called for the initial render.

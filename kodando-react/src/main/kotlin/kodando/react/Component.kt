@@ -18,9 +18,6 @@ external abstract class Component<out Props, State> {
     fun forceUpdate(): Unit
 
     @JsName("render")
-    abstract fun render(): ReactElement?;
+    abstract fun render(): ReactElement?
 }
 
-external abstract class PureComponent<Props, State> : Component<Props, State>, ShouldUpdate<Props, State> {
-    override fun shouldComponentUpdate(nextProps: Props, nextState: State): Boolean
-}

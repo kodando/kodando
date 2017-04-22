@@ -3,7 +3,7 @@
 package kodando.react.dom
 
 
-interface SVGNodeAttributes : DOMAttributes
+interface SVGNodeAttributes
 
 
 var SVGNodeAttributes.cx: Number?

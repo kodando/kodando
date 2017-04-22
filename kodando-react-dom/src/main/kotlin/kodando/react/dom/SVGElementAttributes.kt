@@ -1,11 +1,6 @@
 package kodando.react.dom
 
-interface SVGElementAttributes : HTMLElementAttributes {
-
-	@JsName("viewBox")
-	var viewBox: String?
-
-	@JsName("preserveAspectRatio")
-	var preserveAspectRatio: String?
-
+open class SVGElementAttributes : HTMLElementAttributes() {
+    var viewBox: String? by jsonProperty
+    var preserveAspectRatio: String? by jsonProperty
 }

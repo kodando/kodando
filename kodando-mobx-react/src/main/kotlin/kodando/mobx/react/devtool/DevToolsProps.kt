@@ -6,4 +6,4 @@ import kodando.react.ReactProps
  * Created by danfma on 16/01/2017.
  */
 
-interface DevToolsProps : ReactProps
+open class DevToolsProps : ReactProps()

@@ -2,47 +2,64 @@
 
 package kodando.react
 
-import org.w3c.dom.Element
 import kotlin.js.Json
 
-interface ReactProps : Json {
+
+open class ReactProps(val json: Json = kotlin.js.json()) : Json by json {
+    val jsonProperty = JsonPropertyDelegate(json)
+
+    var key: String? by jsonProperty
+    var ref: String? by jsonProperty
+    var refBy: ElementReferenceHandler? by jsonProperty("ref")
+    var children: ReactChildren? by jsonProperty
+
+    /**
+     * Add an element child to this props.
+     */
+    fun addChild(child: ReactElement?) {
+        children = children?.concat(child) ?: reactChildren(child)
+    }
+
+    /**
+     * Copy all properties to another props instance.
+     */
+    fun spreadTo(other: ReactProps, except: Array<String> = arrayOf()) {
+        val json = this.json
+        val otherJson = other.json
+
+        js("""
+        for (var key in json) {
+            if (except.indexOf(key) >= 0)
+                continue;
+
+            otherJson[key] = json[key];
+        }
+        """)
+    }
+
+    /**
+     * Create a delegate that will map the value to the specified field (name),
+     * in the json, instead of mapping to the property name.
+     *
+     * @param fieldName the field name
+     */
+    protected fun jsonProperty(fieldName: String) = JsonPropertyDelegate(json, fieldName)
+
 
     operator fun ReactElement?.unaryPlus() {
-        append(this)
+        addChild(this)
     }
 
     operator fun String?.unaryPlus() {
-        append(this)
+        addChild(text(this))
     }
 
-    operator fun ReactChildren?.unaryPlus() {
-        append(this)
+    operator fun Array<ReactElement?>?.unaryPlus() {
+        if (this == null) {
+            addChild(null)
+        } else {
+            addChild(all(*this))
+        }
     }
 
 }
-
-inline var ReactProps.key: String?
-    get() = this.asDynamic().key
-    set(value) {
-        this.asDynamic().key = value
-    }
-
-
-inline var ReactProps.ref: String?
-    get() = this.asDynamic().ref
-    set(value) {
-        this.asDynamic().ref = value
-    }
-
-var ReactProps.refBy: (Element) -> Unit
-    get() = this.asDynamic().ref
-    set(value) {
-        this.asDynamic().ref = value
-    }
-
-inline var ReactProps.children: ReactChildren?
-    get() = this.asDynamic().children
-    set(value) {
-        this.asDynamic().children = value
-    }
-

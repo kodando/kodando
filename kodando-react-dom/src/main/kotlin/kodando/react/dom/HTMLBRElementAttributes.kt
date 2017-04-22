@@ -1,5 +1,5 @@
 package kodando.react.dom
 
-interface HTMLBRElementAttributes : HTMLElementAttributes {
-    var clear: String?
+open class HTMLBRElementAttributes : HTMLElementAttributes() {
+    var clear: String? by jsonProperty
 }

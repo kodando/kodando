@@ -1,5 +1,5 @@
 package kodando.react.dom
 
-interface HTMLImageElementAttributes : HTMLElementAttributes {
-    var src: String
+open class HTMLImageElementAttributes : HTMLElementAttributes() {
+    var src: String by jsonProperty
 }

@@ -1,4 +1,4 @@
 package kodando.react.dom
 
-interface HTMLAudioElementAttributes : HTMLMediaElementAttributes
+open class HTMLAudioElementAttributes : HTMLMediaElementAttributes()
 

@@ -1,4 +1,4 @@
-package kodando.react
+package kodando.react.lifecycle
 
 /**
  * Invoked immediately before rendering when new props or state are being received. This method is not called for the initial render.

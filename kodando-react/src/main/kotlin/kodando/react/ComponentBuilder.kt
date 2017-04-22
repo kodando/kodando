@@ -3,14 +3,13 @@ package kodando.react
 import kotlin.reflect.KClass
 
 open class ComponentBuilder<TProps : ReactProps>(
-    val componentType: JsClass<out Component<TProps, *>>) : ElementBuilder<TProps>() {
+    val componentType: JsClass<out Component<TProps, *>>,
+    val propsFactory: () -> TProps = { unsafePropsOf<TProps>() }) {
 
     constructor(componentType: KClass<out Component<TProps, *>>) : this(componentType.js)
 
-    override operator fun invoke(propsSetter: PropSetter<TProps>): ReactElement? {
-        val (children, props) = extractChildren(unsafePropsBy(propsSetter))
-
-        return React.createElement(componentType, props, *children)
+    operator fun invoke(propsSetter: PropSetter<TProps>): ReactElement? {
+        return createElement(componentType, propsFactory().apply(propsSetter))
     }
 
 }
