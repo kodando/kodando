@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## 0.1.12
+
+### kodando-es6@0.2.7
+
+- [NEW] - Added the type `JsDate` to map to the native JS Date Class.
+
+### kodando-react@15.4.3-v11
+
+- [FEATURE] - Added support to pass the props factory when using the KClass on `ComponentBuilder`.
+
+### kodando-react-dom@15.4.3-v11
+
+- Updating to match `kodando-react` version.
+
+
 ## 0.1.9
 
 ### kodando-react@15.4.3-v10

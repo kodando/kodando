@@ -1518,6 +1518,12 @@ kodando-es6@^0.2.4:
   dependencies:
     kotlin "^1.1.1"
 
+kodando-es6@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/kodando-es6/-/kodando-es6-0.2.7.tgz#168ce02299fce1809795d75f75370a35f6c4a5a3"
+  dependencies:
+    kotlin "^1.1.1"
+
 kodando-react-dom@^15.4.3-v10:
   version "15.4.3-v10"
   resolved "https://registry.yarnpkg.com/kodando-react-dom/-/kodando-react-dom-15.4.3-v10.tgz#a68444f883fda90ff426d30a9663f49225a0bef4"

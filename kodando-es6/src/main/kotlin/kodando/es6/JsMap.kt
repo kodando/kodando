@@ -6,21 +6,21 @@ package kodando.es6
 
 @JsName("Map")
 external open class JsMap<Key, Value>(vararg tuple2: Tuple2<Key, Value>) {
-	val size: Int
+    val size: Int
 
-	fun entries(): Array<Tuple2<Key, Value>>
+    fun entries(): Array<Tuple2<Key, Value>>
 
-	fun forEach(callback: (Tuple2<Key, Value>) -> Unit)
+    fun forEach(callback: (Tuple2<Key, Value>) -> Unit)
 
-	fun get(key: Key): Value?
+    fun get(key: Key): Value?
 
-	fun has(key: Key): Boolean
+    fun has(key: Key): Boolean
 
-	fun keys(): Array<Key>
+    fun keys(): Array<Key>
 
-	fun values(): Array<Value>
+    fun values(): Array<Value>
 
 }
 
 fun <Key, Value> jsMapOf(vararg tuples: Tuple2<Key, Value>) =
-	JsMap(*tuples)
+    JsMap(*tuples)

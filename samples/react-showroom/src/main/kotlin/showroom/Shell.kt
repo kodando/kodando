@@ -1,14 +1,9 @@
 package showroom
 
-import kodando.react.ReactElement
-import kodando.react.ReactProps
-import kodando.react.StatelessRenderer
-import kodando.react.dom.div
-import kodando.react.dom.h1
-import kodando.react.dom.h2
-import kodando.react.router.dom.hashRouter
-import kodando.react.router.dom.link
-import kodando.react.router.dom.routeRenderized
+import kodando.react.*
+import kodando.react.dom.*
+import kodando.react.router.dom.*
+import showroom.time.Clock
 
 object Shell : StatelessRenderer<Shell.Props>(::Props) {
 
@@ -16,6 +11,11 @@ object Shell : StatelessRenderer<Shell.Props>(::Props) {
 
     override fun render(props: Props): ReactElement? {
         return div {
+            +Clock {
+                name = "Goiânia"
+                width = 150
+            }
+
             +h1 {
                 +"My super application in React"
             }

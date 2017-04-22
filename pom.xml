@@ -6,7 +6,7 @@
 
     <groupId>br.danfma</groupId>
     <artifactId>kodando</artifactId>
-    <version>0.1.9</version>
+    <version>0.1.12</version>
 
     <modules>
         <module>kodando-crossroads</module>
@@ -33,9 +33,9 @@
         <junit.version>4.12</junit.version>
 
         <!-- VERSIONS -->
-        <kodando.es6.version>0.2.4</kodando.es6.version>
+        <kodando.es6.version>0.2.7</kodando.es6.version>
         <kodando.rxjs.version>5.0.0-v6</kodando.rxjs.version>
-        <kodando.react.version>15.4.3-v10</kodando.react.version>
+        <kodando.react.version>15.4.3-v11</kodando.react.version>
         <kodando.react.history.version>0.18.2-v5</kodando.react.history.version>
         <kodando.react.router.version>4.0.0-v5</kodando.react.router.version>
         <kodando.jest.version>18.0.0-v3</kodando.jest.version>

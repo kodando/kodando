@@ -11,7 +11,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "kodando-es6": "^0.2.4",
+    "kodando-es6": "^0.2.7",
     "kodando-react": "^15.4.3-v10",
     "kodando-react-dom": "^15.4.3-v10",
     "kodando-react-router": "^4.0.0-v5",

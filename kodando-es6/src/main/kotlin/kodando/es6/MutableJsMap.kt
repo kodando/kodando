@@ -10,5 +10,5 @@ external class MutableJsMap<Key, Value>(vararg tuples: Tuple2<Key, Value>) : JsM
 	fun set(key: Key, value: Value)
 }
 
-fun <Key, Value> mutableMapOf(vararg tuples: Tuple2<Key, Value>) =
-	MutableJsMap(*tuples)
+fun <Key, Value> mutableJsMapOf(vararg tuples: Tuple2<Key, Value>) =
+    MutableJsMap(*tuples)
