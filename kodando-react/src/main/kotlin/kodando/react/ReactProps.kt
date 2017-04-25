@@ -46,11 +46,15 @@ fun ReactProps.spreadTo(other: ReactProps, except: Array<String> = arrayOf()) {
     val otherJson = other
 
     js("""
-        for (var key in Object.getOwnPropertyNames(json)) {
-            if (except.indexOf(key) >= 0)
-                continue;
+    var keys = Object.getOwnPropertyNames(json);
 
-            otherJson[key] = json[key];
-        }
-        """)
+    for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+
+        if (except.indexOf(key) >= 0 || json[key] === undefined)
+            continue;
+
+        otherJson[key] = json[key];
+    }
+    """)
 }

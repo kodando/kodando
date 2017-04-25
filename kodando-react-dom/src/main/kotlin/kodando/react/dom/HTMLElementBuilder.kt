@@ -8,4 +8,11 @@ open class HTMLElementBuilder<out TProps : HTMLElementAttributes>(val tagName: S
         return createElement(tagName, unsafePropsBy(setter))
     }
 
+    operator fun invoke(className: String? = null, setter: PropSetter<TProps>): ReactElement? {
+        return this {
+            this.className = className
+            this.setter()
+        }
+    }
+
 }

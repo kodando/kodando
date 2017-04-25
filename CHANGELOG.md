@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.2.3
+
+- **kodando-react** - Function spreadTo wasn't copying the correct values;
+- **kodando-react-dom** - HTMLElementBuilder and extensions were ignoring the className as parameter;
+
+
 ## 0.2.2
 
 ### BREAKING CHANGES (This will be the last for now!)
