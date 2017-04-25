@@ -6,12 +6,12 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val routeBuilder = ComponentBuilder(Module.RouteClass)
+val Route = ComponentBuilder(Module.RouteClass)
 
 
 @JsName("route")
 fun ReactProps.route(setter: PropSetter<RouteProps>) {
-    append(routeBuilder.build(setter))
+    append(Route(setter))
 }
 
 

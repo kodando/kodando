@@ -6,11 +6,11 @@ import kodando.react.*
  * Created by danfma on 24/04/17.
  */
 
-val linkBuilder = ComponentBuilder(Module.LinkClass)
+val Link = ComponentBuilder(Module.LinkClass)
 
 
 private fun ReactProps.routerLink(setter: PropSetter<LinkProps>) =
-    append(linkBuilder.build(setter))
+    append(Link(setter))
 
 
 @JsName("linkToUrl")

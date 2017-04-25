@@ -11,7 +11,7 @@ open class ComponentBuilder<TComponent : Component<TProps, *>, TProps : ReactPro
         propsFactory: (() -> TProps)? = null)
         : this(componentType.js, propsFactory)
 
-    override fun build(setter: PropSetter<TProps>): ReactElement? {
+    override operator fun invoke(setter: PropSetter<TProps>): ReactElement? {
         val props = propsFactory?.invoke() ?: unsafePropsOf()
         props.setter()
 

@@ -6,9 +6,9 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val switchBuilder = ComponentBuilder(Module.SwitchClass)
+val Switch = ComponentBuilder(Module.SwitchClass)
 
 
-fun RouterProps.switch(propSetter: PropSetter<SwitchProps>) {
-    append(switchBuilder.build(propSetter))
+fun RouterProps.switch(setter: PropSetter<SwitchProps>) {
+    append(Switch(setter))
 }

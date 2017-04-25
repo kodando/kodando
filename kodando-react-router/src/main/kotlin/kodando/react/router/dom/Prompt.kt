@@ -6,11 +6,11 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val promptBuilder = ComponentBuilder(Module.PromptClass)
+val Prompt = ComponentBuilder(Module.PromptClass)
 
 
 private fun ReactProps.prompt(setter: PropSetter<PromptProps>) {
-    append(promptBuilder.build(setter))
+    append(Prompt(setter))
 }
 
 

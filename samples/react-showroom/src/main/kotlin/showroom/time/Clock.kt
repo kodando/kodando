@@ -155,4 +155,5 @@ class Clock : Component<Clock.Props, Unit>(), DidMount, WillUnmount, ShouldUpdat
 
 }
 
-fun ReactProps.clock(setter: PropSetter<Clock.Props>) = append(Clock.build(setter))
+fun ReactProps.clock(setter: PropSetter<Clock.Props>) =
+    append(Clock(setter))

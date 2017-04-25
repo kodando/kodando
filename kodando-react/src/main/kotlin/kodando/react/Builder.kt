@@ -1,5 +1,5 @@
 package kodando.react
 
 interface Builder<out T : ReactProps> {
-    fun build(setter: PropSetter<T>): ReactElement?
+    operator fun invoke(setter: PropSetter<T>): ReactElement?
 }

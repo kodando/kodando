@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## 0.2.2
+
+### BREAKING CHANGES (This will be the last for now!)
+
+- **kodando-react** - Changed the method of the Builder to
+  an operator invoke. This way it will make your components cleaner to
+  read. 
+  * Before: 
+    ```kotlin
+    MyComponent.build(setter)
+    ```
+  * Before:
+    ```kotlin
+    MyComponent.build {
+      myProp = value
+    }
+    ```
+  * After:
+    ```kotlin
+    MyComponent(setter)
+    ```
+  * After:
+    ```kotlin
+    MyComponent {
+      myProp = value
+    }
+    ```
+
+
 ## 0.2.1 (reset)
 
 ### BREAKING CHANGES
