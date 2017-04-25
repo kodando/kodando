@@ -1,13 +1,15 @@
 package kodando.react.router.dom
 
-import kodando.react.PropSetter
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
 /**
- * Created by danfma on 04/04/17.
+ * Created by danfma on 24/04/17.
  */
 
-fun hashRouter(setter: PropSetter<HashRouterProps>): ReactElement? {
-    return createElement(Module.HashRouterClass, HashRouterProps().apply(setter))
-}
+
+val hashRouterBuilder = ComponentBuilder(Module.HashRouterClass)
+
+
+fun ReactProps.hashRouter(setter: PropSetter<HashRouterProps>) =
+    append(hashRouterBuilder.build(setter))
+

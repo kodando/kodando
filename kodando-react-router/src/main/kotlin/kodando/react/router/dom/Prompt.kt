@@ -1,25 +1,32 @@
 package kodando.react.router.dom
 
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
 /**
  * Created by danfma on 04/04/17.
  */
 
+val promptBuilder = ComponentBuilder(Module.PromptClass)
+
+
+private fun ReactProps.prompt(setter: PropSetter<PromptProps>) {
+    append(promptBuilder.build(setter))
+}
+
+
 @JsName("promptWithText")
-fun prompt(message: String, matched: Boolean = false): ReactElement? {
-    return createElement(Module.PromptClass, PromptProps().apply {
+fun ReactProps.prompt(message: String, matched: Boolean = false) {
+    prompt {
         this.messageText = message
         this.matched = matched
-    })
+    }
 }
 
 
 @JsName("promptWithFunc")
-fun prompt(messageFactory: (Location) -> String, matched: Boolean = false): ReactElement? {
-    return createElement(Module.PromptClass, PromptProps().apply {
+fun ReactProps.prompt(messageFactory: (Location) -> String, matched: Boolean = false) {
+    prompt {
         this.messageFunc = messageFactory
         this.matched = matched
-    })
+    }
 }

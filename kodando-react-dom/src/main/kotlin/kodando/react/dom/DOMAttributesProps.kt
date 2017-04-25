@@ -9,79 +9,79 @@ import org.w3c.dom.Element
  * Created by danfma on 02/06/2016.
  */
 
-open class DOMAttributesProps : ReactProps() {
-    var className: String? by jsonProperty
+interface DOMAttributesProps : ReactProps {
+    var className: String?
 
-    var id: String? by jsonProperty
+    var id: String?
 
-    var dangerouslySetInnerHTML: DangerousHtml? by jsonProperty
+    var dangerouslySetInnerHTML: DangerousHtml?
 
-    var onCopy: DragEventHandler<Element>? by jsonProperty
+    var onCopy: DragEventHandler<Element>?
 
-    var onCut: DragEventHandler<Element>? by jsonProperty
+    var onCut: DragEventHandler<Element>?
 
-    var onPaste: DragEventHandler<Element>? by jsonProperty
+    var onPaste: DragEventHandler<Element>?
 
-    var onKeyDown: KeyboardEventHandler<Element>? by jsonProperty
+    var onKeyDown: KeyboardEventHandler<Element>?
 
-    var onKeyPress: KeyboardEventHandler<Element>? by jsonProperty
+    var onKeyPress: KeyboardEventHandler<Element>?
 
-    var onKeyUp: KeyboardEventHandler<Element>? by jsonProperty
+    var onKeyUp: KeyboardEventHandler<Element>?
 
-    var onFocus: FocusEventHandler<Element>? by jsonProperty
+    var onFocus: FocusEventHandler<Element>?
 
-    var onBlur: FocusEventHandler<Element>? by jsonProperty
+    var onBlur: FocusEventHandler<Element>?
 
-    var onChange: FormEventHandler<Element>? by jsonProperty
+    var onChange: FormEventHandler<Element>?
 
-    var onInput: FormEventHandler<Element>? by jsonProperty
+    var onInput: FormEventHandler<Element>?
 
-    var onSubmit: FormEventHandler<Element>? by jsonProperty
+    var onSubmit: FormEventHandler<Element>?
 
-    var onClick: MouseEventHandler<Element>? by jsonProperty
+    var onClick: MouseEventHandler<Element>?
 
-    var onDoubleClick: MouseEventHandler<Element>? by jsonProperty
+    var onDoubleClick: MouseEventHandler<Element>?
 
-    var onDrag: DragEventHandler<Element>? by jsonProperty
+    var onDrag: DragEventHandler<Element>?
 
-    var onDragEnd: DragEventHandler<Element>? by jsonProperty
+    var onDragEnd: DragEventHandler<Element>?
 
-    var onDragEnter: DragEventHandler<Element>? by jsonProperty
+    var onDragEnter: DragEventHandler<Element>?
 
-    var onDragExit: DragEventHandler<Element>? by jsonProperty
+    var onDragExit: DragEventHandler<Element>?
 
-    var onDragLeave: DragEventHandler<Element>? by jsonProperty
+    var onDragLeave: DragEventHandler<Element>?
 
-    var onDragOver: DragEventHandler<Element>? by jsonProperty
+    var onDragOver: DragEventHandler<Element>?
 
-    var onDragStart: DragEventHandler<Element>? by jsonProperty
+    var onDragStart: DragEventHandler<Element>?
 
-    var onDrop: DragEventHandler<Element>? by jsonProperty
+    var onDrop: DragEventHandler<Element>?
 
-    var onMouseDown: MouseEventHandler<Element>? by jsonProperty
+    var onMouseDown: MouseEventHandler<Element>?
 
-    var onMouseEnter: MouseEventHandler<Element>? by jsonProperty
+    var onMouseEnter: MouseEventHandler<Element>?
 
-    var onMouseLeave: MouseEventHandler<Element>? by jsonProperty
+    var onMouseLeave: MouseEventHandler<Element>?
 
-    var onMouseMove: MouseEventHandler<Element>? by jsonProperty
+    var onMouseMove: MouseEventHandler<Element>?
 
-    var onMouseOut: MouseEventHandler<Element>? by jsonProperty
+    var onMouseOut: MouseEventHandler<Element>?
 
-    var onMouseOver: MouseEventHandler<Element>? by jsonProperty
+    var onMouseOver: MouseEventHandler<Element>?
 
-    var onMouseUp: MouseEventHandler<Element>? by jsonProperty
+    var onMouseUp: MouseEventHandler<Element>?
 
-    var onTouchCancel: TouchEventHandler<Element>? by jsonProperty
+    var onTouchCancel: TouchEventHandler<Element>?
 
-    var onTouchEnd: TouchEventHandler<Element>? by jsonProperty
+    var onTouchEnd: TouchEventHandler<Element>?
 
-    var onTouchMove: TouchEventHandler<Element>? by jsonProperty
+    var onTouchMove: TouchEventHandler<Element>?
 
-    var onTouchStart: TouchEventHandler<Element>? by jsonProperty
+    var onTouchStart: TouchEventHandler<Element>?
 
-    var onScroll: UIEventHandler<Element>? by jsonProperty
+    var onScroll: UIEventHandler<Element>?
 
-    var onWheel: WheelEventHandler<Element>? by jsonProperty
+    var onWheel: WheelEventHandler<Element>?
 
 }

@@ -3,48 +3,54 @@ package showroom
 import kodando.react.*
 import kodando.react.dom.*
 import kodando.react.router.dom.*
-import showroom.time.Clock
+import showroom.time.clock
 
-object Shell : StatelessRenderer<Shell.Props>(::Props) {
+object Shell : StatelessRenderer<Shell.Props>() {
 
-    class Props : ReactProps()
+    interface Props : ReactProps
 
     override fun render(props: Props): ReactElement? {
-        return div {
-            +Clock {
-                name = "Goiânia"
-                width = 150
-            }
+        return ksx {
+            div {
+                clock {
+                    name = "Goiânia"
+                    width = 150
+                }
 
-            +h1 {
-                +"My super application in React"
-            }
+                h1 {
+                    append("My super application in React")
+                }
 
-            +hashRouter {
-                +div {
-                    +div {
-                        +link("/") {
-                            +"Home"
-                        }
-
-                        +link("/about") {
-                            +"About"
-                        }
-                    }
-
-                    +routeRenderized("/", exact = true) {
+                hashRouter {
+                    div {
                         div {
-                            +"Home view"
-                        }
-                    }
-
-                    +routeRenderized("/about") {
-                        div {
-                            +h2 {
-                                +"About kodando"
+                            routerLink("/") {
+                                append("Home")
                             }
 
-                            +"""Kodando is a library that provides to you React bindings for kotlin2js."""
+                            routerLink("/about") {
+                                append("About")
+                            }
+                        }
+
+                        routeRenderized("/", exact = true) {
+                            ksx {
+                                div {
+                                    append("Home view")
+                                }
+                            }
+                        }
+
+                        routeRenderized("/about") {
+                            ksx {
+                                div {
+                                    h2 {
+                                        append("About kodando")
+                                    }
+
+                                    append("Kodando is a library that provides to you React bindings for kotlin2js.")
+                                }
+                            }
                         }
                     }
                 }

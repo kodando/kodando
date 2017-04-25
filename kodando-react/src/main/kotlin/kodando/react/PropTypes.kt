@@ -1,6 +1,7 @@
 package kodando.react
 
-import kotlin.js.Json
+import kodando.runtime.unsafe.objectWithShapeOf
+import kotlin.js.*
 
 
 external interface PropTypes {

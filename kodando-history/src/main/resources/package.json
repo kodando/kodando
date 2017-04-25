@@ -4,7 +4,7 @@
   "main": "@artifactId@.js",
   "dependencies": {
     "kotlin": "^@kotlinVersion@",
-    "kodando-es6": "^@kodandoEs6Version@",
+    "kodando-runtime": "^@kodandoRuntimeVersion@",
     "history": "^4.6.1"
   }
 }

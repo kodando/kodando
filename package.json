@@ -8,15 +8,15 @@
   "scripts": {
     "build": "node ./node_modules/.bin/webpack",
     "test": "jest",
-    "publish:kodando-es6": "npm publish ./kodando-es6/target/classes/",
-    "publish:kodando-rxjs": "npm publish ./kodando-rxjs/target/classes/",
-    "publish:kodando-react": "npm publish ./kodando-react/target/classes/",
-    "publish:kodando-react-dom": "npm publish ./kodando-react-dom/target/classes/",
-    "publish:kodando-crossroads": "npm publish ./kodando-crossroads/target/classes/",
-    "publish:kodando-hasher": "npm publish ./kodando-hasher/target/classes/",
-    "publish:kodando-history": "npm publish ./kodando-history/target/classes/",
-    "publish:kodando-react-router": "npm publish ./kodando-react-router/target/classes/",
-    "publish:all": "npm run publish:kodando-es6 && npm run publish:kodando-rxjs && npm run publish:kodando-react && npm run publish:kodando-react-dom && npm run publish:kodando-crossroads && npm run publish:kodando-hasher && npm run publish kodando:history && npm run publish:kodando-react-router"
+    "publish:kodando-runtime": "npm publish ./modules/kodando-runtime",
+    "publish:kodando-rxjs": "npm publish ./modules/kodando-rxjs",
+    "publish:kodando-react": "npm publish ./modules/kodando-react",
+    "publish:kodando-react-dom": "npm publish ./kodando-modules/react-dom",
+    "publish:kodando-crossroads": "npm publish ./modules/kodando-crossroads",
+    "publish:kodando-hasher": "npm publish ./modules/kodando-hasher",
+    "publish:kodando-history": "npm publish ./modules/kodando-history",
+    "publish:kodando-react-router": "npm publish ./kodando-modules/react-router",
+    "publish:all": "npm run publish:kodando-runtime && npm run publish:kodando-rxjs && npm run publish:kodando-react && npm run publish:kodando-react-dom && npm run publish:kodando-crossroads && npm run publish:kodando-hasher && npm run publish kodando:history && npm run publish:kodando-react-router"
   },
   "devDependencies": {
     "jest": "^18.1.0",
@@ -27,9 +27,7 @@
     "automock": false,
     "moduleDirectories": [
       "node_modules",
-      "kodando-es6/target/classes",
-      "kodando-rxjs/target/classes",
-      "kodando-jest/target/classes"
+      "modules"
     ],
     "testRegex": "(test|spec)\\.js$"
   },

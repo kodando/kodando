@@ -3,182 +3,182 @@
 package kodando.react.dom
 
 
-open class HTMLElementAttributes : DOMAttributesProps() {
-    var accept: String? by jsonProperty
+interface HTMLElementAttributes : DOMAttributesProps {
+    var accept: String?
 
-    var acceptCharset: String? by jsonProperty
+    var acceptCharset: String?
 
-    var accessKey: String? by jsonProperty
+    var accessKey: String?
 
-    var allowFullScreen: Boolean? by jsonProperty
+    var allowFullScreen: Boolean?
 
-    var allowTransparency: Boolean? by jsonProperty
+    var allowTransparency: Boolean?
 
-    var async: Boolean? by jsonProperty
+    var async: Boolean?
 
-    var autoComplete: Boolean? by jsonProperty
+    var autoComplete: Boolean?
 
-    var autoPlay: Boolean? by jsonProperty
+    var autoPlay: Boolean?
 
-    var charSet: String? by jsonProperty
+    var charSet: String?
 
-    var checked: Boolean? by jsonProperty
+    var checked: Boolean?
 
-    var classID: String? by jsonProperty
+    var classID: String?
 
-    var cols: Number? by jsonProperty
+    var cols: Number?
 
-    var colSpan: Number? by jsonProperty
+    var colSpan: Number?
 
-    var contentEditable: Boolean? by jsonProperty
+    var contentEditable: Boolean?
 
-    var contextMenu: String? by jsonProperty
+    var contextMenu: String?
 
-    var coords: String? by jsonProperty
+    var coords: String?
 
-    var crossOrigin: String? by jsonProperty
+    var crossOrigin: String?
 
-    var dataValue: String? by jsonProperty
+    var dataValue: String?
 
-    var dateTime: String? by jsonProperty
+    var dateTime: String?
 
-    var defaultChecked: Boolean? by jsonProperty
+    var defaultChecked: Boolean?
 
-    var defaultValue: String? by jsonProperty
+    var defaultValue: String?
 
-    var defer: Boolean? by jsonProperty
+    var defer: Boolean?
 
-    var dir: String? by jsonProperty
+    var dir: String?
 
-    var download: Any? by jsonProperty
+    var download: Any?
 
-    var draggable: Boolean? by jsonProperty
+    var draggable: Boolean?
 
-    var encType: String? by jsonProperty
+    var encType: String?
 
-    var form: String? by jsonProperty
+    var form: String?
 
-    var formAction: String? by jsonProperty
+    var formAction: String?
 
-    var formEncType: String? by jsonProperty
+    var formEncType: String?
 
-    var formMethod: String? by jsonProperty
+    var formMethod: String?
 
-    var formNoValidate: Boolean? by jsonProperty
+    var formNoValidate: Boolean?
 
-    var formTarget: String? by jsonProperty
+    var formTarget: String?
 
-    var frameBorder: Any? by jsonProperty
+    var frameBorder: Any?
 
-    var headers: String? by jsonProperty
+    var headers: String?
 
-    var height: Any? by jsonProperty
+    var height: Any?
 
-    var hidden: Boolean? by jsonProperty
+    var hidden: Boolean?
 
-    var high: Number? by jsonProperty
+    var high: Number?
 
-    var htmlFor: String? by jsonProperty
+    var htmlFor: String?
 
-    var httpEquiv: String? by jsonProperty
+    var httpEquiv: String?
 
-    var icon: String? by jsonProperty
+    var icon: String?
 
-    var label: String? by jsonProperty
+    var label: String?
 
-    var lang: String? by jsonProperty
+    var lang: String?
 
-    var list: String? by jsonProperty
+    var list: String?
 
-    var low: Number? by jsonProperty
+    var low: Number?
 
-    var manifest: String? by jsonProperty
+    var manifest: String?
 
-    var marginHeight: Number? by jsonProperty
+    var marginHeight: Number?
 
-    var marginWidth: Number? by jsonProperty
+    var marginWidth: Number?
 
-    var max: Any? by jsonProperty
+    var max: Any?
 
-    var maxLength: Number? by jsonProperty
+    var maxLength: Number?
 
-    var mediaGroup: String? by jsonProperty
+    var mediaGroup: String?
 
-    var min: Any? by jsonProperty
+    var min: Any?
 
-    var name: String? by jsonProperty
+    var name: String?
 
-    var noValidate: Boolean? by jsonProperty
-    var open: Boolean? by jsonProperty
+    var noValidate: Boolean?
+    var open: Boolean?
 
-    var optimum: Number? by jsonProperty
+    var optimum: Number?
 
-    var pattern: String? by jsonProperty
+    var pattern: String?
 
-    var poster: String? by jsonProperty
+    var poster: String?
 
-    var radioGroup: String? by jsonProperty
+    var radioGroup: String?
 
-    var readOnly: Boolean? by jsonProperty
+    var readOnly: Boolean?
 
-    var required: Boolean? by jsonProperty
+    var required: Boolean?
 
-    var role: String? by jsonProperty
+    var role: String?
 
-    var rows: Number? by jsonProperty
+    var rows: Number?
 
-    var rowSpan: Number? by jsonProperty
+    var rowSpan: Number?
 
-    var sandbox: String? by jsonProperty
+    var sandbox: String?
 
-    var scope: String? by jsonProperty
+    var scope: String?
 
-    var scoped: Boolean? by jsonProperty
+    var scoped: Boolean?
 
-    var seamless: Boolean? by jsonProperty
+    var seamless: Boolean?
 
-    var selected: Boolean? by jsonProperty
+    var selected: Boolean?
 
-    var shape: String? by jsonProperty
+    var shape: String?
 
-    var sizes: String? by jsonProperty
+    var sizes: String?
 
-    var spellCheck: Boolean? by jsonProperty
+    var spellCheck: Boolean?
 
-    var srcDoc: String? by jsonProperty
+    var srcDoc: String?
 
-    var srcSet: String? by jsonProperty
+    var srcSet: String?
 
-    var start: Number? by jsonProperty
+    var start: Number?
 
-    var step: Any? by jsonProperty
+    var step: Any?
 
-    var style: CSSProperties? by jsonProperty
+    var style: CSSProperties?
 
-    var tabIndex: Number? by jsonProperty
+    var tabIndex: Number?
 
-    var title: String? by jsonProperty
+    var title: String?
 
-    var useMap: String? by jsonProperty
+    var useMap: String?
 
-    var width: Any? by jsonProperty
+    var width: Any?
 
-    var wmode: String? by jsonProperty
+    var wmode: String?
 
 // Non-standard Attributes
 
-    var autoCapitalize: Boolean? by jsonProperty
+    var autoCapitalize: Boolean?
 
-    var autoCorrect: Boolean? by jsonProperty
+    var autoCorrect: Boolean?
 
-    var property: String? by jsonProperty
+    var property: String?
 
-    var itemProp: String? by jsonProperty
+    var itemProp: String?
 
-    var itemScope: Boolean? by jsonProperty
+    var itemScope: Boolean?
 
-    var itemType: String? by jsonProperty
+    var itemType: String?
 
-    var unselectable: Boolean? by jsonProperty
+    var unselectable: Boolean?
 
 }

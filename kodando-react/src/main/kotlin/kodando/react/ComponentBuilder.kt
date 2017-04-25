@@ -2,15 +2,20 @@ package kodando.react
 
 import kotlin.reflect.KClass
 
-open class ComponentBuilder<TProps : ReactProps>(
-    val componentType: JsClass<out Component<TProps, *>>,
-    val propsFactory: () -> TProps = { unsafePropsOf<TProps>() }) {
+open class ComponentBuilder<TComponent : Component<TProps, *>, TProps : ReactProps>(
+    val componentType: JsClass<TComponent>,
+    val propsFactory: (() -> TProps)? = null) : Builder<TProps> {
 
-    constructor(componentType: KClass<out Component<TProps, *>>,
-                propsFactory: () -> TProps = { unsafePropsOf<TProps>() }) : this(componentType.js, propsFactory)
+    constructor(
+        componentType: KClass<TComponent>,
+        propsFactory: (() -> TProps)? = null)
+        : this(componentType.js, propsFactory)
 
-    operator fun invoke(propsSetter: PropSetter<TProps>): ReactElement? {
-        return createElement(componentType, propsFactory().apply(propsSetter))
+    override fun build(setter: PropSetter<TProps>): ReactElement? {
+        val props = propsFactory?.invoke() ?: unsafePropsOf()
+        props.setter()
+
+        return createElement(componentType, props)
     }
 
 }

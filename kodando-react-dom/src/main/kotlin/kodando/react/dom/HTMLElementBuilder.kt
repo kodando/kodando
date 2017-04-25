@@ -1,26 +1,11 @@
 package kodando.react.dom
 
-import kodando.react.PropSetter
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
-open class HTMLElementBuilder<out TProps : HTMLElementAttributes>(
-    val tagName: String,
-    val propsFactory: () -> TProps) {
+open class HTMLElementBuilder<out TProps : HTMLElementAttributes>(val tagName: String) : Builder<TProps> {
 
-    operator open fun invoke(propsSetter: PropSetter<TProps>): ReactElement? {
-        return createElement(tagName, propsFactory().apply(propsSetter))
+    override fun build(setter: PropSetter<TProps>): ReactElement? {
+        return createElement(tagName, unsafePropsBy(setter))
     }
-
-    operator fun invoke(className: String): ReactElement? =
-        this.invoke {
-            this.className = className
-        }
-
-    operator fun invoke(className: String, propSetter: PropSetter<TProps>): ReactElement? =
-        this.invoke {
-            this.className = className
-            this.propSetter()
-        }
 
 }

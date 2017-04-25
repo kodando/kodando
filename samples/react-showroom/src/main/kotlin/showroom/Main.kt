@@ -1,6 +1,8 @@
 package showroom
 
 import kodando.react.dom.ReactDOM
+import kodando.runtime.hmr.Hot
+import kodando.runtime.hmr.module
 import kotlin.browser.document
 
 /**
@@ -12,5 +14,6 @@ fun main(args: Array<String>) {
     val shell = Shell { }
 
     ReactDOM.render(shell!!, container)
-}
 
+    module.hot?.let(Hot::accept)
+}

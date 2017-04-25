@@ -1,4 +1,4 @@
 package kodando.react.dom
 
-open class HTMLDataListElementAttributes : HTMLElementAttributes()
+interface HTMLDataListElementAttributes : HTMLElementAttributes
 

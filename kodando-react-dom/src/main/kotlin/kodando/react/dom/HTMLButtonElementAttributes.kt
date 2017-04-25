@@ -1,8 +1,8 @@
 package kodando.react.dom
 
-open class HTMLButtonElementAttributes : HTMLElementAttributes() {
-    var autoFocus: Boolean? by jsonProperty
-    var disabled: Boolean? by jsonProperty
-    var type: String? by jsonProperty
+interface HTMLButtonElementAttributes : HTMLElementAttributes {
+    var autoFocus: Boolean?
+    var disabled: Boolean?
+    var type: String?
 }
 

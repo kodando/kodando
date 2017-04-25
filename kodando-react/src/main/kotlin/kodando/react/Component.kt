@@ -3,7 +3,7 @@
 
 package kodando.react
 
-external abstract class Component<out Props, State> {
+external abstract class Component<out Props : ReactProps, State> {
     val props: Props
     var state: State
     val refs: ElementRefs
@@ -20,4 +20,3 @@ external abstract class Component<out Props, State> {
     @JsName("render")
     abstract fun render(): ReactElement?
 }
-

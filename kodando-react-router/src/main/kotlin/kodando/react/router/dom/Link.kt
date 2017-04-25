@@ -1,21 +1,21 @@
 package kodando.react.router.dom
 
-import kodando.react.PropSetter
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
 /**
- * Created by danfma on 04/04/17.
+ * Created by danfma on 24/04/17.
  */
 
-internal fun link(setter: PropSetter<LinkProps>): ReactElement? {
-    return createElement(Module.LinkClass, LinkProps().apply(setter))
-}
+val linkBuilder = ComponentBuilder(Module.LinkClass)
+
+
+private fun ReactProps.routerLink(setter: PropSetter<LinkProps>) =
+    append(linkBuilder.build(setter))
 
 
 @JsName("linkToUrl")
-fun link(toUrl: String, replace: Boolean? = null, setter: PropSetter<LinkProps>): ReactElement? {
-    return link {
+fun ReactProps.routerLink(toUrl: String, replace: Boolean? = null, setter: PropSetter<LinkProps>) {
+    routerLink {
         this.toUrl = toUrl
         this.replace = replace ?: undefined
         this.setter()
@@ -24,8 +24,8 @@ fun link(toUrl: String, replace: Boolean? = null, setter: PropSetter<LinkProps>)
 
 
 @JsName("linkToLocation")
-fun link(toLocation: Location, replace: Boolean? = null, setter: PropSetter<LinkProps>): ReactElement? {
-    return link {
+fun ReactProps.routerLink(toLocation: Location, replace: Boolean? = null, setter: PropSetter<LinkProps>) {
+    routerLink {
         this.toLocation = toLocation
         this.replace = replace ?: undefined
         this.setter()

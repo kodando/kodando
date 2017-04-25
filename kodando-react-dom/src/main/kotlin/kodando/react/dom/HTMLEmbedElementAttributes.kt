@@ -1,4 +1,4 @@
 package kodando.react.dom
 
-open class HTMLEmbedElementAttributes : HTMLElementAttributes()
+interface HTMLEmbedElementAttributes : HTMLElementAttributes
 

@@ -1,6 +1,5 @@
 package kodando.react
 
-import kotlin.js.*
 import kotlin.reflect.KClass
 
 
@@ -14,7 +13,7 @@ external object React {
     @JsName("createElement")
     fun createElement(
         component: Any,
-        props: Json?,
+        props: ReactProps?,
         vararg children: Any?): ReactElement
 
 }
@@ -31,7 +30,7 @@ fun <TProps : ReactProps> createElement(
 
     return React.createElement(
         function,
-        props?.json,
+        props,
         *children
     )
 }
@@ -48,7 +47,7 @@ fun createElement(
 
     return React.createElement(
         elementName,
-        props?.json,
+        props,
         *children
     )
 }
@@ -65,7 +64,7 @@ fun <T : Component<*, *>> createElement(
 
     return React.createElement(
         componentType,
-        props?.json,
+        props,
         *children
     ).unsafeCast<TypedReactElement<T>>()
 }

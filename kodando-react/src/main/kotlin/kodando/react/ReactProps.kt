@@ -2,64 +2,55 @@
 
 package kodando.react
 
-import kotlin.js.Json
+import kotlin.js.*
+
+interface ReactProps : Json {
+    var key: String?
+    var ref: Any?
+    var children: ReactChildren?
+}
 
 
-open class ReactProps(val json: Json = kotlin.js.json()) : Json by json {
-    val jsonProperty = JsonPropertyDelegate(json)
-
-    var key: String? by jsonProperty
-    var ref: String? by jsonProperty
-    var refBy: ElementReferenceHandler? by jsonProperty("ref")
-    var children: ReactChildren? by jsonProperty
-
-    /**
-     * Add an element child to this props.
-     */
-    fun addChild(child: ReactElement?) {
-        children = children?.concat(child) ?: reactChildren(child)
+var ReactProps.refByName: String?
+    get() = ref.unsafeCast<String?>()
+    set(value) {
+        ref = value
     }
 
-    /**
-     * Copy all properties to another props instance.
-     */
-    fun spreadTo(other: ReactProps, except: Array<String> = arrayOf()) {
-        val json = this.json
-        val otherJson = other.json
+var ReactProps.refBy: ((Any?) -> Unit)?
+    get() = ref.unsafeCast<((Any?) -> Unit)?>()
+    set(value) {
+        ref = value
+    }
 
-        js("""
-        for (var key in json) {
+
+@JsName("appendElement")
+fun ReactProps.append(child: ReactElement?) {
+    children = children?.concat(child) ?: reactChildren(child)
+}
+
+@JsName("appendString")
+fun ReactProps.append(child: String?) {
+    children = children?.concat(raw(child)) ?: reactChildren(raw(child))
+}
+
+@JsName("appendChildren")
+fun ReactProps.append(child: ReactChildren?) {
+    children = children?.concat(raw(child)) ?: reactChildren(raw(child))
+}
+
+
+@JsName("spreadTo")
+fun ReactProps.spreadTo(other: ReactProps, except: Array<String> = arrayOf()) {
+    val json = this
+    val otherJson = other
+
+    js("""
+        for (var key in Object.getOwnPropertyNames(json)) {
             if (except.indexOf(key) >= 0)
                 continue;
 
             otherJson[key] = json[key];
         }
         """)
-    }
-
-    /**
-     * Create a delegate that will map the value to the specified field (name),
-     * in the json, instead of mapping to the property name.
-     *
-     * @param fieldName the field name
-     */
-    protected fun jsonProperty(fieldName: String) = JsonPropertyDelegate(json, fieldName)
-
-
-    operator fun ReactElement?.unaryPlus() {
-        addChild(this)
-    }
-
-    operator fun String?.unaryPlus() {
-        addChild(text(this))
-    }
-
-    operator fun Array<ReactElement?>?.unaryPlus() {
-        if (this == null) {
-            addChild(null)
-        } else {
-            addChild(all(*this))
-        }
-    }
-
 }

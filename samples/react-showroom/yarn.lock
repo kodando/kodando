@@ -1512,45 +1512,7 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
-kodando-es6@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/kodando-es6/-/kodando-es6-0.2.4.tgz#15cdf107f3e50fd6986ca0c5e490f8acae3a6b62"
-  dependencies:
-    kotlin "^1.1.1"
-
-kodando-es6@^0.2.7:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/kodando-es6/-/kodando-es6-0.2.7.tgz#168ce02299fce1809795d75f75370a35f6c4a5a3"
-  dependencies:
-    kotlin "^1.1.1"
-
-kodando-react-dom@^15.4.3-v10:
-  version "15.4.3-v10"
-  resolved "https://registry.yarnpkg.com/kodando-react-dom/-/kodando-react-dom-15.4.3-v10.tgz#a68444f883fda90ff426d30a9663f49225a0bef4"
-  dependencies:
-    kodando-es6 "^0.2.4"
-    kodando-react "^15.4.3-v10"
-    kotlin "^1.1.1"
-    react-dom "^15.4.2"
-
-kodando-react-router@^4.0.0-v5:
-  version "4.0.0-v5"
-  resolved "https://registry.yarnpkg.com/kodando-react-router/-/kodando-react-router-4.0.0-v5.tgz#91785f2608a78f6841a350ce8d263973116db3c0"
-  dependencies:
-    kodando-es6 "^0.2.4"
-    kodando-react "^15.4.3-v10"
-    kotlin "^1.1.1"
-    react-router-dom "^4.0.0"
-
-kodando-react@^15.4.3-v10:
-  version "15.4.3-v10"
-  resolved "https://registry.yarnpkg.com/kodando-react/-/kodando-react-15.4.3-v10.tgz#580fddadecc6104702456aaa31367bce5cfdb64a"
-  dependencies:
-    kodando-es6 "^0.2.4"
-    kotlin "^1.1.1"
-    react "^15.4.2"
-
-kotlin@^1.1.0, kotlin@^1.1.1:
+kotlin@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/kotlin/-/kotlin-1.1.0.tgz#32d08fa29c5302fc5986467e8cc37447ecb252e7"
 
@@ -2363,7 +2325,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^15.4.2:
+react-dom@^15.5.4:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.5.4.tgz#ba0c28786fd52ed7e4f2135fe0288d462aef93da"
   dependencies:
@@ -2372,7 +2334,7 @@ react-dom@^15.4.2:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
-react-router-dom@^4.0.0:
+react-router-dom@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.1.tgz#3021ade1f2c160af97cf94e25594c5f294583025"
   dependencies:
@@ -2393,7 +2355,7 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react@^15.4.2:
+react@^15.5.4:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
   dependencies:

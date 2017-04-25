@@ -1,0 +1,48 @@
+<project default="copy-projects">
+    <macrodef name="copy-project">
+        <attribute name="project"/>
+        <attribute name="dir"/>
+        <sequential>
+            <copy todir="modules/@{project}">
+                <fileset dir="@{dir}/@{project}/target/classes">
+                    <include name="*.js"/>
+                    <include name="*.js.map"/>
+                    <include name="**/*.scss"/>
+                    <include name="**/*.json"/>
+                </fileset>
+            </copy>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="publish-project">
+        <attribute name="project"/>
+        <sequential>
+            <exec dir="modules/@{project}" command="npm publish" failonerror="false"/>
+        </sequential>
+    </macrodef>
+
+    <target name="copy-projects">
+        <mkdir dir="modules"/>
+
+        <copy-project project="kodando-runtime" dir="."/>
+        <copy-project project="kodando-react" dir="."/>
+        <copy-project project="kodando-react-dom" dir="."/>
+        <copy-project project="kodando-react-router" dir="."/>
+        <copy-project project="kodando-rxjs" dir="."/>
+        <copy-project project="kodando-history" dir="."/>
+        <copy-project project="kodando-crossroads" dir="."/>
+        <copy-project project="kodando-hasher" dir="."/>
+    </target>
+
+    <target name="publish-projects">
+        <publish-project project="kodando-runtime"/>
+        <publish-project project="kodando-history"/>
+        <publish-project project="kodando-rxjs"/>
+        <publish-project project="kodando-react"/>
+        <publish-project project="kodando-react-dom"/>
+        <publish-project project="kodando-react-router"/>
+        <publish-project project="kodando-crossroads"/>
+        <publish-project project="kodando-hasher"/>
+    </target>
+
+</project>

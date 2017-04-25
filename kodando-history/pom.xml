@@ -5,7 +5,7 @@
     <parent>
         <artifactId>kodando</artifactId>
         <groupId>br.danfma</groupId>
-        <version>0.1.2</version>
+        <version>0.2.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,8 +15,8 @@
     <dependencies>
         <dependency>
             <groupId>br.danfma</groupId>
-            <artifactId>kodando-es6</artifactId>
-            <version>${kodando.es6.version}</version>
+            <artifactId>kodando-runtime</artifactId>
+            <version>${kodando.runtime.version}</version>
         </dependency>
     </dependencies>
 

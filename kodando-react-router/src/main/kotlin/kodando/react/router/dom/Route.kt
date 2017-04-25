@@ -1,23 +1,23 @@
 package kodando.react.router.dom
 
-import kodando.react.Component
-import kodando.react.PropSetter
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
 /**
  * Created by danfma on 04/04/17.
  */
 
+val routeBuilder = ComponentBuilder(Module.RouteClass)
+
+
 @JsName("route")
-fun route(propSetter: PropSetter<RouteProps>): ReactElement? {
-    return createElement(Module.RouteClass, RouteProps().apply(propSetter))
+fun ReactProps.route(setter: PropSetter<RouteProps>) {
+    append(routeBuilder.build(setter))
 }
 
 
 @JsName("routeWithPath")
-fun route(path: String, propSetter: PropSetter<RouteProps>): ReactElement? {
-    return route {
+fun ReactProps.route(path: String, propSetter: PropSetter<RouteProps>) {
+    route {
         this.path = path
         this.propSetter()
     }
@@ -25,13 +25,13 @@ fun route(path: String, propSetter: PropSetter<RouteProps>): ReactElement? {
 
 
 @JsName("routeWithComponent")
-fun route(
+fun ReactProps.route(
     path: String,
     component: Component<Routeable, *>,
     exact: Boolean? = null,
-    strict: Boolean? = null): ReactElement? {
+    strict: Boolean? = null) {
 
-    return route {
+    route {
         this.path = path
         this.component = component
         this.exact = exact ?: undefined
@@ -41,17 +41,16 @@ fun route(
 
 
 @JsName("routeRenderized")
-fun routeRenderized(
+fun ReactProps.routeRenderized(
     path: String,
     exact: Boolean? = null,
     strict: Boolean? = null,
-    render: (Routeable) -> ReactElement?): ReactElement? {
+    render: (Routeable) -> ReactElement?) {
 
-    return route {
+    route {
         this.path = path
         this.render = render
         this.exact = exact ?: undefined
         this.strict = strict ?: undefined
     }
 }
-

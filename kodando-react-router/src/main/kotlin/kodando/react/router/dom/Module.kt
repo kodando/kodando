@@ -1,10 +1,7 @@
 package kodando.react.router.dom
 
 import kodando.history.History
-import kodando.react.Component
-import kodando.react.ReactElement
-import kodando.react.ReactProps
-import kodando.react.Style
+import kodando.react.*
 import kotlin.js.*
 
 /**
@@ -14,20 +11,20 @@ import kotlin.js.*
 typealias Callback = (allowTransition: Boolean) -> Unit
 
 
-open class RouterProps : ReactProps() {
-    var basename: String? by jsonProperty
-    var getUserConfirmation: ((message: String, callback: Callback) -> Unit)? by jsonProperty
+interface RouterProps : ReactProps {
+    var basename: String?
+    var getUserConfirmation: ((message: String, callback: Callback) -> Unit)?
 }
 
 
-class BrowserRouterProps : RouterProps() {
-    var forceRefresh: Boolean? by jsonProperty
-    var keyLength: Int? by jsonProperty
+interface BrowserRouterProps : RouterProps {
+    var forceRefresh: Boolean?
+    var keyLength: Int?
 }
 
 
-class HashRouterProps : RouterProps() {
-    var hashType: String? by jsonProperty
+interface HashRouterProps : RouterProps {
+    var hashType: String?
 }
 
 
@@ -36,53 +33,52 @@ interface RouteTo {
 }
 
 
-class LinkProps : ReactProps(), RouteTo {
-    var replace: Boolean? by jsonProperty
-    override var to: Any? by jsonProperty
+interface LinkProps : ReactProps, RouteTo {
+    var replace: Boolean?
 }
 
 
-class NavLinkProps : ReactProps() {
-    var activeClassName: String? by jsonProperty
-    var activeStyle: Style? by jsonProperty
-    var exact: Boolean? by jsonProperty
-    var strict: Boolean? by jsonProperty
-    var isActive: ((Match?, Location) -> Boolean)? by jsonProperty
+interface NavLinkProps : ReactProps {
+    var activeClassName: String?
+    var activeStyle: Style?
+    var exact: Boolean?
+    var strict: Boolean?
+    var isActive: ((Match?, Location) -> Boolean)?
 }
 
 
-class PromptProps : ReactProps() {
-    var message: Any? by jsonProperty
+interface PromptProps : ReactProps {
+    var message: Any?
 
     @JsName("when")
-    var matched: Boolean? by jsonProperty
+    var matched: Boolean?
 }
 
 
-class RedirectProps : ReactProps(), RouteTo {
-    var push: Boolean? by jsonProperty
-    var from: String? by jsonProperty
-    override var to: Any? by jsonProperty
+interface RedirectProps : ReactProps, RouteTo {
+    var push: Boolean?
+    var from: String?
+    override var to: Any?
 }
 
 
-interface Routeable {
+interface Routeable : ReactProps {
     var match: Match
     var location: Location
     var history: History
 }
 
 
-class RouteProps : ReactProps() {
-    var component: Component<Routeable, *>? by jsonProperty
-    var render: (Routeable) -> ReactElement? by jsonProperty
-    var path: String? by jsonProperty
-    var exact: Boolean? by jsonProperty
-    var strict: Boolean? by jsonProperty
+interface RouteProps : ReactProps {
+    var component: Component<Routeable, *>?
+    var render: (Routeable) -> ReactElement?
+    var path: String?
+    var exact: Boolean?
+    var strict: Boolean?
 }
 
 
-class SwitchProps : ReactProps()
+interface SwitchProps : ReactProps
 
 
 data class Location(

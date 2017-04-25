@@ -2,14 +2,8 @@
 
 package kodando.react
 
+import kodando.runtime.unsafe.objectWithShapeOf
 
-fun <T> objectWithShapeOf(): T = js("({})")
-
-fun <T> objectWithShapeBy(setter: T.() -> Unit): T {
-    val obj = objectWithShapeOf<T>()
-    obj.setter()
-    return obj
-}
 
 /**
  * Creates an unsafe dynamic instance instance of an object that implements a ReactProps with the shape of the
@@ -18,7 +12,7 @@ fun <T> objectWithShapeBy(setter: T.() -> Unit): T {
  * Prefer the propsBy or propSetterOf functions.
  */
 fun <T : ReactProps> unsafePropsOf(): T {
-    return ReactProps().asDynamic()
+    return objectWithShapeOf()
 }
 
 /**

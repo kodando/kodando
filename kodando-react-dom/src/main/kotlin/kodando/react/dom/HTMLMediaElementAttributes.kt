@@ -1,12 +1,12 @@
 package kodando.react.dom
 
-open class HTMLMediaElementAttributes : HTMLElementAttributes() {
-    var autoplay: Boolean? by jsonProperty
-    var controls: Boolean? by jsonProperty
-    var loop: Boolean? by jsonProperty
-    var muted: Boolean? by jsonProperty
-    var preload: String? by jsonProperty
-    var src: String? by jsonProperty
-    var volume: Int? by jsonProperty
+interface HTMLMediaElementAttributes : HTMLElementAttributes {
+    var autoplay: Boolean?
+    var controls: Boolean?
+    var loop: Boolean?
+    var muted: Boolean?
+    var preload: String?
+    var src: String?
+    var volume: Int?
 }
 

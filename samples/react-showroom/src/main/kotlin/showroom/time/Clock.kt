@@ -1,9 +1,9 @@
 package showroom.time
 
-import kodando.es6.JsDate
 import kodando.react.*
 import kodando.react.dom.*
 import kodando.react.lifecycle.*
+import kodando.runtime.JsDate
 import org.w3c.dom.*
 import kotlin.browser.window
 import kotlin.js.Math
@@ -16,12 +16,20 @@ class Clock : Component<Clock.Props, Unit>(), DidMount, WillUnmount, ShouldUpdat
     private var canvasElement: HTMLCanvasElement? = null
 
     override fun render(): ReactElement? {
-        return canvas {
-            width = props.width
-            height = props.width
-            refBy = { canvasElement = it as HTMLCanvasElement }
-            style = styleOf {
-                set("backgroundColor", "#333") // TODO should define it safely
+        return ksx {
+            div {
+                canvas {
+                    width = props.width
+                    height = props.width
+                    refBy = { canvasElement = it as HTMLCanvasElement }
+                    style = styleOf {
+                        set("backgroundColor", "#333") // TODO should define it safely
+                    }
+                }
+
+                p {
+                    append("Time in: ${props.name}")
+                }
             }
         }
     }
@@ -130,16 +138,21 @@ class Clock : Component<Clock.Props, Unit>(), DidMount, WillUnmount, ShouldUpdat
     }
 
 
-    class Props : ReactProps() {
-        var name: String by jsonProperty
-        var width: Int by jsonProperty
+    interface Props : ReactProps {
+        var name: String
+        var width: Int
 
-        init {
-            width = 300
+        companion object {
+            operator fun invoke(): Props = unsafePropsBy {
+                name = ""
+                width = 300
+            }
         }
     }
 
 
-    companion object : ComponentBuilder<Props>(Clock::class.js, ::Props)
+    companion object : ComponentBuilder<Clock, Props>(Clock::class, { Props() })
 
 }
+
+fun ReactProps.clock(setter: PropSetter<Clock.Props>) = append(Clock.build(setter))

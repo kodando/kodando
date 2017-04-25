@@ -11,11 +11,10 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "kodando-es6": "^0.2.7",
-    "kodando-react": "^15.4.3-v10",
-    "kodando-react-dom": "^15.4.3-v10",
-    "kodando-react-router": "^4.0.0-v5",
-    "kotlin": "^1.1.0"
+    "kotlin": "^1.1.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
   },
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server",

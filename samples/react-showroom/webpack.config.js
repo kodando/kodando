@@ -21,7 +21,8 @@ module.exports = {
         "vendor": [
             "kotlin",
             "react",
-            "react-dom"
+            "react-dom",
+            "react-router-dom"
         ]
     },
 
@@ -33,9 +34,13 @@ module.exports = {
 
     resolve: {
         extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".jsx", ".js"],
-        modules: [
-            "node_modules"
-        ]
+        alias: {
+            "kodando-runtime": path.resolve("../../modules/kodando-runtime.js"),
+            "kodando-rxjs": path.resolve("../../modules/kodando-rxjs.js"),
+            "kodando-react": path.resolve("../../modules/kodando-react.js"),
+            "kodando-react-dom": path.resolve("../../modules/kodando-react-dom.js"),
+            "kodando-react-router": path.resolve("../../modules/kodando-react-router.js"),
+        }
     },
 
     module: {

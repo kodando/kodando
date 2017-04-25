@@ -1,13 +1,13 @@
 package kodando.react.router.dom
 
-import kodando.react.PropSetter
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
 /**
- * Created by danfma on 04/04/17.
+ * Created by danfma on 24/04/17.
  */
 
-fun browserRouter(setter: PropSetter<BrowserRouterProps>): ReactElement? {
-    return createElement(Module.BrowserRouterClass, BrowserRouterProps().apply(setter))
-}
+val browserRouterBuilder = ComponentBuilder(Module.BrowserRouterClass)
+
+
+fun ReactProps.browserRouter(setter: PropSetter<BrowserRouterProps>) =
+    append(browserRouterBuilder.build(setter))

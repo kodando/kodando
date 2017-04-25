@@ -97,3 +97,12 @@ fun reactChildren(children: Array<ReactElement?>): ReactChildren? {
 @JsName("reactChildrenFromElement")
 fun reactChildren(element: ReactElement?): ReactChildren? =
     element.unsafeCast<ReactChildren?>()
+
+
+@JsName("firstAsReactElement")
+fun ReactChildren?.firstAsElement(): ReactElement? {
+    if (this == null) return null
+    if (isArray()) return asElements()?.first()
+
+    return this.asReactElement()
+}

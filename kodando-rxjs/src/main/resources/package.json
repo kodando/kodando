@@ -5,6 +5,6 @@
   "dependencies": {
     "kotlin": "^@kotlinVersion@",
     "rxjs": "^5.1.0",
-    "kodando-es6": "^@kodandoEs6Version@"
+    "kodando-runtime": "^@kodandoRuntimeVersion@"
   }
 }

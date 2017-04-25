@@ -1,28 +1,34 @@
 package kodando.react.router.dom
 
-import kodando.react.ReactElement
-import kodando.react.createElement
+import kodando.react.*
 
 /**
  * Created by danfma on 04/04/17.
  */
 
+val redirectBuilder = ComponentBuilder(Module.RedirectClass)
+
+
+private fun ReactProps.redirect(setter: PropSetter<RedirectProps>) {
+    append(redirectBuilder.build(setter))
+}
+
 
 @JsName("redirectToUrl")
-fun redirect(to: String, from: String? = null, push: Boolean? = null): ReactElement? {
-    return createElement(Module.RedirectClass, RedirectProps().apply {
+fun ReactProps.redirect(to: String, from: String? = null, push: Boolean? = null) {
+    redirect {
         this.toUrl = to
         this.from = from ?: undefined
         this.push = push ?: undefined
-    })
+    }
 }
 
 
 @JsName("redirectToLocation")
-fun redirect(location: Location, from: String? = null, push: Boolean? = null): ReactElement? {
-    return createElement(Module.RedirectClass, RedirectProps().apply {
+fun ReactProps.redirect(location: Location, from: String? = null, push: Boolean? = null) {
+    redirect {
         this.toLocation = location
         this.from = from ?: undefined
         this.push = push ?: undefined
-    })
+    }
 }

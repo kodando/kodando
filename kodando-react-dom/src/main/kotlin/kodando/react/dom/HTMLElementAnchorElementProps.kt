@@ -1,7 +1,7 @@
 package kodando.react.dom
 
-open class HTMLElementAnchorElementProps : HTMLElementAttributes() {
-    var href: String? by jsonProperty
-    var hrefLang: String? by jsonProperty
-    var rel: String? by jsonProperty
+interface HTMLElementAnchorElementProps : HTMLElementAttributes {
+    var href: String?
+    var hrefLang: String?
+    var rel: String?
 }

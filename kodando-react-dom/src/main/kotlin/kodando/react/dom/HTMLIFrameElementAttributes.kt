@@ -3,12 +3,12 @@ package kodando.react.dom
 import kodando.react.dom.events.SyntheticEvent
 import org.w3c.dom.HTMLIFrameElement
 
-open class HTMLIFrameElementAttributes : HTMLElementAttributes() {
-    var align: String? by jsonProperty
-    var disabled: Boolean? by jsonProperty
-    var border: String? by jsonProperty
-    var scrolling: String? by jsonProperty
-    var src: String? by jsonProperty
-    var vspace: Number? by jsonProperty
-    var onLoad: ((SyntheticEvent<HTMLIFrameElement>) -> Unit)? by jsonProperty
+interface HTMLIFrameElementAttributes : HTMLElementAttributes {
+    var align: String?
+    var disabled: Boolean?
+    var border: String?
+    var scrolling: String?
+    var src: String?
+    var vspace: Number?
+    var onLoad: ((SyntheticEvent<HTMLIFrameElement>) -> Unit)?
 }
