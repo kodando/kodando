@@ -1,3 +1,5 @@
+@file:Suppress("EXPERIMENTAL_FEATURE_WARNING")
+
 package kodando.runtime.async
 
 import kotlin.coroutines.experimental.*
@@ -25,3 +27,4 @@ fun <T> async(block: suspend () -> T): Future<T> {
     return Future(promise)
 }
 
+fun <T> asyncPromise(block: suspend () -> T) = async(block).toPromise()

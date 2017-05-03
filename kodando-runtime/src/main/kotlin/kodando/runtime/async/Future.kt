@@ -27,4 +27,6 @@ class Future<T>(private val promise: Promise<T>) {
             }
     }
 
+    fun toPromise() = promise
+
 }

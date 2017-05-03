@@ -14,7 +14,10 @@ external interface Expect<in T> {
     fun toBeNull()
     fun toBeUndefined()
     fun toBeTruthy()
+    fun toEqual(value: T)
 }
 
 external fun describe(name: String, handler: () -> Unit)
-external fun it(description: String, expectationHandler: () -> Unit)
+
+@JsName("it")
+external fun it(description: String, expectationHandler: () -> Any)

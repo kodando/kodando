@@ -6,19 +6,18 @@
 
     <groupId>br.danfma</groupId>
     <artifactId>kodando</artifactId>
-    <version>0.2.3</version>
+    <version>0.2.4</version>
 
     <modules>
+        <module>kodando-jest</module>
         <module>kodando-runtime</module>
         <module>kodando-crossroads</module>
         <module>kodando-hasher</module>
         <module>kodando-history</module>
         <module>kodando-rxjs</module>
-        <module>kodando-jest</module>
         <module>kodando-react</module>
         <module>kodando-react-dom</module>
         <module>kodando-react-router</module>
-        <module>libraries</module>
         <module>samples</module>
     </modules>
 
@@ -26,18 +25,19 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.1.1</kotlin.version>
+        <kotlin.version>1.1.2-2</kotlin.version>
+        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <junit.version>4.12</junit.version>
 
         <!-- VERSIONS -->
-        <kodando.runtime.version>0.3.1</kodando.runtime.version>
-        <kodando.rxjs.version>5.3.0-v1.1</kodando.rxjs.version>
-        <kodando.react.version>15.5.4-v2.1</kodando.react.version>
-        <kodando.react.router.version>4.1.1-v2.0</kodando.react.router.version>
-        <kodando.jest.version>19.0.0-v1.0</kodando.jest.version>
-        <kodando.history.version>4.6.1-v1.0</kodando.history.version>
-        <kodando.crossroads.version>0.12.2-v4.0</kodando.crossroads.version>
-        <kodando.hasher.version>1.2.0-v4.0</kodando.hasher.version>
+        <kodando.runtime.version>0.4.0</kodando.runtime.version>
+        <kodando.rxjs.version>5.3.1-v2.0</kodando.rxjs.version>
+        <kodando.react.version>15.5.4-v3.0</kodando.react.version>
+        <kodando.react.router.version>4.1.1-v3.0</kodando.react.router.version>
+        <kodando.jest.version>19.0.0-v2.0</kodando.jest.version>
+        <kodando.history.version>4.6.1-v2.0</kodando.history.version>
+        <kodando.crossroads.version>0.12.2-v5.0</kodando.crossroads.version>
+        <kodando.hasher.version>1.2.0-v5.0</kodando.hasher.version>
     </properties>
 
     <repositories>
@@ -98,6 +98,7 @@
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
 
         <plugins>
             <plugin>
@@ -113,9 +114,22 @@
                             <goal>js</goal>
                         </goals>
                         <configuration>
-                            <moduleKind>commonjs</moduleKind>
+                            <moduleKind>umd</moduleKind>
                             <sourceMap>true</sourceMap>
                             <outputFile>${project.build.outputDirectory}/${project.artifactId}.js</outputFile>
+                            <multiPlatform>false</multiPlatform>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-js</goal>
+                        </goals>
+                        <configuration>
+                            <moduleKind>umd</moduleKind>
+                            <sourceMap>true</sourceMap>
+                            <outputFile>${project.build.directory}/tests/${project.artifactId}.spec.js</outputFile>
                             <multiPlatform>false</multiPlatform>
                         </configuration>
                     </execution>

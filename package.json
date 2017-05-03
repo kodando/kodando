@@ -19,7 +19,7 @@
     "publish:all": "npm run publish:kodando-runtime && npm run publish:kodando-rxjs && npm run publish:kodando-react && npm run publish:kodando-react-dom && npm run publish:kodando-crossroads && npm run publish:kodando-hasher && npm run publish kodando:history && npm run publish:kodando-react-router"
   },
   "devDependencies": {
-    "jest": "^18.1.0",
+    "jest": "^19.0.2",
     "shelljs": "^0.7.7",
     "xml2js": "^0.4.17"
   },
@@ -29,7 +29,13 @@
       "node_modules",
       "modules"
     ],
-    "testRegex": "(test|spec)\\.js$"
+    "modulePathIgnorePatterns": [
+      "target/.*"
+    ],
+    "testRegex": "(test|spec)\\.js$",
+    "testPathIgnorePatterns": [
+      "target/.*"
+    ]
   },
   "dependencies": {
     "crossroads": "^0.12.2",
@@ -41,6 +47,6 @@
     "mobx-react": "^4.1.5",
     "react": "^15.4.2",
     "react-history": "^0.18.2",
-    "rxjs": "^5.1.0"
+    "rxjs": "^5.3.1"
   }
 }

@@ -11,6 +11,14 @@
                     <include name="**/*.json"/>
                 </fileset>
             </copy>
+            <copy todir="tests/@{project}" failonerror="false">
+                <fileset dir="@{dir}/@{project}/target/tests">
+                    <include name="*.js"/>
+                    <include name="*.js.map"/>
+                    <include name="**/*.scss"/>
+                    <include name="**/*.json"/>
+                </fileset>
+            </copy>
         </sequential>
     </macrodef>
 
