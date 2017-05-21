@@ -13,16 +13,13 @@ class Future<T>(private val promise: Promise<T>) {
     }
 
     infix fun finally(handler: () -> Unit) {
-        console.log("REGISTERING THE FINALLY")
         promise
             .then(
                 onFulfilled = {
-                    console.log("finally in then")
                     handler()
                 }
             )
             .catch {
-                console.log("finally in catch")
                 handler()
             }
     }
