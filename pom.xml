@@ -18,7 +18,6 @@
         <module>kodando-react</module>
         <module>kodando-react-dom</module>
         <module>kodando-react-router</module>
-        <module>samples</module>
     </modules>
 
     <packaging>pom</packaging>

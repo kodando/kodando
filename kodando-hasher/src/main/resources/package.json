@@ -1,9 +1,0 @@
-{
-  "name": "@artifactId@",
-  "version": "@version@",
-  "main": "@artifactId@.js",
-  "dependencies": {
-    "kotlin": "^@kotlinVersion@",
-    "hasher": "^1.2.0"
-  }
-}
