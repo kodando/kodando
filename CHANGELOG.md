@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.3.0
+
+* Updating to **kotlin 1.1.3-2**;
+* Changing versioning to simplify the evolution of this library.
+  Now the version will follow the format `{yyyy.mm.dd}-js-{libVersion}`,
+  where the {libVersion} will match the js library version;
+  
+
 ## 0.2.3
 
 - **kodando-react** - Function spreadTo wasn't copying the correct values;
