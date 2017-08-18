@@ -1,9 +1,14 @@
 package kodando.rxjs.tests
 
-import kodando.jest.*
+import kodando.jest.describe
+import kodando.jest.expect
+import kodando.jest.it
 import kodando.runtime.async.asyncPromise
 import kodando.runtime.async.await
-import kodando.rxjs.*
+import kodando.rxjs.Observable
+import kodando.rxjs.take
+import kodando.rxjs.toArray
+import kodando.rxjs.toPromise
 import org.w3c.dom.events.Event
 import kotlin.browser.document
 import kotlin.js.Promise
@@ -16,7 +21,7 @@ object CreationTests {
     init {
         describe("Observable.create") {
             it("should be able to produce elements") {
-                val observable = Rx.Observable.create<Int> { observer ->
+                val observable = Observable.create<Int> { observer ->
                     observer.next(1)
                     observer.next(2)
                     observer.complete()
@@ -33,9 +38,9 @@ object CreationTests {
 
         describe("Observable.createWithSubscription") {
             it("should be able to produce and unsubscribe after") {
-                val source = Rx.Observable.of(1)
+                val source = Observable.of(1)
 
-                val observable = Rx.Observable.createWithSubscription<Int> { observer ->
+                val observable = Observable.createWithSubscription<Int> { observer ->
                     source.subscribe(observer)
                 }
 
@@ -50,7 +55,7 @@ object CreationTests {
 
         describe("Observable.empty") {
             it("should return nothing") {
-                val observable = Rx.Observable.empty<Int>()
+                val observable = Observable.empty<Int>()
 
                 asyncPromise {
                     val produced = await(observable.toArray().toPromise())
@@ -62,7 +67,7 @@ object CreationTests {
 
         describe("Observable.from(Promise)") {
             it("should return the promised value") {
-                val observable = Rx.Observable.from(Promise.resolve(1))
+                val observable = Observable.from(Promise.resolve(1))
 
                 asyncPromise {
                     val produced = await(observable.toPromise())
@@ -74,7 +79,7 @@ object CreationTests {
 
         describe("Observable.fromPromise") {
             it("should return the promised value") {
-                val observable = Rx.Observable.fromPromise(Promise.resolve(1))
+                val observable = Observable.fromPromise(Promise.resolve(1))
 
                 asyncPromise {
                     val produced = await(observable.toPromise())
@@ -86,7 +91,7 @@ object CreationTests {
 
         describe("Observable.from(Array)") {
             it("should return the array value") {
-                val observable = Rx.Observable.from(arrayOf(1, 2))
+                val observable = Observable.from(arrayOf(1, 2))
 
                 asyncPromise {
                     val produced = await(observable.toArray().toPromise())
@@ -99,8 +104,8 @@ object CreationTests {
 
         describe("Observable.from(Observable)") {
             it("should return the observable values") {
-                val source = Rx.Observable.of(1)
-                val observable = Rx.Observable.from(source)
+                val source = Observable.of(1)
+                val observable = Observable.from(source)
 
                 asyncPromise {
                     val produced = await(observable.toArray().toPromise())
@@ -118,7 +123,7 @@ object CreationTests {
                 click.initEvent("click", true, true)
 
                 val source = document.createElement("div")
-                val observable = Rx.Observable.fromEvent<Event>(source, "click")
+                val observable = Observable.fromEvent<Event>(source, "click")
 
                 asyncPromise {
                     val promise = observable.take(1).toPromise()

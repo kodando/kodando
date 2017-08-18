@@ -6,7 +6,7 @@
 
     <groupId>br.danfma</groupId>
     <artifactId>kodando</artifactId>
-    <version>0.3.0</version>
+    <version>0.3.1</version>
 
     <modules>
         <module>kodando-runtime</module>
@@ -30,7 +30,7 @@
 
         <!-- VERSIONS -->
         <kodando.runtime.version>2017.8.11</kodando.runtime.version>
-        <kodando.rxjs.version>2017.8.11-js-5.4</kodando.rxjs.version>
+        <kodando.rxjs.version>2017.8.18-js-5.4</kodando.rxjs.version>
         <kodando.react.version>2017.8.11-js-15.6</kodando.react.version>
         <kodando.react.router.version>2017.8.11-js-4.1</kodando.react.router.version>
         <kodando.jest.version>2017.8.11-js-19.0</kodando.jest.version>
