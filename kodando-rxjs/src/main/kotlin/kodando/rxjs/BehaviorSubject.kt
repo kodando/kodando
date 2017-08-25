@@ -5,6 +5,8 @@ package kodando.rxjs
 
 external open class BehaviorSubject<T>(initialValue: T) : ISubject<T> {
     val value: T
+    fun getValue(): T
+
     override fun next(data: T)
     override fun error(error: Error)
     override fun complete()
