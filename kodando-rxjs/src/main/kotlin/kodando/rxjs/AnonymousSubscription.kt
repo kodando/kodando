@@ -3,7 +3,7 @@ package kodando.rxjs
 /**
  * A subscription contract.
  */
-external interface ISubscription {
+external interface AnonymousSubscription {
     /**
      * Disposes the resources held by the subscription.
      * May, for instance, cancel an ongoing Observable execution or cancel any

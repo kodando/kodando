@@ -1,66 +1,57 @@
+@file: JsModule("rxjs/Rx")
+@file: JsNonModule
+
 package kodando.rxjs
 
 import kodando.runtime.JsDate
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
-import kotlin.js.Date
-import kotlin.js.Promise
+import kotlin.js.*
 
-external open class Observable<out T>(publisher: (IObserver<T>) -> ISubscription?) : IObservable<T> {
+external open class Observable<T>(publisher: (Observer<T>) -> AnonymousSubscription?) : Subscribable<T> {
 
-    override fun subscribe(observer: IObserver<T>): ISubscription
-    override fun subscribe(next: NextHandler<T>): ISubscription
-    override fun subscribe(next: NextHandler<T>?, error: ErrorHandler?): ISubscription
-    override fun subscribe(next: NextHandler<T>?, error: ErrorHandler?, complete: CompleteHandler?): ISubscription
+    override fun subscribe(observer: MaybeObserverOrHandler<T>): AnonymousSubscription
 
-    companion object {
+    companion object : ObservableStatic {
 
         @JsName("create")
-        fun <T> create(producer: (IObserver<T>) -> Unit): IObservable<T>
+        fun <T> create(producer: (Observer<T>) -> Unit): Observable<T>
 
         @JsName("create")
-        fun <T> createWithSubscription(producer: (IObserver<T>) -> ISubscription): IObservable<T>
+        fun <T> createWithSubscription(producer: (Observer<T>) -> AnonymousSubscription): Observable<T>
 
         @JsName("of")
-        fun <T> of(vararg value: T): IObservable<T>
+        fun <T> of(vararg value: T): Observable<T>
 
         @JsName("from")
-        fun <T> from(promise: Promise<T>): IObservable<T>
+        fun <T> from(promise: Promise<T>): Observable<T>
 
         @JsName("from")
-        fun <T> from(promise: Array<T>): IObservable<T>
+        fun <T> from(promise: Array<T>): Observable<T>
 
         @JsName("from")
-        fun <T> from(promise: IObservable<T>): IObservable<T>
+        fun <T> from(promise: Observable<T>): Observable<T>
 
         @JsName("fromEvent")
-        fun <T : Event> fromEvent(target: EventTarget, eventName: String): IObservable<T>
+        fun <T : Event> fromEvent(target: EventTarget, eventName: String): Observable<T>
 
         @JsName("fromPromise")
-        fun <T> fromPromise(promise: Promise<T>): IObservable<T>
-
-        @JsName("interval")
-        fun interval(period: Int): IObservable<Int>
-
-        @JsName("merge")
-        fun <T> merge(vararg observables: IObservable<T>): IObservable<T>
+        fun <T> fromPromise(promise: Promise<T>): Observable<T>
 
         @JsName("throw")
-        fun <T> throwError(error: Error): IObservable<T>
-
-        @JsName("empty")
-        fun <T> empty(): IObservable<T>
+        fun <T> throwError(error: Error): Observable<T>
 
         @JsName("range")
-        fun range(start: Int, count: Int): IObservable<Int>
+        fun range(start: Int, count: Int): Observable<Int>
 
         @JsName("timer")
-        fun timer(initialDelay: Int, period: Int): IObservable<Int>
+        fun timer(initialDelay: Int, period: Int): Observable<Int>
 
         @JsName("timer")
-        fun timer(initialDelay: Date, period: Int): IObservable<Int>
+        fun timer(initialDelay: Date, period: Int): Observable<Int>
 
         @JsName("timer")
-        fun timer(initialDelay: JsDate, period: Int): IObservable<Int>
+        fun timer(initialDelay: JsDate, period: Int): Observable<Int>
     }
 }
+

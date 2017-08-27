@@ -7,4 +7,7 @@ package kodando.rxjs
 typealias NextHandler<T> = (T) -> Unit
 typealias ErrorHandler = (Any) -> Unit
 typealias CompleteHandler = () -> Unit
+typealias TeardownLogic = () -> Unit
 
+typealias MaybeObserverOrHandler<T> = Maybe<Observer<T>, NextHandler<T>>
+typealias ScheduleWork<T> = Maybe<AnonymousSubscription, NextHandler<T>>

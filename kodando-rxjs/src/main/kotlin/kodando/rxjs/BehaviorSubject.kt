@@ -3,15 +3,7 @@
 
 package kodando.rxjs
 
-external open class BehaviorSubject<T>(initialValue: T) : ISubject<T> {
+external open class BehaviorSubject<T>(initialValue: T) : Subject<T> {
     val value: T
     fun getValue(): T
-
-    override fun next(data: T)
-    override fun error(error: Error)
-    override fun complete()
-    override fun subscribe(observer: IObserver<T>): ISubscription
-    override fun subscribe(next: NextHandler<T>): ISubscription
-    override fun subscribe(next: NextHandler<T>?, error: ErrorHandler?): ISubscription
-    override fun subscribe(next: NextHandler<T>?, error: ErrorHandler?, complete: CompleteHandler?): ISubscription
 }

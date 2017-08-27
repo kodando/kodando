@@ -3,12 +3,14 @@
 
 package kodando.rxjs
 
-external open class Subject<T> : ISubject<T> {
+external open class Subject<T> : Observable<T>, Observer<T> {
+    override val closed: Boolean?
     override fun next(data: T)
     override fun error(error: Error)
     override fun complete()
-    override fun subscribe(observer: IObserver<T>): ISubscription
-    override fun subscribe(next: NextHandler<T>): ISubscription
-    override fun subscribe(next: NextHandler<T>?, error: ErrorHandler?): ISubscription
-    override fun subscribe(next: NextHandler<T>?, error: ErrorHandler?, complete: CompleteHandler?): ISubscription
+    fun asObservable(): Observable<T>
+
+    companion object {
+        fun <T> create(destination: Observer<T>, source: Observable<T>): Subject<T>
+    }
 }

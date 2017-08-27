@@ -126,7 +126,7 @@
                             <goal>test-js</goal>
                         </goals>
                         <configuration>
-                            <moduleKind>umd</moduleKind>
+                            <moduleKind>commonjs</moduleKind>
                             <sourceMap>true</sourceMap>
                             <outputFile>${project.build.directory}/tests/${project.artifactId}.spec.js</outputFile>
                             <multiPlatform>false</multiPlatform>
