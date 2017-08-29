@@ -10,4 +10,4 @@ typealias CompleteHandler = () -> Unit
 typealias TeardownLogic = () -> Unit
 
 typealias MaybeObserverOrHandler<T> = Maybe<Observer<T>, NextHandler<T>>
-typealias ScheduleWork<T> = Maybe<AnonymousSubscription, NextHandler<T>>
+typealias ScheduleWork<T> = Maybe<Unsubscribable, NextHandler<T>>

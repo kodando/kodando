@@ -7,9 +7,9 @@ import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
 import kotlin.js.*
 
-external open class Observable<T>(publisher: (Observer<T>) -> AnonymousSubscription?) : Subscribable<T> {
+external open class Observable<T>(publisher: (Observer<T>) -> Unsubscribable?) : Subscribable<T> {
 
-    override fun subscribe(observer: MaybeObserverOrHandler<T>): AnonymousSubscription
+    override fun subscribe(observer: MaybeObserverOrHandler<T>): Unsubscribable
 
     companion object : ObservableStatic {
 
@@ -17,7 +17,7 @@ external open class Observable<T>(publisher: (Observer<T>) -> AnonymousSubscript
         fun <T> create(producer: (Observer<T>) -> Unit): Observable<T>
 
         @JsName("create")
-        fun <T> createWithSubscription(producer: (Observer<T>) -> AnonymousSubscription): Observable<T>
+        fun <T> createWithSubscription(producer: (Observer<T>) -> Unsubscribable): Observable<T>
 
         @JsName("of")
         fun <T> of(vararg value: T): Observable<T>
