@@ -3,7 +3,6 @@
 
 package kodando.rxjs
 
-import kodando.runtime.JsDate
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
 import kotlin.js.*
@@ -37,21 +36,6 @@ external open class Observable<T>(publisher: (Observer<T>) -> AnonymousSubscript
 
         @JsName("fromPromise")
         fun <T> fromPromise(promise: Promise<T>): Observable<T>
-
-        @JsName("throw")
-        fun <T> throwError(error: Error): Observable<T>
-
-        @JsName("range")
-        fun range(start: Int, count: Int): Observable<Int>
-
-        @JsName("timer")
-        fun timer(initialDelay: Int, period: Int): Observable<Int>
-
-        @JsName("timer")
-        fun timer(initialDelay: Date, period: Int): Observable<Int>
-
-        @JsName("timer")
-        fun timer(initialDelay: JsDate, period: Int): Observable<Int>
     }
 }
 
