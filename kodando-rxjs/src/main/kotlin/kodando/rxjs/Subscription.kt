@@ -14,7 +14,7 @@ package kodando.rxjs
  *
  * @see 'http://reactivex.io/rxjs/class/es6/Subscription.js~Subscription.html'
  */
-open external class Subscription(unsubscribe: () -> Unit) : AnonymousSubscription {
+open external class Subscription(unsubscribe: () -> Unit) : Unsubscribable {
     /**
      * A flag to indicate whether this Subscription has already been unsubscribed.
      */
@@ -24,27 +24,27 @@ open external class Subscription(unsubscribe: () -> Unit) : AnonymousSubscriptio
      * Adds a tear down to be called during the unsubscribe() of this Subscription.
      */
     @JsName("add")
-    fun add(unsubscribe: TeardownLogic): AnonymousSubscription
+    fun add(unsubscribe: TeardownLogic): Unsubscribable
 
     /**
      * Adds a tear down to be called during the unsubscribe() of this Subscription.
      */
     @JsName("add")
-    fun add(subscription: AnonymousSubscription): AnonymousSubscription
+    fun add(subscription: Unsubscribable): Unsubscribable
 
     /**
      * emoves a Subscription from the internal list of subscriptions that will unsubscribe during the unsubscribe process of this Subscription.
      */
     @JsName("remove")
-    fun remove(subscription: AnonymousSubscription)
+    fun remove(subscription: Unsubscribable)
 
     /**
-     * @see AnonymousSubscription.unsubscribe()
+     * @see Unsubscribable.unsubscribe()
      */
     override fun unsubscribe()
 
     companion object {
-        val EMPTY: AnonymousSubscription
+        val EMPTY: Unsubscribable
     }
 
 }
