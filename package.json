@@ -27,15 +27,13 @@
     "automock": false,
     "moduleDirectories": [
       "node_modules",
-      "modules"
+      "kodando-runtime/target/classes",
+      "kodando-rxjs/target/classes"
     ],
-    "modulePathIgnorePatterns": [
-      "target/.*"
+    "roots": [
+      "kodando-rxjs/target"
     ],
-    "testRegex": "(test|spec)\\.js$",
-    "testPathIgnorePatterns": [
-      "target/.*"
-    ]
+    "testRegex": "(test|spec)\\.js$"
   },
   "dependencies": {
     "crossroads": "^0.12.2",
