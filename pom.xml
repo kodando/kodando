@@ -6,7 +6,7 @@
 
     <groupId>br.danfma</groupId>
     <artifactId>kodando</artifactId>
-    <version>0.4.4</version>
+    <version>0.6.0</version>
 
     <modules>
         <module>kodando-runtime</module>
@@ -24,19 +24,19 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.1.4-2</kotlin.version>
+        <kotlin.version>1.1.51</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <junit.version>4.12</junit.version>
 
         <!-- VERSIONS -->
-        <kodando.runtime.version>2017.8.25</kodando.runtime.version>
-        <kodando.rxjs.version>2017.8.28-2-js-5.4</kodando.rxjs.version>
-        <kodando.react.version>2017.8.28-js-15.6</kodando.react.version>
-        <kodando.react.router.version>2017.8.25-js-4.1</kodando.react.router.version>
-        <kodando.jest.version>2017.8.25-js-19.0</kodando.jest.version>
-        <kodando.history.version>2017.8.25-js-4.6</kodando.history.version>
-        <kodando.crossroads.version>2017.8.25-js-0.12</kodando.crossroads.version>
-        <kodando.hasher.version>2017.8.25-js-1.2</kodando.hasher.version>
+        <kodando.runtime.version>2017.9.1</kodando.runtime.version>
+        <kodando.rxjs.version>2017.9.1</kodando.rxjs.version>
+        <kodando.react.version>2017.9.1</kodando.react.version>
+        <kodando.react.router.version>2017.9.1</kodando.react.router.version>
+        <kodando.jest.version>2017.9.1</kodando.jest.version>
+        <kodando.history.version>2017.9.1</kodando.history.version>
+        <kodando.crossroads.version>2017.9.1</kodando.crossroads.version>
+        <kodando.hasher.version>2017.9.1</kodando.hasher.version>
     </properties>
 
     <repositories>
