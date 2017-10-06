@@ -6,11 +6,8 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val Redirect = ComponentBuilder(Module.RedirectClass)
-
-
-private fun ReactProps.redirect(setter: PropSetter<RedirectProps>) {
-    append(Redirect(setter))
+private inline fun ReactProps.redirect(configurer: Configurer<RedirectProps>) {
+    addComponent(Module.RedirectClass, createProps(configurer))
 }
 
 

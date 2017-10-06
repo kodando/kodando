@@ -6,9 +6,6 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val Router = ComponentBuilder(Module.RouterClass)
-
-
-fun ReactProps.router(setter: PropSetter<RouterProps>) {
-    append(Router(setter))
+fun ReactProps.router(configurer: Configurer<RouterProps>) {
+    addComponent(Module.RouterClass, createProps(configurer))
 }

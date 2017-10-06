@@ -6,11 +6,8 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val Prompt = ComponentBuilder(Module.PromptClass)
-
-
-private fun ReactProps.prompt(setter: PropSetter<PromptProps>) {
-    append(Prompt(setter))
+private inline fun ReactProps.prompt(configurer: Configurer<PromptProps>) {
+    addComponent(Module.PromptClass, createProps(configurer))
 }
 
 

@@ -1,52 +1,22 @@
 {
-  "name": "kodando",
+  "name": "kodando-dio-project",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/danfma/kodan.git",
-  "author": "danfma <danfma@gmail.com>",
+  "author": "Daniel Ferreira Monteiro Alves <danfma@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "node ./node_modules/.bin/webpack",
-    "test": "jest",
-    "publish:kodando-runtime": "npm publish ./modules/kodando-runtime",
-    "publish:kodando-rxjs": "npm publish ./modules/kodando-rxjs",
-    "publish:kodando-react": "npm publish ./modules/kodando-react",
-    "publish:kodando-react-dom": "npm publish ./kodando-modules/react-dom",
-    "publish:kodando-crossroads": "npm publish ./modules/kodando-crossroads",
-    "publish:kodando-hasher": "npm publish ./modules/kodando-hasher",
-    "publish:kodando-history": "npm publish ./modules/kodando-history",
-    "publish:kodando-react-router": "npm publish ./kodando-modules/react-router",
-    "publish:all": "npm run publish:kodando-runtime && npm run publish:kodando-rxjs && npm run publish:kodando-react && npm run publish:kodando-react-dom && npm run publish:kodando-crossroads && npm run publish:kodando-hasher && npm run publish kodando:history && npm run publish:kodando-react-router"
+    "start": "./node_modules/.bin/webpack-dev-server --watch --debug --devtool inline-source-map --hot --watch-aggregate-timeout 2000",
+    "build": "./node_modules/.bin/webpack -p"
   },
   "devDependencies": {
-    "jest": "^19.0.2",
-    "shelljs": "^0.7.7",
-    "xml2js": "^0.4.17"
-  },
-  "jest": {
-    "automock": false,
-    "moduleDirectories": [
-      "node_modules",
-      "kodando-runtime/target/classes",
-      "kodando-rxjs/target/classes"
-    ],
-    "roots": [
-      "kodando-rxjs/target"
-    ],
-    "testRegex": "(test|spec)\\.js$"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "crossroads": "^0.12.2",
-    "hasher": "^1.2.0",
-    "history": "^4.6.3",
-    "kotlin": "^1.1.0",
-    "mobx": "^3.1.7",
-    "mobx-location": "^0.2.0",
-    "mobx-react": "^4.1.5",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-history": "^0.18.2",
-    "react-router-dom": "^4.1.2",
-    "rxjs": "^5.4.3"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2"
   }
 }

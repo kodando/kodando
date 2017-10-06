@@ -1,0 +1,73 @@
+buildscript {
+    ext.kotlin_version = '1.1.51'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap-1.1' }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    group 'br.danfma.kodando'
+    version '0.1.0'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'kotlin2js'
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    }
+
+    compileKotlin2Js {
+        kotlinOptions.metaInfo = true
+        kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+        kotlinOptions.sourceMap = true
+        kotlinOptions.sourceMapEmbedSources = "always"
+        kotlinOptions.moduleKind = 'umd'
+    }
+
+    compileTestKotlin2Js {
+        kotlinOptions.metaInfo = true
+        kotlinOptions.outputFile = "$project.buildDir.path/js-tests/${project.name}-test.js"
+        kotlinOptions.sourceMap = true
+        kotlinOptions.sourceMapEmbedSources = "always"
+        kotlinOptions.moduleKind = 'commonjs'
+    }
+}
+
+configure(subprojects.findAll { it.name.startsWith('kodando-') }) {
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId "br.danfma.kodando"
+                artifactId "${project.name}"
+                from components.java
+
+                repositories {
+                    maven {
+                        url "https://api.bintray.com/maven/danfma/maven/kodando/;publish=1"
+
+                        credentials {
+                            username System.getenv("BINTRAY_USERNAME")
+                            password System.getenv("BINTRAY_PASSKEY")
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

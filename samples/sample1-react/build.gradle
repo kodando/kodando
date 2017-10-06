@@ -1,0 +1,9 @@
+apply plugin: "kotlin2js"
+apply plugin: "kotlin-dce-js"
+
+dependencies {
+    compile project(":kodando-runtime")
+    compile project(":kodando-react")
+    compile project(":kodando-react-dom")
+    compile project(":kodando-react-router")
+}

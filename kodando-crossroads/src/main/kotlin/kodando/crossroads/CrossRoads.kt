@@ -23,13 +23,3 @@ external object CrossRoads {
     fun removeAllRoutes()
 
 }
-
-external interface Route {
-    val matched: Matched
-}
-
-external interface Matched {
-    fun add(handler: Function<*>)
-}
-
-external interface ByPassed : Matched

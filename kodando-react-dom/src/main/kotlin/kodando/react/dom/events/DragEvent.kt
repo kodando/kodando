@@ -1,8 +1,8 @@
 package kodando.react.dom.events
 
 import org.w3c.dom.DataTransfer
-import org.w3c.dom.Element
+import org.w3c.dom.Node
 
-external interface DragEvent<TElement : Element> : SyntheticEvent<TElement> {
-	var dataTransfer: DataTransfer?
+external interface DragEvent<TNode : Node> : SyntheticEvent<TNode> {
+    var dataTransfer: DataTransfer?
 }

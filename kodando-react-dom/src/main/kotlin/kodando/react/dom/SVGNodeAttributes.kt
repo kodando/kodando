@@ -3,496 +3,286 @@
 package kodando.react.dom
 
 
-interface SVGNodeAttributes
+external interface SVGNodeAttributes {
 
+    @JsName("cx")
+    var cx: Number?
 
-var SVGNodeAttributes.cx: Number?
-	get() = this.asDynamic().cx
-	set(value) {
-		this.asDynamic().cx = value
-	}
 
+    @JsName("cx")
+    var cxWithUnit: String?
 
-var SVGNodeAttributes.cxWithUnit: String?
-	get() = this.asDynamic().cxWithUnit
-	set(value) {
-		this.asDynamic().cxWithUnit = value
-	}
 
+    @JsName("cy")
+    var cy: Number?
 
-var SVGNodeAttributes.cy: Number?
-	get() = this.asDynamic().cy
-	set(value) {
-		this.asDynamic().cy = value
-	}
 
+    @JsName("cy")
+    var cyWithUnit: String?
 
-var SVGNodeAttributes.cyWithUnit: String?
-	get() = this.asDynamic().cyWithUnit
-	set(value) {
-		this.asDynamic().cyWithUnit = value
-	}
 
+    @JsName("d")
+    var d: String?
 
-var SVGNodeAttributes.d: String?
-	get() = this.asDynamic().d
-	set(value) {
-		this.asDynamic().d = value
-	}
 
+    @JsName("dx")
+    var dx: Number?
 
-var SVGNodeAttributes.dx: Number?
-	get() = this.asDynamic().dx
-	set(value) {
-		this.asDynamic().dx = value
-	}
 
+    @JsName("dx")
+    var dxWithUnit: String?
 
-var SVGNodeAttributes.dxWithUnit: String?
-	get() = this.asDynamic().dxWithUnit
-	set(value) {
-		this.asDynamic().dxWithUnit = value
-	}
 
+    @JsName("dy")
+    var dy: Number?
 
-var SVGNodeAttributes.dy: Number?
-	get() = this.asDynamic().dy
-	set(value) {
-		this.asDynamic().dy = value
-	}
 
+    @JsName("dy")
+    var dyWithUnit: String?
 
-var SVGNodeAttributes.dyWithUnit: String?
-	get() = this.asDynamic().dyWithUnit
-	set(value) {
-		this.asDynamic().dyWithUnit = value
-	}
 
+    @JsName("fill")
+    var fill: String?
 
-var SVGNodeAttributes.fill: String?
-	get() = this.asDynamic().fill
-	set(value) {
-		this.asDynamic().fill = value
-	}
 
+    @JsName("fillOpacity")
+    var fillOpacity: Number?
 
-var SVGNodeAttributes.fillOpacity: Number?
-	get() = this.asDynamic().fillOpacity
-	set(value) {
-		this.asDynamic().fillOpacity = value
-	}
 
+    @JsName("fillOpacity")
+    var fillOpacityPercent: String?
 
-var SVGNodeAttributes.fillOpacityPercent: String?
-	get() = this.asDynamic().fillOpacityPercent
-	set(value) {
-		this.asDynamic().fillOpacityPercent = value
-	}
 
+    @JsName("fontFamily")
+    var fontFamily: String?
 
-var SVGNodeAttributes.fontFamily: String?
-	get() = this.asDynamic().fontFamily
-	set(value) {
-		this.asDynamic().fontFamily = value
-	}
 
+    @JsName("fontSize")
+    var fontSize: Number?
 
-var SVGNodeAttributes.fontSize: Number?
-	get() = this.asDynamic().fontSize
-	set(value) {
-		this.asDynamic().fontSize = value
-	}
 
+    @JsName("fontSize")
+    var fontSizeWithUnit: String?
 
-var SVGNodeAttributes.fontSizeWithUnit: String?
-	get() = this.asDynamic().fontSizeWithUnit
-	set(value) {
-		this.asDynamic().fontSizeWithUnit = value
-	}
 
+    @JsName("fx")
+    var fx: Number?
 
-var SVGNodeAttributes.fx: Number?
-	get() = this.asDynamic().fx
-	set(value) {
-		this.asDynamic().fx = value
-	}
 
+    @JsName("fx")
+    var fxWithUnit: String?
 
-var SVGNodeAttributes.fxWithUnit: String?
-	get() = this.asDynamic().fxWithUnit
-	set(value) {
-		this.asDynamic().fxWithUnit = value
-	}
 
+    @JsName("fy")
+    var fy: Number?
 
-var SVGNodeAttributes.fy: Number?
-	get() = this.asDynamic().fy
-	set(value) {
-		this.asDynamic().fy = value
-	}
 
+    @JsName("fy")
+    var fyWithUnit: String?
 
-var SVGNodeAttributes.fyWithUnit: String?
-	get() = this.asDynamic().fyWithUnit
-	set(value) {
-		this.asDynamic().fyWithUnit = value
-	}
 
+    @JsName("gradientTransform")
+    var gradientTransform: String?
 
-var SVGNodeAttributes.gradientTransform: String?
-	get() = this.asDynamic().gradientTransform
-	set(value) {
-		this.asDynamic().gradientTransform = value
-	}
 
+    @JsName("gradientUnits")
+    var gradientUnits: String?
 
-var SVGNodeAttributes.gradientUnits: String?
-	get() = this.asDynamic().gradientUnits
-	set(value) {
-		this.asDynamic().gradientUnits = value
-	}
 
+    @JsName("height")
+    var height: Number?
 
-var SVGNodeAttributes.height: Number?
-	get() = this.asDynamic().height
-	set(value) {
-		this.asDynamic().height = value
-	}
 
+    @JsName("height")
+    var heightWithUnit: String?
 
-var SVGNodeAttributes.heightWithUnit: String?
-	get() = this.asDynamic().heightWithUnit
-	set(value) {
-		this.asDynamic().heightWithUnit = value
-	}
 
+    @JsName("markerEnd")
+    var markerEnd: String?
 
-var SVGNodeAttributes.markerEnd: String?
-	get() = this.asDynamic().markerEnd
-	set(value) {
-		this.asDynamic().markerEnd = value
-	}
 
+    @JsName("markerMid")
+    var markerMid: String?
 
-var SVGNodeAttributes.markerMid: String?
-	get() = this.asDynamic().markerMid
-	set(value) {
-		this.asDynamic().markerMid = value
-	}
 
+    @JsName("markerStart")
+    var markerStart: String?
 
-var SVGNodeAttributes.markerStart: String?
-	get() = this.asDynamic().markerStart
-	set(value) {
-		this.asDynamic().markerStart = value
-	}
 
+    @JsName("offset")
+    var offset: Number?
 
-var SVGNodeAttributes.offset: Number?
-	get() = this.asDynamic().offset
-	set(value) {
-		this.asDynamic().offset = value
-	}
 
+    @JsName("offset")
+    var offsetWithUnit: String?
 
-var SVGNodeAttributes.offsetWithUnit: String?
-	get() = this.asDynamic().offsetWithUnit
-	set(value) {
-		this.asDynamic().offsetWithUnit = value
-	}
 
+    @JsName("opacity")
+    var opacity: Number?
 
-var SVGNodeAttributes.opacity: Number?
-	get() = this.asDynamic().opacity
-	set(value) {
-		this.asDynamic().opacity = value
-	}
 
+    @JsName("opacity")
+    var opacityWithUnit: String?
 
-var SVGNodeAttributes.opacityWithUnit: String?
-	get() = this.asDynamic().opacityWithUnit
-	set(value) {
-		this.asDynamic().opacityWithUnit = value
-	}
 
+    @JsName("patternContentUnits")
+    var patternContentUnits: String?
 
-var SVGNodeAttributes.patternContentUnits: String?
-	get() = this.asDynamic().patternContentUnits
-	set(value) {
-		this.asDynamic().patternContentUnits = value
-	}
 
+    @JsName("patternUnits")
+    var patternUnits: String?
 
-var SVGNodeAttributes.patternUnits: String?
-	get() = this.asDynamic().patternUnits
-	set(value) {
-		this.asDynamic().patternUnits = value
-	}
 
+    @JsName("points")
+    var points: String?
 
-var SVGNodeAttributes.points: String?
-	get() = this.asDynamic().points
-	set(value) {
-		this.asDynamic().points = value
-	}
 
+    @JsName("preserveAspectRatio")
+    var preserveAspectRatio: String?
 
-var SVGNodeAttributes.preserveAspectRatio: String?
-	get() = this.asDynamic().preserveAspectRatio
-	set(value) {
-		this.asDynamic().preserveAspectRatio = value
-	}
 
+    @JsName("r")
+    var r: Number?
 
-var SVGNodeAttributes.r: Number?
-	get() = this.asDynamic().r
-	set(value) {
-		this.asDynamic().r = value
-	}
 
+    @JsName("r")
+    var rWithUnit: String?
 
-var SVGNodeAttributes.rWithUnit: String?
-	get() = this.asDynamic().rWithUnit
-	set(value) {
-		this.asDynamic().rWithUnit = value
-	}
 
+    @JsName("rx")
+    var rx: Number?
 
-var SVGNodeAttributes.rx: Number?
-	get() = this.asDynamic().rx
-	set(value) {
-		this.asDynamic().rx = value
-	}
 
+    @JsName("rx")
+    var rxWithUnit: String?
 
-var SVGNodeAttributes.rxWithUnit: String?
-	get() = this.asDynamic().rxWithUnit
-	set(value) {
-		this.asDynamic().rxWithUnit = value
-	}
 
+    @JsName("ry")
+    var ry: Number?
 
-var SVGNodeAttributes.ry: Number?
-	get() = this.asDynamic().ry
-	set(value) {
-		this.asDynamic().ry = value
-	}
 
+    @JsName("ry")
+    var ryWithUnit: String?
 
-var SVGNodeAttributes.ryWithUnit: String?
-	get() = this.asDynamic().ryWithUnit
-	set(value) {
-		this.asDynamic().ryWithUnit = value
-	}
 
+    @JsName("spreadMethod")
+    var spreadMethod: String?
 
-var SVGNodeAttributes.spreadMethod: String?
-	get() = this.asDynamic().spreadMethod
-	set(value) {
-		this.asDynamic().spreadMethod = value
-	}
 
+    @JsName("stopColor")
+    var stopColor: String?
 
-var SVGNodeAttributes.stopColor: String?
-	get() = this.asDynamic().stopColor
-	set(value) {
-		this.asDynamic().stopColor = value
-	}
 
+    @JsName("stopOpacity")
+    var stopOpacity: Number?
 
-var SVGNodeAttributes.stopOpacity: Number?
-	get() = this.asDynamic().stopOpacity
-	set(value) {
-		this.asDynamic().stopOpacity = value
-	}
 
+    @JsName("stopOpacity")
+    var stopOpacityWithUnit: String?
 
-var SVGNodeAttributes.stopOpacityWithUnit: String?
-	get() = this.asDynamic().stopOpacityWithUnit
-	set(value) {
-		this.asDynamic().stopOpacityWithUnit = value
-	}
 
+    @JsName("stroke")
+    var stroke: String?
 
-var SVGNodeAttributes.stroke: String?
-	get() = this.asDynamic().stroke
-	set(value) {
-		this.asDynamic().stroke = value
-	}
 
+    @JsName("strokeDasharray")
+    var strokeDasharray: String?
 
-var SVGNodeAttributes.strokeDasharray: String?
-	get() = this.asDynamic().strokeDasharray
-	set(value) {
-		this.asDynamic().strokeDasharray = value
-	}
 
+    @JsName("strokeLinecap")
+    var strokeLinecap: String?
 
-var SVGNodeAttributes.strokeLinecap: String?
-	get() = this.asDynamic().strokeLinecap
-	set(value) {
-		this.asDynamic().strokeLinecap = value
-	}
 
+    @JsName("strokeMiterlimit")
+    var strokeMiterlimit: String?
 
-var SVGNodeAttributes.strokeMiterlimit: String?
-	get() = this.asDynamic().strokeMiterlimit
-	set(value) {
-		this.asDynamic().strokeMiterlimit = value
-	}
 
+    @JsName("strokeOpacity")
+    var strokeOpacity: Number?
 
-var SVGNodeAttributes.strokeOpacity: Number?
-	get() = this.asDynamic().strokeOpacity
-	set(value) {
-		this.asDynamic().strokeOpacity = value
-	}
 
+    @JsName("strokeOpacity")
+    var strokeOpacityPercent: String?
 
-var SVGNodeAttributes.strokeOpacityPercent: String?
-	get() = this.asDynamic().strokeOpacityPercent
-	set(value) {
-		this.asDynamic().strokeOpacityPercent = value
-	}
 
+    @JsName("strokeWidth")
+    var strokeWidth: Number?
 
-var SVGNodeAttributes.strokeWidth: Number?
-	get() = this.asDynamic().strokeWidth
-	set(value) {
-		this.asDynamic().strokeWidth = value
-	}
 
+    @JsName("strokeWidth")
+    var strokeWidthWithUnit: String?
 
-var SVGNodeAttributes.strokeWidthWithUnit: String?
-	get() = this.asDynamic().strokeWidthWithUnit
-	set(value) {
-		this.asDynamic().strokeWidthWithUnit = value
-	}
 
+    @JsName("textAnchor")
+    var textAnchor: String?
 
-var SVGNodeAttributes.textAnchor: String?
-	get() = this.asDynamic().textAnchor
-	set(value) {
-		this.asDynamic().textAnchor = value
-	}
 
+    @JsName("transform")
+    var transform: String?
 
-var SVGNodeAttributes.transform: String?
-	get() = this.asDynamic().transform
-	set(value) {
-		this.asDynamic().transform = value
-	}
 
+    @JsName("version")
+    var version: String?
 
-var SVGNodeAttributes.version: String?
-	get() = this.asDynamic().version
-	set(value) {
-		this.asDynamic().version = value
-	}
 
+    @JsName("viewBox")
+    var viewBox: String?
 
-var SVGNodeAttributes.viewBox: String?
-	get() = this.asDynamic().viewBox
-	set(value) {
-		this.asDynamic().viewBox = value
-	}
 
+    @JsName("width")
+    var width: Number?
 
-var SVGNodeAttributes.width: Number?
-	get() = this.asDynamic().width
-	set(value) {
-		this.asDynamic().width = value
-	}
 
+    @JsName("width")
+    var widthWithUnit: String?
 
-var SVGNodeAttributes.widthWithUnit: String?
-	get() = this.asDynamic().widthWithUnit
-	set(value) {
-		this.asDynamic().widthWithUnit = value
-	}
 
+    @JsName("x1")
+    var x1: Number?
 
-var SVGNodeAttributes.x1: Number?
-	get() = this.asDynamic().x1
-	set(value) {
-		this.asDynamic().x1 = value
-	}
 
+    @JsName("x1")
+    var x1WithUnit: String?
 
-var SVGNodeAttributes.x1WithUnit: String?
-	get() = this.asDynamic().x1WithUnit
-	set(value) {
-		this.asDynamic().x1WithUnit = value
-	}
 
+    @JsName("x2")
+    var x2: Number?
 
-var SVGNodeAttributes.x2: Number?
-	get() = this.asDynamic().x2
-	set(value) {
-		this.asDynamic().x2 = value
-	}
 
+    @JsName("x2")
+    var x2WithUnit: String?
 
-var SVGNodeAttributes.x2WithUnit: String?
-	get() = this.asDynamic().x2WithUnit
-	set(value) {
-		this.asDynamic().x2WithUnit = value
-	}
 
+    @JsName("x")
+    var x: Number?
 
-var SVGNodeAttributes.x: Number?
-	get() = this.asDynamic().x
-	set(value) {
-		this.asDynamic().x = value
-	}
 
+    @JsName("x")
+    var xWithUnit: String?
 
-var SVGNodeAttributes.xWithUnit: String?
-	get() = this.asDynamic().xWithUnit
-	set(value) {
-		this.asDynamic().xWithUnit = value
-	}
 
+    @JsName("y1")
+    var y1: Number?
 
-var SVGNodeAttributes.y1: Number?
-	get() = this.asDynamic().y1
-	set(value) {
-		this.asDynamic().y1 = value
-	}
 
+    @JsName("y1")
+    var y1WithUnit: String?
 
-var SVGNodeAttributes.y1WithUnit: String?
-	get() = this.asDynamic().y1WithUnit
-	set(value) {
-		this.asDynamic().y1WithUnit = value
-	}
 
+    @JsName("y2")
+    var y2: Number?
 
-var SVGNodeAttributes.y2: Number?
-	get() = this.asDynamic().y2
-	set(value) {
-		this.asDynamic().y2 = value
-	}
 
+    @JsName("y2")
+    var y2WithUnit: String?
 
-var SVGNodeAttributes.y2WithUnit: String?
-	get() = this.asDynamic().y2WithUnit
-	set(value) {
-		this.asDynamic().y2WithUnit = value
-	}
 
+    @JsName("y")
+    var y: Number?
 
-var SVGNodeAttributes.y: Number?
-	get() = this.asDynamic().y
-	set(value) {
-		this.asDynamic().y = value
-	}
 
+    @JsName("y")
+    var yWithUnit: String?
 
-var SVGNodeAttributes.yWithUnit: String?
-	get() = this.asDynamic().yWithUnit
-	set(value) {
-		this.asDynamic().yWithUnit = value
-	}
 
-
+}

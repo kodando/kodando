@@ -1,0 +1,14 @@
+rootProject.name = 'kodando'
+
+include 'kodando-runtime'
+include 'kodando-jest'
+include 'kodando-crossroads'
+include 'kodando-hasher'
+include 'kodando-history'
+include 'kodando-rxjs'
+include 'kodando-react'
+include 'kodando-react-dom'
+include 'kodando-react-router'
+include 'samples:sample1-react'
+
+findProject(':samples:sample1-react')?.name = 'sample1-react'
