@@ -14,8 +14,8 @@ buildscript {
 }
 
 allprojects {
-    group 'br.danfma.kodando'
-    version '0.1.0'
+    group 'br.danfma'
+    version '2017.10.1'
 
     repositories {
         jcenter()
@@ -53,13 +53,12 @@ configure(subprojects.findAll { it.name.startsWith('kodando-') }) {
     publishing {
         publications {
             maven(MavenPublication) {
-                groupId "br.danfma.kodando"
                 artifactId "${project.name}"
                 from components.java
 
                 repositories {
                     maven {
-                        url "https://api.bintray.com/maven/danfma/maven/kodando/;publish=1"
+                        url "https://api.bintray.com/maven/danfma/maven/${project.name}/;publish=1"
 
                         credentials {
                             username System.getenv("BINTRAY_USERNAME")
