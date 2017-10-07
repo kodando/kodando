@@ -7,9 +7,7 @@ import kodando.react.*
  */
 
 
-val HashRouter = ComponentBuilder(Module.HashRouterClass)
-
-
-fun ReactProps.hashRouter(setter: PropSetter<HashRouterProps>) =
-    append(HashRouter(setter))
-
+fun ReactProps.hashRouter(props: HashRouterProps = createProps(),
+                          configure: Configurer<HashRouterProps>) {
+    addComponent(Module.HashRouterClass, props.configureBy(configure))
+}

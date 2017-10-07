@@ -1,8 +1,8 @@
 package kodando.react.dom.events
 
-import org.w3c.dom.Element
+import org.w3c.dom.Node
 
-external interface UIEvent<TElement : Element> : SyntheticEvent<TElement> {
-	var detail: Number
-	var view: AbstractView?
+external interface UIEvent<TNode : Node> : SyntheticEvent<TNode> {
+    var detail: Number
+    var view: AbstractView?
 }

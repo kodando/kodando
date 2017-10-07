@@ -1,0 +1,4 @@
+dependencies {
+    compile project(":kodando-runtime")
+    testCompile project(":kodando-jest")
+}

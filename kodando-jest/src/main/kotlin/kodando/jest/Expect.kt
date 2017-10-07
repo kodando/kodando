@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package kodando.jest
 
 import kotlin.js.RegExp

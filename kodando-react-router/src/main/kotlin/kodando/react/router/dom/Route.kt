@@ -6,20 +6,17 @@ import kodando.react.*
  * Created by danfma on 04/04/17.
  */
 
-val Route = ComponentBuilder(Module.RouteClass)
-
-
 @JsName("route")
-fun ReactProps.route(setter: PropSetter<RouteProps>) {
-    append(Route(setter))
+fun ReactProps.route(configurer: Configurer<RouteProps>) {
+    addComponent(Module.RouteClass, createProps(configurer))
 }
 
 
 @JsName("routeWithPath")
-fun ReactProps.route(path: String, propSetter: PropSetter<RouteProps>) {
+fun ReactProps.route(path: String, configurer: Configurer<RouteProps>) {
     route {
         this.path = path
-        this.propSetter()
+        this.configurer()
     }
 }
 
@@ -27,7 +24,7 @@ fun ReactProps.route(path: String, propSetter: PropSetter<RouteProps>) {
 @JsName("routeWithComponent")
 fun ReactProps.route(
     path: String,
-    component: Component<Routeable, *>,
+    component: ReactComponent<Routeable, *>,
     exact: Boolean? = null,
     strict: Boolean? = null) {
 
@@ -45,7 +42,7 @@ fun ReactProps.routeRenderized(
     path: String,
     exact: Boolean? = null,
     strict: Boolean? = null,
-    render: (Routeable) -> ReactElement?) {
+    render: (Routeable) -> ReactNode?) {
 
     route {
         this.path = path

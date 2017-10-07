@@ -1,0 +1,4 @@
+dependencies {
+    compile project(":kodando-react")
+    testCompile project(":kodando-jest")
+}

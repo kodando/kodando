@@ -1,21 +1,10 @@
 package kodando.react.dom
 
-import kodando.react.*
-import org.w3c.dom.Element
-
+import kodando.react.ReactNode
+import org.w3c.dom.Node
 
 @JsModule("react-dom")
 @JsNonModule
 external object ReactDOM {
-
-    @JsName("render")
-    fun render(element: ReactElement, container: Element): Component<*, *>
-
-    @JsName("render")
-    fun <T : Component<*, *>> render(element: TypedReactElement<T>, container: Element): T
-
-    @JsName("unmountComponentAtNode")
-    fun unmountComponentAtNode(container: Element)
-
+    fun render(node: ReactNode?, container: Node)
 }
-
