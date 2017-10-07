@@ -1,3 +1,6 @@
+group 'br.danfma'
+version '2017.10.2'
+
 dependencies {
     testCompile project(":kodando-jest")
 }

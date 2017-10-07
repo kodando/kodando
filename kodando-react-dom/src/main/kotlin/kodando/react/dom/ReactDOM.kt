@@ -7,4 +7,6 @@ import org.w3c.dom.Node
 @JsNonModule
 external object ReactDOM {
     fun render(node: ReactNode?, container: Node)
+    fun unmountComponentAtNode(container: Node)
+    fun createPortal(node: ReactNode?, container: Node): ReactNode?
 }
