@@ -1,5 +1,5 @@
-group 'br.danfma'
-version '2017.10.2'
+group 'kodando'
+version '1.0.0'
 
 dependencies {
     compile project(":kodando-react")

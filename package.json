@@ -3,17 +3,6 @@
   "version": "1.0.0",
   "author": "Daniel Ferreira Monteiro Alves <danfma@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --watch --debug --devtool inline-source-map --hot --watch-aggregate-timeout 2000",
-    "build": "./node_modules/.bin/webpack -p"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1"
-  },
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

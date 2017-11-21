@@ -1,3 +1,8 @@
 package kodando.react
 
-external interface ReactNode
+import kotlin.js.Json
+
+external interface ReactNode {
+    val type: String
+    val props: Json
+}

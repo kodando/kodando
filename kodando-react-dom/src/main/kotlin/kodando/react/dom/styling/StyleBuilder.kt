@@ -1,11 +1,9 @@
 package kodando.react.dom.styling
 
 class StyleBuilder(vararg initialClasses: String) {
-    val classes = arrayListOf<String>()
 
-    init {
-        initialClasses.forEach { add(it) }
-    }
+    var classes = arrayOf(*initialClasses)
+        private set
 
     fun add(className: String?): StyleBuilder {
         if (className != null) {
@@ -24,6 +22,7 @@ class StyleBuilder(vararg initialClasses: String) {
     }
 
     override fun toString(): String {
-        return classes.toTypedArray().joinToString(" ")
+        return classes.joinToString(" ")
     }
+
 }

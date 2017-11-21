@@ -1,3 +1,5 @@
+version "1.0.0"
+
 dependencies {
     compile project(":kodando-runtime")
     testCompile project(":kodando-jest")

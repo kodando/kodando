@@ -1,11 +1,9 @@
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlin_version = '1.1.60'
 
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
-        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap-1.1' }
     }
 
     dependencies {
@@ -14,8 +12,7 @@ buildscript {
 }
 
 allprojects {
-    group 'br.danfma'
-    version '2017.10.1'
+    group 'kodando.v2'
 
     repositories {
         jcenter()
@@ -32,15 +29,15 @@ subprojects {
 
     compileKotlin2Js {
         kotlinOptions.metaInfo = true
-        kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+        kotlinOptions.outputFile = "${project.buildDir.path}/js/${project.name}.js"
         kotlinOptions.sourceMap = true
         kotlinOptions.sourceMapEmbedSources = "always"
-        kotlinOptions.moduleKind = 'umd'
+        kotlinOptions.moduleKind = 'commonjs'
     }
 
     compileTestKotlin2Js {
         kotlinOptions.metaInfo = true
-        kotlinOptions.outputFile = "$project.buildDir.path/js-tests/${project.name}-test.js"
+        kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}-test.js"
         kotlinOptions.sourceMap = true
         kotlinOptions.sourceMapEmbedSources = "always"
         kotlinOptions.moduleKind = 'commonjs'
@@ -58,7 +55,7 @@ configure(subprojects.findAll { it.name.startsWith('kodando-') }) {
 
                 repositories {
                     maven {
-                        url "https://api.bintray.com/maven/danfma/maven/${project.name}/;publish=1"
+                        url "https://api.bintray.com/maven/danfma/kodando/kodando;publish=1"
 
                         credentials {
                             username System.getenv("BINTRAY_USERNAME")

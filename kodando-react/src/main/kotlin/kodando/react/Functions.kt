@@ -4,15 +4,14 @@ import kotlin.reflect.KClass
 
 typealias Configurer<T> = T.() -> Unit
 
+@JsName("unsafelyCreateObject")
+inline fun <T> unsafelyCreateObject() = js("({})").unsafeCast<T>()
+
 @JsName("createProps")
-inline fun <T : ReactProps> createProps(): T {
-    return js("({children:[]})").unsafeCast<T>()
-}
+inline fun <T : ReactProps> createProps(): T = unsafelyCreateObject()
 
 @JsName("createPropsAndConfigure")
-inline fun <T : ReactProps> createProps(configure: Configurer<T>): T {
-    return createProps<T>().apply(configure)
-}
+inline fun <T : ReactProps> createProps(configure: Configurer<T>): T = createProps<T>().also(configure)
 
 @JsName("configureBy")
 fun <T : ReactProps> T.configureBy(configure: Configurer<T>?): T {
@@ -55,6 +54,11 @@ private fun extractChildren(props: ReactProps): Array<Any?> {
 @JsName("createElement")
 fun createElement(tagName: String, props: ReactProps): ReactNode? {
     return React.createElement(tagName, props, *extractChildren(props))
+}
+
+@JsName("createElementByRenderer")
+fun <TProps : ReactProps> createElement(renderer: (TProps) -> ReactNode?, props: TProps): ReactNode? {
+    return React.createElement(renderer, props, *extractChildren(props))
 }
 
 @JsName("createComponent")

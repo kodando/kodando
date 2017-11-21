@@ -5,16 +5,17 @@ package kodando.react
 
 @JsName("Component")
 external abstract class ReactComponent<TProps : ReactProps, TState>(props: TProps = definedExternally, context: Any? = definedExternally) {
-
     val props: TProps
-    open val context: Any?
     var state: TState
+    open val context: Any?
+
+    fun forceRefresh()
 
     @JsName("setState")
-    fun setState(state: TState)
+    fun setState(state: TState, callback: (() -> Unit)? = definedExternally)
 
     @JsName("setState")
-    fun setState(state: TState, callback: () -> Unit)
+    fun setState(updater: (TState, TProps) -> TState)
 
     open fun componentWillMount()
 
@@ -24,12 +25,15 @@ external abstract class ReactComponent<TProps : ReactProps, TState>(props: TProp
 
     open fun shouldComponentUpdate(nextProps: TProps, nextState: TState): Boolean
 
-    open fun componentWillUpdate(nextProps: TProps)
+    open fun componentWillUpdate(nextProps: TProps, nextState: TState)
 
-    open fun componentDidUpdate(previousProps: TProps, previousState: TState)
+    @JsName("render")
+    abstract fun render(): ReactNode?
+
+    open fun componentDidUpdate(prevProps: TProps, prevState: TState)
 
     open fun componentWillUnmount()
 
-    abstract fun render(): ReactNode?
+    open fun componentDidCatch(error: Throwable, info: Any?)
 
 }
