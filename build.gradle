@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.0'
+    ext.kotlin_version = '1.2.10'
 
     repositories {
         jcenter()
@@ -12,7 +12,7 @@ buildscript {
 }
 
 allprojects {
-    group 'kodando.v2'
+    group 'br.danfma.kodando'
 
     repositories {
         jcenter()
@@ -61,7 +61,7 @@ configure(subprojects.findAll { it.name.startsWith('kodando-') }) {
 
                 repositories {
                     maven {
-                        url "https://api.bintray.com/maven/danfma/kodando/kodando;publish=1"
+                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name};publish=1"
 
                         credentials {
                             username System.getenv("BINTRAY_USERNAME")

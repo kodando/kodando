@@ -2,8 +2,6 @@ rootProject.name = 'kodando'
 
 include 'kodando-runtime'
 include 'kodando-jest'
-include 'kodando-crossroads'
-include 'kodando-hasher'
 include 'kodando-history'
 include 'kodando-rxjs'
 include 'kodando-react'
