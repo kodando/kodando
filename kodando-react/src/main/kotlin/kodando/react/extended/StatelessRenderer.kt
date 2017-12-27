@@ -1,6 +1,10 @@
-package kodando.react
+package kodando.react.extended
 
-abstract class ReactStatelessRenderer<in TProps : ReactProps> {
+import kodando.react.ReactNode
+import kodando.react.ReactProps
+import kodando.react.createElement
+
+abstract class StatelessRenderer<in TProps : ReactProps> {
     private val renderer: (TProps) -> ReactNode?
 
     init {

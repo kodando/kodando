@@ -2,7 +2,7 @@
 
 package kodando.react.native
 
-import kodando.react.ReactComponent
+import kodando.react.Component
 import kodando.react.ReactProps
 import org.w3c.dom.Node
 
@@ -29,10 +29,10 @@ external interface ImageProps : ReactProps {
 external interface ImageSource
 
 
-external val Text: JsClass<ReactComponent<TextProps, Unit>>
+external val Text: JsClass<Component<TextProps, Unit>>
 
-external val View: JsClass<ReactComponent<ViewProps, Unit>>
+external val View: JsClass<Component<ViewProps, Unit>>
 
-external val ScrollView: JsClass<ReactComponent<ScrollViewProps, Unit>>
+external val ScrollView: JsClass<Component<ScrollViewProps, Unit>>
 
-external val Image: JsClass<ReactComponent<ImageProps, Unit>>
+external val Image: JsClass<Component<ImageProps, Unit>>

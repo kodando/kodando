@@ -2,9 +2,7 @@
 
 package kodando.rxjs
 
-import kodando.runtime.Tuple2
-import kodando.runtime.Tuple3
-import kotlin.js.*
+import kotlin.js.Promise
 import kotlin.reflect.KClass
 
 /**
@@ -114,22 +112,11 @@ inline fun <T> Subscribable<out Subscribable<T>>.combineAll(): Subscribable<Arra
     this.asDynamic().combineAll()
 
 
-@JsName("combineLatest1")
-inline fun <T, TOther1> Subscribable<T>.combineLatest(other: Subscribable<TOther1>): Subscribable<Array<Tuple2<T, TOther1>>> =
-    this.asDynamic().combineLatest(other)
-
-
 @JsName("combineLatest1AndProject")
 fun <T, TOther, TResult> Subscribable<T>.combineLatest(
     source1: Subscribable<TOther>,
     projection: (T, TOther) -> TResult): Subscribable<TResult> =
     this.asDynamic().combineLatest(source1, projection)
-
-
-@JsName("combineLatest2")
-inline fun <T, T1, T2> Subscribable<T>.combineLatest(source1: Subscribable<T1>,
-                                                     source2: Subscribable<T2>): Subscribable<Array<Tuple3<T, T1, T2>>> =
-    this.asDynamic().combineLatest(source1, source2)
 
 
 @JsName("combineLatest2AndProject")

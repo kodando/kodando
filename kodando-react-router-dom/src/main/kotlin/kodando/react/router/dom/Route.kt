@@ -24,7 +24,7 @@ fun ReactProps.route(path: String, configurer: Configurer<RouteProps>) {
 @JsName("routeWithComponent")
 fun ReactProps.route(
     path: String,
-    component: ReactComponent<Routeable, *>,
+    component: Component<Routeable, *>,
     exact: Boolean? = null,
     strict: Boolean? = null) {
 

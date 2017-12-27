@@ -50,7 +50,7 @@ subprojects {
     }
 }
 
-configure(subprojects.findAll { it.name.startsWith('kodando-') }) {
+configure(subprojects.findAll { it.name != 'kodando-all' && it.name.startsWith('kodando-') }) {
     apply plugin: 'maven-publish'
 
     publishing {

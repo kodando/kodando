@@ -71,7 +71,7 @@ external interface Routeable : ReactProps {
 
 
 external interface RouteProps : ReactProps {
-    var component: ReactComponent<Routeable, *>?
+    var component: Component<Routeable, *>?
     var render: (Routeable) -> ReactNode?
     var path: String?
     var exact: Boolean?
@@ -125,42 +125,42 @@ external object Module {
 
 
     @JsName("Router")
-    class Router : ReactComponent<RouterProps, Unit> {
+    class Router : Component<RouterProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("BrowserRouter")
-    class BrowserRouter : ReactComponent<BrowserRouterProps, Unit> {
+    class BrowserRouter : Component<BrowserRouterProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("HashRouter")
-    class HashRouter : ReactComponent<HashRouterProps, Unit> {
+    class HashRouter : Component<HashRouterProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("Prompt")
-    class Prompt : ReactComponent<PromptProps, Unit> {
+    class Prompt : Component<PromptProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("Redirect")
-    class Redirect : ReactComponent<RedirectProps, Unit> {
+    class Redirect : Component<RedirectProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("Route")
-    class Route : ReactComponent<RouteProps, Unit> {
+    class Route : Component<RouteProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("Link")
-    class Link : ReactComponent<LinkProps, Unit> {
+    class Link : Component<LinkProps, Unit> {
         override fun render(): ReactNode?
     }
 
     @JsName("Switch")
-    class Switch : ReactComponent<SwitchProps, Unit> {
+    class Switch : Component<SwitchProps, Unit> {
         override fun render(): ReactNode?
     }
 

@@ -8,3 +8,5 @@ include 'kodando-react'
 include 'kodando-react-dom'
 include 'kodando-react-native'
 include 'kodando-react-router-dom'
+include 'kodando-all'
+

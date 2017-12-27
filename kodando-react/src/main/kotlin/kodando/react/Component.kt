@@ -4,12 +4,12 @@
 package kodando.react
 
 @JsName("Component")
-external abstract class ReactComponent<TProps : ReactProps, TState>(props: TProps = definedExternally, context: Any? = definedExternally) {
+external abstract class Component<TProps : ReactProps, TState>(props: TProps = definedExternally, context: Any? = definedExternally) {
     val props: TProps
     var state: TState
     open val context: Any?
 
-    fun forceRefresh()
+    fun forceUpdate()
 
     @JsName("setState")
     fun setState(state: TState, callback: (() -> Unit)? = definedExternally)

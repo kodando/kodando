@@ -62,7 +62,7 @@ fun <TProps : ReactProps> createElement(renderer: (TProps) -> ReactNode?, props:
 }
 
 @JsName("createComponent")
-fun <TProps : ReactProps> createComponent(componentType: JsClass<out ReactComponent<TProps, *>>, props: TProps): ReactNode? {
+fun <TProps : ReactProps> createComponent(componentType: JsClass<out Component<TProps, *>>, props: TProps): ReactNode? {
     return React.createElement(componentType, props, *extractChildren(props))
 }
 
@@ -111,7 +111,7 @@ fun ReactProps.add(children: ReactChildren?) {
 
 @JsName("addComponent")
 fun <TProps : ReactProps> ReactProps.addComponent(
-    componentType: JsClass<out ReactComponent<TProps, *>>,
+    componentType: JsClass<out Component<TProps, *>>,
     props: TProps = createProps(),
     configure: Configurer<TProps>? = null) {
 
@@ -124,7 +124,7 @@ fun <TProps : ReactProps> ReactProps.addComponent(
 
 @JsName("addKComponent")
 fun <TProps : ReactProps> ReactProps.addComponent(
-    componentType: KClass<out ReactComponent<TProps, *>>,
+    componentType: KClass<out Component<TProps, *>>,
     props: TProps = createProps(),
     configure: Configurer<TProps>? = null) {
 

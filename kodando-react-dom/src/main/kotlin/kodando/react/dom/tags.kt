@@ -290,7 +290,7 @@ fun ReactProps.img(className: String = "", props: HtmlImageElementProps = create
 }
 
 @JsName("input")
-fun ReactProps.input(className: String = "", props: HtmlTextAreaElementProps = createProps(), configurer: Configurer<HtmlTextAreaElementProps>? = null) {
+fun ReactProps.input(className: String = "", props: HtmlInputElementProps = createProps(), configurer: Configurer<HtmlInputElementProps>? = null) {
     addElement("input", className, props, configurer)
 }
 

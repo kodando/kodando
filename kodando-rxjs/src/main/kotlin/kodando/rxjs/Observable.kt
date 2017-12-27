@@ -1,11 +1,10 @@
-@file: JsModule("rxjs/Rx")
-@file: JsNonModule
+@file: JsModule("rxjs/Observable")
 
 package kodando.rxjs
 
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
-import kotlin.js.*
+import kotlin.js.Promise
 
 external open class Observable<T>(publisher: (Observer<T>) -> Unsubscribable?) : Subscribable<T> {
 
