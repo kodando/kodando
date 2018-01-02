@@ -13,7 +13,7 @@ external class JsDate {
 
     constructor()
 
-    constructor(milliseconds: Int)
+    constructor(milliseconds: Long)
 
     constructor(dateString: String)
 
