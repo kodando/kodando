@@ -43,7 +43,7 @@ subprojects {
 
     compileTestKotlin2Js {
         kotlinOptions.metaInfo = true
-        kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}-test.js"
+        kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}.spec.js"
         kotlinOptions.sourceMap = true
         kotlinOptions.sourceMapEmbedSources = "always"
         kotlinOptions.moduleKind = 'commonjs'
@@ -61,7 +61,7 @@ configure(subprojects.findAll { it.name != 'kodando-all' && it.name.startsWith('
 
                 repositories {
                     maven {
-                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name};publish=1"
+                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name}/;publish=1"
 
                         credentials {
                             username System.getenv("BINTRAY_USERNAME")

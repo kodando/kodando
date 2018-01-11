@@ -11,11 +11,15 @@ import kodando.react.dom.div
 import kodando.react.dom.span
 
 
-object Counter : Component<Int, Counter.Message> {
+object Counter : Component<Int, Int, Counter.Message> {
 
     sealed class Message {
         class Increment : Message()
         class Decrement : Message()
+    }
+
+    override fun init(arg: Int): Result<Int, Message> {
+        return Result(arg)
     }
 
     override fun update(model: Int, message: Message): Result<Int, Message> {

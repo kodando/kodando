@@ -8,12 +8,16 @@ import kodando.react.dom.button
 import kodando.react.dom.div
 import kotlin.browser.window
 
-object Counters : Component<Array<Int>, Counters.Message> {
+object Counters : Component<Array<Int>, Array<Int>, Counters.Message> {
 
     sealed class Message {
         class AddCounter : Message()
         class AddCounterLater(val delay: Int) : Message()
         class ToCounter(val index: Int, val message: Counter.Message) : Message()
+    }
+
+    override fun init(data: Array<Int>): Result<Array<Int>, Message> {
+        return Result(data)
     }
 
     override fun update(model: Array<Int>, message: Message): Result<Array<Int>, Message> {
