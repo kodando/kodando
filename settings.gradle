@@ -8,5 +8,11 @@ include 'kodando-react'
 include 'kodando-react-dom'
 include 'kodando-react-native'
 include 'kodando-react-router-dom'
+include 'kodando-elmish'
+include 'kodando-elmish-react'
+include 'kodando-redurx'
 include 'kodando-all'
+include 'samples:kodando-react-elmish-counters'
+
+findProject(':samples:kodando-react-elmish-counters')?.name = 'kodando-react-elmish-counters'
 

@@ -43,7 +43,7 @@ subprojects {
 
     compileTestKotlin2Js {
         kotlinOptions.metaInfo = true
-        kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}-test.js"
+        kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}.spec.js"
         kotlinOptions.sourceMap = true
         kotlinOptions.sourceMapEmbedSources = "always"
         kotlinOptions.moduleKind = 'commonjs'

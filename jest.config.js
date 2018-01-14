@@ -5,6 +5,6 @@ module.exports = {
         'node_modules'
     ],
     testMatch: [
-        '**/js-tests/*-test.js'
+        '**/js-tests/*.spec.js'
     ]
 };

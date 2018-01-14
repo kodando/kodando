@@ -1,6 +1,6 @@
-@file:JsModule("rxjs/Rx")
+@file:JsModule("rxjs/AsyncSubject")
 @file:JsNonModule
 
 package kodando.rxjs
 
-external open class AsyncSubject<T> : Subject<T>
+open external class AsyncSubject<T> : Subject<T>

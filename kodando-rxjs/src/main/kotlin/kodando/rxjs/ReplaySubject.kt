@@ -1,9 +1,10 @@
-@file:JsModule("rxjs/Rx")
+@file:JsModule("rxjs/ReplaySubject")
 @file:JsNonModule
 
 package kodando.rxjs
 
-external open class ReplaySubject<T>(bufferSize: Int = definedExternally,
-                                     windowSize: Int = definedExternally,
-                                     scheduler: Scheduler = definedExternally) : Subject<T>
+open external class ReplaySubject<T>(
+    bufferSize: Int = definedExternally,
+    windowSize: Int = definedExternally,
+    scheduler: Scheduler = definedExternally) : Subject<T>
 
