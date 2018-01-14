@@ -15,7 +15,7 @@ external fun test(name: String, handler: () -> Unit)
 external fun testAsync(name: String, handler: () -> Promise<*>)
 
 @JsName("it")
-external fun it(description: String, expectationHandler: () -> Unit)
+external fun it(description: String, expectationHandler: () -> Any?)
 
 @JsName("it")
 external fun itAsync(description: String, expectationHandler: () -> Promise<*>)

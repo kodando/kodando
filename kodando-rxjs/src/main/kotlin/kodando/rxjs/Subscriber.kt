@@ -1,12 +1,10 @@
-@file: JsModule("rxjs/Rx")
+@file: JsModule("rxjs/Subscriber")
 @file: JsNonModule
 @file:Suppress("unused")
 
 package kodando.rxjs
 
-external open class Subscriber<in T>(subscription: MaybeObserverOrHandler<T>,
-                                     error: ErrorHandler? = definedExternally,
-                                     complete: CompleteHandler? = definedExternally) : Subscription, Observer<T> {
+open external class Subscriber<in T> : Subscription, Observer<T> {
 
     constructor(observer: Observer<T>)
 

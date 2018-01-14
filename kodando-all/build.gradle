@@ -3,6 +3,7 @@ version "0.1.0-SNAPSHOT"
 apply plugin: 'kotlin-dce-js'
 
 dependencies {
-    compile project(':kodando-runtime')
-    compile project(':kodando-rxjs')
+    compile project(":kodando-runtime")
+    compile project(":kodando-rxjs")
+    compile project(":kodando-jest")
 }

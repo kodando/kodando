@@ -1,17 +1,22 @@
 package kodando.jest
 
-import kotlin.js.Promise
+import kodando.runtime.async.asyncPromise
 
 class It(private val description: String) {
 
     @JsName("byChecking")
     infix fun byChecking(handler: () -> Unit) {
-        it(description, handler)
+        it(description) {
+            handler()
+            undefined
+        }
     }
 
     @JsName("byCheckingWhenDone")
-    infix fun byCheckingWhenDone(handler: () -> Promise<*>) {
-        itAsync(description, handler)
+    infix fun <T> byCheckingAfter(handler: suspend () -> T) {
+        itAsync(description) {
+            asyncPromise(handler)
+        }
     }
 
 }

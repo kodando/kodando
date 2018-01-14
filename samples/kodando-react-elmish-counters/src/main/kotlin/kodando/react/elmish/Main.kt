@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 //    val program =
 //        createProgram(Counters)
 //            .useReact("#application")
-//            .startWith(counters)
+//            .mergeAll(counters)
 
     if (module.hot) {
         module.hot.accept()

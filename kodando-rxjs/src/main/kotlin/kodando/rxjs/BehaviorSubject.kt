@@ -1,9 +1,9 @@
-@file:JsModule("rxjs/Rx")
+@file:JsModule("rxjs/BehaviorSubject")
 @file:JsNonModule
 
 package kodando.rxjs
 
-external open class BehaviorSubject<T>(initialValue: T) : Subject<T> {
+open external class BehaviorSubject<T>(initialValue: T) : Subject<T> {
     val value: T
     fun getValue(): T
 }

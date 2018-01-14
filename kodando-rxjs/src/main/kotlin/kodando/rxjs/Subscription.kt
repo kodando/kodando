@@ -1,4 +1,4 @@
-@file:JsModule("rxjs/Rx")
+@file:JsModule("rxjs/Subscription")
 @file:JsNonModule
 
 package kodando.rxjs

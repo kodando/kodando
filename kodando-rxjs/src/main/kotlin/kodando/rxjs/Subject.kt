@@ -1,9 +1,9 @@
-@file:JsModule("rxjs/Rx")
+@file:JsModule("rxjs/Subject")
 @file:JsNonModule
 
 package kodando.rxjs
 
-external open class Subject<T> : Observable<T>, Observer<T> {
+open external class Subject<T> : Observable<T>, Observer<T> {
     override val closed: Boolean?
     override fun next(data: T)
     override fun error(error: Error)

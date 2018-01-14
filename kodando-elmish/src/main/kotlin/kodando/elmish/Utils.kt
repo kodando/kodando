@@ -1,8 +1,8 @@
 package kodando.elmish
 
 import kodando.rxjs.Subject
-import kodando.rxjs.scan
-import kodando.rxjs.startWith
+import kodando.rxjs.operator.scan
+import kodando.rxjs.operator.startWith
 import kodando.rxjs.subscribeBy
 import kotlin.js.Json
 import kotlin.js.Promise
@@ -102,8 +102,8 @@ fun <TArg, TModel, TMessage> Program<TArg, TModel, TMessage>.runWith(arg: TArg) 
 
     val dispatch = { message: TMessage ->
         Promise.resolve<Any?>(null).then {
-            messages.next(message)
-        }
+                messages.next(message)
+            }
 
         Unit
     }
@@ -115,7 +115,7 @@ fun <TArg, TModel, TMessage> Program<TArg, TModel, TMessage>.runWith(arg: TArg) 
     }
 
     messages
-        .scan(update, model)
+        .scan(model, update)
         .startWith(model)
         .subscribeBy(
             next = {

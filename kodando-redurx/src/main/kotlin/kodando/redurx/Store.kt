@@ -2,8 +2,7 @@ package kodando.redurx
 
 import kodando.rxjs.BehaviorSubject
 import kodando.rxjs.Unsubscribable
-import kodando.rxjs.scan
-import kodando.rxjs.subscribe
+import kodando.rxjs.operator.scan
 
 class Store<T> private constructor(initialState: T,
                                    reducer: Reducer<T>,
@@ -18,7 +17,7 @@ class Store<T> private constructor(initialState: T,
                 .fold(reducer) { reducer, middleware -> middleware(this, reducer) }
 
         subscription = Actions
-            .scan(combinedReducer, initialState)
+            .scan(initialState, combinedReducer)
             .subscribe(this)
     }
 

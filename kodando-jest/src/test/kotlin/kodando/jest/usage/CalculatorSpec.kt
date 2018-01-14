@@ -11,7 +11,7 @@ object CalculatorSpec : Spec() {
                 expect(1 + 1).toBe(2)
             }
 
-            it("should accept an async function") byCheckingWhenDone {
+            it("should accept an async function") byCheckingAfter {
                 Promise.resolve(true)
             }
         }
