@@ -6,8 +6,9 @@ import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
 import kodando.rxjs.ObservableClass
 
-@JsModule("rxjs/observable/throwError")
+@JsModule("rxjs/observable/throw")
 private external object ThrowErrorModule {
+    @JsName("throw")
     val throwError: JsFunction
 }
 

@@ -61,7 +61,7 @@ configure(subprojects.findAll { it.name != 'kodando-all' && it.name.startsWith('
 
                 repositories {
                     maven {
-                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name};publish=1"
+                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name};publish=1;override=1"
 
                         credentials {
                             username System.getenv("BINTRAY_USERNAME")
