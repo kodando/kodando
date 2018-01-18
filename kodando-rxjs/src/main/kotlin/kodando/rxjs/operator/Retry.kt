@@ -2,13 +2,13 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/retry")
-private external object RetryModule {
-    val retry: JsFunction
-}
+private val retry_: JsFunction =
+    from("rxjs/operators/retry") import "retry"
 
-@JsName("retry")
+
 fun <T> Observable<T>.retry(times: Int): Observable<T> {
-    return RetryModule.retry.call(this, times)
+    return pipe(retry_.call(this, times))
 }

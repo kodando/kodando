@@ -2,32 +2,28 @@
 
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
-import kodando.rxjs.Scheduler
+import kodando.rxjs.*
 
-@JsModule("rxjs/observable/merge")
-private external object MergeModule {
-    val merge: JsFunction
-}
+private val merge_: JsFunction =
+    from("rxjs/observable/merge") import "merge"
+
 
 fun <T> ObservableClass.merge(vararg observables: Observable<T>): Observable<T> {
-    return MergeModule.merge.apply(this, observables)
+    return merge_.apply(this, observables)
 }
 
 fun <T> ObservableClass.merge(vararg observables: Observable<T>,
                               concurrent: Int): Observable<T> {
-    return MergeModule.merge.apply(this, arrayOf(*observables, concurrent))
+    return merge_.apply(this, arrayOf(*observables, concurrent))
 }
 
 fun <T> ObservableClass.merge(vararg observables: Observable<T>,
                               scheduler: Scheduler): Observable<T> {
-    return MergeModule.merge.apply(this, arrayOf(*observables, scheduler))
+    return merge_.apply(this, arrayOf(*observables, scheduler))
 }
 
 fun <T> ObservableClass.merge(vararg observables: Observable<T>,
                               concurrent: Int,
                               scheduler: Scheduler): Observable<T> {
-    return MergeModule.merge.apply(this, arrayOf(*observables, concurrent, scheduler))
+    return merge_.apply(this, arrayOf(*observables, concurrent, scheduler))
 }

@@ -2,14 +2,16 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
 
-@JsModule("rxjs/operators/expand")
-private external object ExpandModule {
-    val flatMap: JsFunction
-}
+private val expand_: JsFunction =
+    from("rxjs/operators/expand") import "expand"
+
 
 fun <T, TResult> Observable<T>.expand(
     transformer: (T) -> Observable<TResult>): Observable<TResult> {
-    return ExpandModule.flatMap.call(this, transformer)
+
+    return pipe(expand_.call(this, transformer))
 }

@@ -2,20 +2,16 @@
 
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
-import kodando.rxjs.Scheduler
+import kodando.rxjs.*
 
-@JsModule("rxjs/observable/concat")
-private external object ConcatModule {
-    val concat: JsFunction
-}
+private val concat_: JsFunction =
+    from("rxjs/observable/concat") import "concat"
+
 
 fun <T> ObservableClass.concat(vararg observables: Observable<T>): Observable<T> {
-    return ConcatModule.concat.apply(this, observables)
+    return concat_.apply(this, observables)
 }
 
 fun <T> ObservableClass.concat(vararg observables: Observable<T>, scheduler: Scheduler): Observable<T> {
-    return ConcatModule.concat.apply(this, observables + scheduler)
+    return concat_.apply(this, observables + scheduler)
 }

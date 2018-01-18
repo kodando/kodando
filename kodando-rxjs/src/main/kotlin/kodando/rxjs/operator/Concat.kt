@@ -2,12 +2,13 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/concat")
-private external object ConcatModule {
-    val concat: JsFunction
-}
+private val concat_: JsFunction =
+    from("rxjs/operators/concat") import "concat"
+
 
 fun <T> Observable<T>.concat(vararg others: Observable<T>): Observable<T> {
-    return ConcatModule.concat.apply(this, others)
+    return pipe(concat_.apply(this, others))
 }

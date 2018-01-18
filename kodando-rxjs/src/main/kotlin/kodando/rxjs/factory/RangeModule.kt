@@ -2,15 +2,12 @@
 
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
+import kodando.rxjs.*
 
-@JsModule("rxjs/observable/range")
-private external object RangeModule {
-    val range: JsFunction
-}
+private val range_: JsFunction =
+    from("rxjs/observable/range") import "range"
+
 
 fun ObservableClass.range(start: Int, count: Int): Observable<Int> {
-    return RangeModule.range.call(this, start, count)
+    return range_.call(this, start, count)
 }

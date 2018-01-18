@@ -4,7 +4,9 @@ import kodando.jest.Spec
 import kodando.jest.expect
 import kodando.runtime.async.await
 import kodando.rxjs.Observable
-import kodando.rxjs.factory.*
+import kodando.rxjs.factory.fromEvent
+import kodando.rxjs.factory.fromPromise
+import kodando.rxjs.factory.of
 import kodando.rxjs.operator.combineAll
 import kodando.rxjs.operator.take
 import kodando.rxjs.operator.toArray

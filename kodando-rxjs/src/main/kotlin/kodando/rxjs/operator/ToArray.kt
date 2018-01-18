@@ -2,12 +2,13 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/toArray")
-private external object ToArrayModule {
-    val toArray: JsFunction
-}
+private val toArray_: JsFunction =
+    from("rxjs/operators/toArray") import ("toArray")
+
 
 fun <T> Observable<T>.toArray(): Observable<Array<T>> {
-    return ToArrayModule.toArray.call(this)
+    return this.pipe(toArray_.call(this))
 }

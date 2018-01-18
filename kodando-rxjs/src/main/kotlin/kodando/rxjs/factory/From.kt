@@ -1,23 +1,20 @@
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
+import kodando.rxjs.*
 import kotlin.js.Promise
 
-@JsModule("rxjs/observable/from")
-private external object FromModule {
-    val from: JsFunction
-}
+private val from_: JsFunction =
+    from("rxjs/observable/from") import "from"
+
 
 fun <T> ObservableClass.from(promise: Promise<T>): Observable<T> {
-    return FromModule.from.call(this, promise)
+    return from_.call(this, promise)
 }
 
 fun <T> ObservableClass.from(array: Array<T>): Observable<T> {
-    return FromModule.from.call(this, array)
+    return from_.call(this, array)
 }
 
 fun <T> ObservableClass.from(observable: Observable<T>): Observable<T> {
-    return FromModule.from.call(this, observable)
+    return from_.call(this, observable)
 }

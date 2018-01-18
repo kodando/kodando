@@ -3,13 +3,12 @@ package kodando.rxjs.operator
 import kodando.rxjs.*
 
 
-@JsModule("rxjs/operators/tap")
-private external object TapModule {
-    val tap: JsFunction
-}
+private val tap_: JsFunction =
+    from("rxjs/operators/tap") import "tap"
+
 
 fun <T> Observable<T>.tap(observer: Observer<T>): Observable<T> {
-    return TapModule.tap.call(this, observer)
+    return pipe(tap_.call(this, observer))
 }
 
 fun <T> Observable<T>.tap(
@@ -17,5 +16,5 @@ fun <T> Observable<T>.tap(
     error: ErrorHandler? = null,
     complete: CompleteHandler? = null): Observable<T> {
 
-    return TapModule.tap.call(this, next, error, complete)
+    return pipe(tap_.call(this, next, error, complete))
 }

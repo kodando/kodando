@@ -7,7 +7,8 @@ import kotlin.js.Promise
 open external class Observable<out T>(publisher: (Observer<T>) -> Unsubscribable?) {
 
     open fun subscribe(observer: Observer<T>): Unsubscribable
-    
+
+    fun <R> pipe(operator: OperatorFunction<T, R>): Observable<R>
     fun toPromise(): Promise<T>
 
     companion object : ObservableClass {

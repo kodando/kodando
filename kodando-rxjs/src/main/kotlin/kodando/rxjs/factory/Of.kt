@@ -1,14 +1,11 @@
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
+import kodando.rxjs.*
 
-@JsModule("rxjs/observable/of")
-private external object OfModule {
-    val of: JsFunction
-}
+private val of_: JsFunction =
+    from("rxjs/observable/of") import "of"
+
 
 fun <T> ObservableClass.of(vararg values: T): Observable<T> {
-    return OfModule.of.apply(this, values)
+    return of_.apply(this, values)
 }

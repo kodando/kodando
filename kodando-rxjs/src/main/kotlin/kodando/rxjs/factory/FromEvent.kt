@@ -1,17 +1,13 @@
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
+import kodando.rxjs.*
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
 
-@JsModule("rxjs/observable/fromEvent")
-private external object FromEventModule {
-    val fromEvent: JsFunction
-}
+private val fromEvent_: JsFunction =
+    from("rxjs/observable/fromEvent") import "fromEvent"
 
-@JsName("fromEvent")
+
 fun <T : Event> ObservableClass.fromEvent(target: EventTarget, eventName: String): Observable<T> {
-    return FromEventModule.fromEvent.call(this, target, eventName)
+    return fromEvent_.call(this, target, eventName)
 }

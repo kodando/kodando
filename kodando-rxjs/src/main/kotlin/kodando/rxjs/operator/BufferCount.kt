@@ -2,14 +2,13 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
-import kodando.rxjs.OperatorFunction
+import kodando.rxjs.from
+import kodando.rxjs.import
 
 
-@JsModule("rxjs/operators/bufferCount")
-private external object BufferCountModule {
-    val bufferCount: JsFunction
-}
+private val bufferCount_: JsFunction =
+    from("rxjs/operators/bufferCount") import "bufferCount"
 
-fun <T> Observable<T>.bufferCount(bufferSize: Int, startBufferEvery: Int? = null): OperatorFunction<T, Array<T>> {
-    return BufferCountModule.bufferCount.call(this, bufferSize, startBufferEvery)
+fun <T> Observable<T>.bufferCount(bufferSize: Int, startBufferEvery: Int? = null): Observable<Array<T>> {
+    return pipe(bufferCount_.call(this, bufferSize, startBufferEvery))
 }

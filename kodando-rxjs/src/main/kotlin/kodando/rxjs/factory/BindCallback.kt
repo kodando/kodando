@@ -2,28 +2,24 @@
 
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
-import kodando.rxjs.Scheduler
+import kodando.rxjs.*
 
-@JsModule("rxjs/observable/bindCallback")
-private external object BindCallbackModule {
-    val bindCallback: JsFunction
-}
+private val bindCallback_: JsFunction =
+    from("rxjs/observable/bindCallback") import "bindCallback"
+
 
 fun <T, R> ObservableClass.bindCallback(func: (T) -> R): (T) -> Observable<R> {
-    return BindCallbackModule.bindCallback.call(this, func)
+    return bindCallback_.call(this, func)
 }
 
 fun <T, R> ObservableClass.bindCallbackWithScheduler(scheduler: Scheduler, func: (T) -> R): (T) -> Observable<R> {
-    return BindCallbackModule.bindCallback.call(this, func, null, scheduler)
+    return bindCallback_.call(this, func, null, scheduler)
 }
 
 fun <T1, T2, R> ObservableClass.bindCallback(func: (T1) -> T2, selector: (T2) -> R): (T1) -> Observable<R> {
-    return BindCallbackModule.bindCallback.call(this, func, selector)
+    return bindCallback_.call(this, func, selector)
 }
 
 fun <T1, T2, R> ObservableClass.bindCallbackWithScheduler(scheduler: Scheduler, func: (T1) -> T2, selector: (T2) -> R): (T1) -> Observable<R> {
-    return BindCallbackModule.bindCallback.call(this, func, selector, scheduler)
+    return bindCallback_.call(this, func, selector, scheduler)
 }

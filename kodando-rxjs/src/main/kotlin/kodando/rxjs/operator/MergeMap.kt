@@ -2,12 +2,12 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/mergeMap")
-private external object MergeMapModule {
-    val mergeMap: JsFunction
-}
+private val mergeMap_: JsFunction =
+    from("rxjs/operators/mergeMap") import "mergeMap"
 
 fun <T, TResult> Observable<T>.mergeMap(transformer: (T) -> Observable<TResult>): Observable<TResult> {
-    return MergeMapModule.mergeMap.call(this, transformer)
+    return pipe(mergeMap_.call(this, transformer))
 }

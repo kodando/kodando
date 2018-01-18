@@ -2,12 +2,12 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/combineAll")
-private external object CombineAllModule {
-    val combineAll: JsFunction
-}
+private val combineAll_: JsFunction =
+    from("rxjs/operators/combineAll") import "combineAll"
 
 fun <T> Observable<out Observable<T>>.combineAll(): Observable<Array<T>> {
-    return CombineAllModule.combineAll.call(this)
+    return pipe(combineAll_.call(this))
 }

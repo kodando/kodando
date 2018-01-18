@@ -2,12 +2,13 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/delay")
-private external object DelayModule {
-    val delay: JsFunction
-}
+private val delay_: JsFunction =
+    from("rxjs/operators/delay") import "delay"
+
 
 fun <T> Observable<T>.delay(time: Int): Observable<T> {
-    return DelayModule.delay.call(this, time)
+    return pipe(delay_.call(this, time))
 }

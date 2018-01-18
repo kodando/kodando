@@ -2,12 +2,12 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 
-@JsModule("rxjs/operators/filter")
-private external object FilterModule {
-    val filter: JsFunction
-}
+private val filter_: JsFunction =
+    from("rxjs/operators/filter") import "filter"
 
-fun <T> Observable<T>.filter(filter: (T) -> Boolean): Observable<T> {
-    return FilterModule.filter.call(this, filter)
+fun <T> Observable<T>.filter(predicate: (T) -> Boolean): Observable<T> {
+    return pipe(filter_.call(this, predicate))
 }

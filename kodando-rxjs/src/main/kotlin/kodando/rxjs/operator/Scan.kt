@@ -1,27 +1,23 @@
 package kodando.rxjs.operator
 
-import kodando.rxjs.Accumulator
-import kodando.rxjs.AccumulatorWithIndex
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
+import kodando.rxjs.*
 
-@JsModule("rxjs/operators/scan")
-private external object ScanModule {
-    val scan: JsFunction
-}
+private val scan_: JsFunction =
+    from("rxjs/operators/scan") import "scan"
+
 
 fun <T, R> Observable<T>.scan(seed: R? = undefined, accumulator: Accumulator<T, R>): Observable<R> {
     return if (seed === undefined) {
-        ScanModule.scan.call(this, accumulator)
+        pipe(scan_.call(this, accumulator))
     } else {
-        ScanModule.scan.call(this, accumulator, seed)
+        pipe(scan_.call(this, accumulator, seed))
     }
 }
 
 fun <T, R> Observable<T>.scanIndexed(seed: R? = undefined, accumulator: AccumulatorWithIndex<T, R>): Observable<R> {
     return if (seed === undefined) {
-        ScanModule.scan.call(this, accumulator)
+        pipe(scan_.call(this, accumulator))
     } else {
-        ScanModule.scan.call(this, accumulator, seed)
+        pipe(scan_.call(this, accumulator, seed))
     }
 }

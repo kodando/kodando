@@ -2,14 +2,13 @@ package kodando.rxjs.operator
 
 import kodando.rxjs.JsFunction
 import kodando.rxjs.Observable
-import kodando.rxjs.OperatorFunction
+import kodando.rxjs.from
+import kodando.rxjs.import
 
 
-@JsModule("rxjs/operators/buffer")
-private external object BufferModule {
-    val buffer: JsFunction
-}
+private val buffer_: JsFunction =
+    from("rxjs/operators/buffer") import "buffer"
 
-fun <T> Observable<T>.buffer(notifier: Observable<*>): OperatorFunction<T, Array<T>> {
-    return BufferModule.buffer.call(this, notifier)
+fun <T> Observable<T>.buffer(notifier: Observable<*>): Observable<Array<T>> {
+    return pipe(buffer_.call(this, notifier))
 }

@@ -1,19 +1,15 @@
 package kodando.rxjs.operator
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.Scheduler
+import kodando.rxjs.*
 
 
-@JsModule("rxjs/operators/auditTime")
-private external object AuditTimeModule {
-    val auditTime: JsFunction
-}
+private val auditTime_: JsFunction =
+    from("rxjs/operators/auditTime") import "auditTime"
 
 fun <T> Observable<T>.auditTime(duration: Int): Observable<T> {
-    return AuditTimeModule.auditTime.call(this, duration)
+    return pipe(auditTime_.call(this, duration))
 }
 
 fun <T> Observable<T>.auditTimeWithScheduler(duration: Int, scheduler: Scheduler): Observable<T> {
-    return AuditTimeModule.auditTime.call(this, duration, scheduler)
+    return pipe(auditTime_.call(this, duration, scheduler))
 }

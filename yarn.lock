@@ -1532,6 +1532,10 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
+kotlin@^1.2.20:
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/kotlin/-/kotlin-1.2.20.tgz#a09c94940fa91f8a040485298bb02862d540b067"
+
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://repo.symphony.com/artifactory/api/npm/npm-virtual-dev/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"

@@ -2,20 +2,16 @@
 
 package kodando.rxjs.factory
 
-import kodando.rxjs.JsFunction
-import kodando.rxjs.Observable
-import kodando.rxjs.ObservableClass
-import kodando.rxjs.Scheduler
+import kodando.rxjs.*
 
-@JsModule("rxjs/observable/empty")
-private external object EmptyModule {
-    val empty: JsFunction
-}
+private val empty_: JsFunction =
+    from("rxjs/observable/empty") import "empty"
+
 
 fun <T> ObservableClass.empty(): Observable<T> {
-    return EmptyModule.empty.call(this)
+    return empty_.call(this)
 }
 
 fun <T> ObservableClass.emptyWithScheduler(scheduler: Scheduler): Observable<T> {
-    return EmptyModule.empty.call(this, scheduler)
+    return empty_.call(this, scheduler)
 }
