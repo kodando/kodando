@@ -4,10 +4,10 @@ package kodando.rxjs.factory
 
 import kodando.rxjs.*
 
-private val throw_: JsFunction =
-    from("rxjs/observable/throw") import "_throw"
+private val throwError: JsFunction =
+    from("rxjs/observable/throwError") import "throwError"
 
 
-fun <T> ObservableClass.throwError(error: Error): Observable<T> {
-    return throw_.call(this, error)
+fun <T> ObservableClass.throwError(error: Throwable): Observable<T> {
+    return throwError.call(this, error)
 }

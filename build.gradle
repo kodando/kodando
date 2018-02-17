@@ -1,9 +1,9 @@
 buildscript {
-    ext.kotlin_version = '1.2.20'
+    ext.kotlin_version = '1.2.21'
 
     repositories {
-        jcenter()
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
@@ -15,8 +15,8 @@ allprojects {
     group 'br.danfma.kodando'
 
     repositories {
-        jcenter()
         mavenCentral()
+        jcenter()
     }
 }
 
@@ -61,11 +61,11 @@ configure(subprojects.findAll { it.name != 'kodando-all' && it.name.startsWith('
 
                 repositories {
                     maven {
-                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name};publish=1;override=1"
+                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name}/;publish=1"
 
                         credentials {
-                            username System.getenv("BINTRAY_USERNAME")
-                            password System.getenv("BINTRAY_PASSKEY")
+                            username = System.getenv("BINTRAY_USERNAME")
+                            password = System.getenv("BINTRAY_PASSKEY")
                         }
                     }
                 }
