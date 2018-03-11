@@ -1,0 +1,119 @@
+package kodando.mithril
+
+import org.w3c.dom.Element
+import kotlin.js.*
+
+external interface Props {
+    var children: Array<out VNode<*>>
+}
+
+external interface VNode<out TProps : Props> {
+    val attrs: TProps?
+    val dom: Element
+    val state: Any?
+}
+
+external interface View<in TProps : Props> {
+    fun view(vnode: VNode<TProps>): VNode<*>
+}
+
+external interface OnInit<in TProps : Props> {
+    @JsName("oninit")
+    fun onInit(vnode: VNode<TProps>)
+}
+
+external interface OnCreate<in TProps : Props> {
+    @JsName("oncreate")
+    fun onCreate(vnode: VNode<TProps>)
+}
+
+external interface OnBeforeUpdate<in TProps : Props> {
+    @JsName("onbeforeupdate")
+    fun onUpdate(vnode: VNode<TProps>, oldVNode: VNode<TProps>): Boolean
+}
+
+external interface OnUpdate<in TProps : Props> {
+    @JsName("onupdate")
+    fun onUpdate(vnode: VNode<TProps>)
+}
+
+external interface BeforeRemove<in TProps : Props> {
+    @JsName("onbeforeremove")
+    fun onBeforeRemove(vnode: VNode<TProps>)
+}
+
+external interface BeforeRemoveAsync<in TProps : Props> {
+    @JsName("onbeforeremove")
+    fun onBeforeRemove(vnode: VNode<TProps>): Promise<*>
+}
+
+external interface OnRemove<in TProps : Props> {
+    @JsName("onremove")
+    fun onRemove(vnode: VNode<TProps>)
+}
+
+@JsModule("mithril")
+private external object Mithril {
+    fun render(element: Element, view: Any)
+    fun mount(element: Element, view: View<*>)
+    fun route()
+}
+
+@JsModule("mithril")
+private external fun m(tag: String, children: Any?): VNode<*>
+
+@JsModule("mithril")
+private external fun m(tag: String, json: Props, children: Any?): VNode<*>
+
+@JsModule("mithril")
+private external fun m(view: View<*>, children: Any?): VNode<*>
+
+@JsModule("mithril")
+private external fun m(view: View<*>, json: Props, children: Any?): VNode<*>
+
+
+fun render(element: Element, view: Any) {
+    Mithril.render(element, view)
+}
+
+fun mount(element: Element, view: View<*>) {
+    Mithril.mount(element, view)
+}
+
+private fun separateChildren(props: Props, children: Array<out Any?>): Pair<Props, Array<out Any?>> {
+    if (props.children === undefined) {
+        return props to children
+    }
+
+    lateinit var newProps: Props
+    lateinit var composedChildren: Array<out Any?>
+
+    js("""
+      var addedChildren = props.children;
+
+      newProps = Object.assign({}, props, {children:undefined});
+      composedChildren = [].concat(addedChildren).concat(children);
+  """)
+
+    return newProps to composedChildren
+}
+
+fun createElement(tag: String, vararg children: Any?): VNode<*> {
+    return m(tag, children)
+}
+
+fun <TProps : Props> createElement(tag: String, props: TProps, vararg children: Any?): VNode<*> {
+    val (cleanProps, allChildren) = separateChildren(props, children)
+
+    return m(tag, cleanProps, allChildren)
+}
+
+fun createElement(view: View<*>, vararg children: Any?): VNode<*> {
+    return m(view, children)
+}
+
+fun <TProps : Props> createElement(view: View<TProps>, props: TProps, vararg children: Any?): VNode<*> {
+    val (cleanProps, allChildren) = separateChildren(props, children)
+
+    return m(view, cleanProps, allChildren)
+}
