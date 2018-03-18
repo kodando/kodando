@@ -13,4 +13,6 @@ external object History {
 
     fun createHashHistory(hashOptions: HashOptions): HashHistoryInstance
 
+    fun createLocation(path: String, state: Any?, key: String?, currentLocation: Location): Location
+
 }

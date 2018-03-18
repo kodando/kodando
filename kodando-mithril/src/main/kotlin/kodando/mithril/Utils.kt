@@ -1,18 +1,13 @@
 package kodando.mithril
 
+import kodando.runtime.unsafe.objectWithShapeOf
 import org.w3c.dom.events.Event
 import kotlin.js.Promise
 
 typealias Applier<T> = T.() -> Unit
 
-private fun <T> createObject() =
-    js("({})").unsafeCast<T>()
-
-private fun <T> createObject(configure: (T) -> Unit): T =
-    createObject<T>().also(configure)
-
-fun <T : Props> withProps(applier: Applier<T>? = null): T {
-    val props = createObject<T>()
+fun <T : Props> createProps(applier: Applier<T>? = null): T {
+    val props = objectWithShapeOf<T>()
 
     if (applier != null) {
         props.applier()
@@ -21,10 +16,14 @@ fun <T : Props> withProps(applier: Applier<T>? = null): T {
     return props
 }
 
+fun <T : Props> createPropsAndAlso(configure: (T) -> Unit): T {
+    return createProps<T>().also(configure)
+}
+
 fun VNode<*>.addTransientAnimationClass(className: String): Promise<Unit> {
     val eventName = "animationend"
 
-    return Promise { resolve, reject ->
+    return Promise { resolve, _ ->
         lateinit var callback: (Event) -> Unit
 
         callback = {

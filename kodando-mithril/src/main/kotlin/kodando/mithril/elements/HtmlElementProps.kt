@@ -1,12 +1,12 @@
 package kodando.mithril.elements
 
 import kodando.mithril.Props
-import org.w3c.dom.events.Event
+import org.w3c.dom.events.MouseEvent
 
 external interface HtmlElementProps : Props {
     @JsName("class")
     var className: String
 
     @JsName("onclick")
-    var onClick: (Event) -> Unit
+    var onClick: (MouseEvent) -> Unit
 }

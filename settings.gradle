@@ -16,4 +16,5 @@ include 'kodando-all'
 include 'samples:kodando-react-elmish-counters'
 
 findProject(':samples:kodando-react-elmish-counters')?.name = 'kodando-react-elmish-counters'
+include 'kodando-mithril-router-dom'
 

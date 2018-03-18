@@ -4,17 +4,18 @@ import org.w3c.dom.Element
 import kotlin.js.*
 
 external interface Props {
-    var children: Array<out VNode<*>>
+    var children: Array<out VNode<*>?>
 }
 
 external interface VNode<out TProps : Props> {
     val attrs: TProps?
+    val children: Array<out VNode<*>>
     val dom: Element
     val state: Any?
 }
 
 external interface View<in TProps : Props> {
-    fun view(vnode: VNode<TProps>): VNode<*>
+    fun view(vnode: VNode<TProps>): VNode<*>?
 }
 
 external interface OnInit<in TProps : Props> {
@@ -56,7 +57,8 @@ external interface OnRemove<in TProps : Props> {
 private external object Mithril {
     fun render(element: Element, view: Any)
     fun mount(element: Element, view: View<*>)
-    fun route()
+    fun route(element: Element, defaultRoute: String, routes: Json)
+    fun redraw()
 }
 
 @JsModule("mithril")
@@ -71,6 +73,10 @@ private external fun m(view: View<*>, children: Any?): VNode<*>
 @JsModule("mithril")
 private external fun m(view: View<*>, json: Props, children: Any?): VNode<*>
 
+@JsModule("mithril")
+private external fun m(child: VNode<*>, json: Props, children: Any?): VNode<*>
+
+typealias VNodeFactory = (VNode<*>) -> VNode<*>
 
 fun render(element: Element, view: Any) {
     Mithril.render(element, view)
@@ -80,7 +86,19 @@ fun mount(element: Element, view: View<*>) {
     Mithril.mount(element, view)
 }
 
-private fun separateChildren(props: Props, children: Array<out Any?>): Pair<Props, Array<out Any?>> {
+fun route(element: Element, defaultRoute: String, map: Map<String, View<*>>) {
+    val routes = json(
+        *map.map { (key, value) -> key to value }.toTypedArray()
+    )
+
+    Mithril.route(element, defaultRoute, routes)
+}
+
+fun redraw() {
+    Mithril.redraw()
+}
+
+fun separateChildren(props: Props, children: Array<out Any?>): Pair<Props, Array<out Any?>> {
     if (props.children === undefined) {
         return props to children
     }
@@ -116,4 +134,10 @@ fun <TProps : Props> createElement(view: View<TProps>, props: TProps, vararg chi
     val (cleanProps, allChildren) = separateChildren(props, children)
 
     return m(view, cleanProps, allChildren)
+}
+
+fun <TProps : Props> createElement(vnode: VNode<*>, props: TProps, vararg children: Any?): VNode<*> {
+    val (cleanProps, allChildren) = separateChildren(props, children)
+
+    return m(vnode, cleanProps, allChildren)
 }

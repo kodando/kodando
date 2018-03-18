@@ -1,0 +1,6 @@
+version "4.2.0"
+
+dependencies {
+    compile project(":kodando-history")
+    compile project(":kodando-mithril")
+}
