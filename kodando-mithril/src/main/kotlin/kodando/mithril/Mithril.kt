@@ -4,6 +4,9 @@ import org.w3c.dom.Element
 import kotlin.js.*
 
 external interface Props {
+    var id: String?
+    var ref: String?
+    var key: String?
     var children: Array<out VNode<*>?>
 }
 

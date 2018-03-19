@@ -12,7 +12,7 @@ internal object SharedContextMap {
     }
 
     fun get(key: Symbol): Any {
-        return contextMap[key]?.last() ?: throw Error("No context value for key = '$key'")
+        return contextMap[key]?.last() ?: throw Error("No context value for contextKey = '$key'")
     }
 
     fun remove(key: Symbol) {
