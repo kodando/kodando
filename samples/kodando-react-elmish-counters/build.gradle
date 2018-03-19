@@ -1,9 +1,0 @@
-group 'br.danfma.kodando'
-version '0.1.0'
-
-dependencies {
-    compile project(":kodando-react")
-    compile project(":kodando-react-dom")
-    compile project(":kodando-elmish")
-    compile project(":kodando-elmish-react")
-}

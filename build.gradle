@@ -8,7 +8,12 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
     }
+}
+
+plugins {
+    id "com.jfrog.bintray" version "1.8.0"
 }
 
 allprojects {
@@ -22,6 +27,8 @@ allprojects {
 
 subprojects {
     apply plugin: 'kotlin2js'
+    apply plugin: 'maven-publish'
+    apply plugin: 'com.jfrog.bintray'
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
@@ -48,28 +55,30 @@ subprojects {
         kotlinOptions.sourceMapEmbedSources = "always"
         kotlinOptions.moduleKind = 'commonjs'
     }
-}
-
-configure(subprojects.findAll { it.name != 'kodando-all' && it.name.startsWith('kodando-') }) {
-    apply plugin: 'maven-publish'
 
     publishing {
         publications {
-            maven(MavenPublication) {
-                artifactId "${project.name}"
+            MyPublication(MavenPublication) {
                 from components.java
-
-                repositories {
-                    maven {
-                        url "https://api.bintray.com/maven/danfma/kotlin-kodando/${project.name}/;publish=1"
-
-                        credentials {
-                            username = System.getenv("BINTRAY_USERNAME")
-                            password = System.getenv("BINTRAY_PASSKEY")
-                        }
-                    }
-                }
+                artifactId "${project.name}"
             }
+        }
+    }
+
+    bintray {
+        user = project.hasProperty("bintrayUser") ? project.property("bintrayUser") : System.getenv("BINTRAY_USERNAME")
+        key = project.hasProperty("bintrayKey") ? project.property("bintrayKey") : System.getenv("BINTRAY_PASSKEY")
+        publications = ["MyPublication"]
+        publish = true
+
+        pkg {
+            repo = "kotlin-kodando"
+            name = "${project.name}"
+            userOrg = user
+            licenses = ["MIT"]
+            vcsUrl = "https://github.com/kodando/kodando.git"
+            labels = ["kotlin", "javascript", "kotlinjs", "bindings"]
+            publicDownloadNumbers = true
         }
     }
 }

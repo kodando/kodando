@@ -2,9 +2,11 @@ modules
 /tests
 node_modules
 build
+*/build/
 !build/package.json
 !build/yarn.lock
 www/js
+.idea
 
 target/
 pom.xml.tag
