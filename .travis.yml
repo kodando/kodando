@@ -23,6 +23,8 @@ cache:
   directories:
     - "$HOME/.gradle/caches/"
     - "$HOME/.gradle/wrapper/"
+    - "$HOME/.config/yarn/global/"
+    - "$HOME/.yarn-cache/"
 
 script:
   - "./gradlew test --console=plain"
