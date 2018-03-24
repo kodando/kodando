@@ -27,6 +27,6 @@ cache:
     - "$HOME/.yarn-cache/"
 
 script:
-  - "./gradlew test --console=plain"
+  - "./gradlew clean build test --console=plain"
   - yarn
   - yarn test
