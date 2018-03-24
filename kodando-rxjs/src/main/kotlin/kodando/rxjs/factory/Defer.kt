@@ -2,17 +2,20 @@
 
 package kodando.rxjs.factory
 
-import kodando.rxjs.*
+import kodando.rxjs.JsFunction
+import kodando.rxjs.Observable
+import kodando.rxjs.from
+import kodando.rxjs.import
 import kotlin.js.Promise
 
 private val defer_: JsFunction =
     from("rxjs/observable/defer") import "defer"
 
 
-fun <T> ObservableClass.defer(factory: () -> Observable<T>): Observable<T> {
-    return defer_.call(this, factory)
+fun <T> defer(factory: () -> Observable<T>): Observable<T> {
+    return defer_.call(null, factory)
 }
 
-fun <T> ObservableClass.deferWhen(factory: () -> Promise<T>): Observable<T> {
-    return defer_.call(this, factory)
+fun <T> deferWhen(factory: () -> Promise<T>): Observable<T> {
+    return defer_.call(null, factory)
 }
