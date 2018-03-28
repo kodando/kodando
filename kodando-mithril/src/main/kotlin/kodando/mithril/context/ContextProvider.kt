@@ -11,16 +11,7 @@ external interface ContextProviderProps : Props {
 
 object ContextProvider
     : View<ContextProviderProps>
-    , OnInit<ContextProviderProps>
     , OnRemove<ContextProviderProps> {
-
-    override fun onInit(vnode: VNode<ContextProviderProps>) {
-        val attrs = vnode.attrs ?: throw Error("You should specify the name and value")
-        val key = attrs.name
-        val value = attrs.value
-
-        SharedContextMap.put(key, value)
-    }
 
     override fun onRemove(vnode: VNode<ContextProviderProps>) {
         val attrs = vnode.attrs!!
@@ -30,6 +21,12 @@ object ContextProvider
     }
 
     override fun view(vnode: VNode<ContextProviderProps>): VNode<*>? {
+        val attrs = vnode.attrs ?: throw Error("You should specify the name and value")
+        val key = attrs.name
+        val value = attrs.value
+
+        SharedContextMap.put(key, value)
+
         return vnode.attrs?.renderer?.invoke()
     }
 }
