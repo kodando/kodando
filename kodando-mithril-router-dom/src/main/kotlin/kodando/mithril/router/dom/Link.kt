@@ -60,8 +60,8 @@ object LinkView : View<LinkProps> {
     private fun shouldPresentDefault(event: MouseEvent, props: LinkProps): Boolean {
         return !event.defaultPrevented
             && event.button == 0.toShort()
-            && props.target == null
-            && isModifierEvent(event)
+            && props.target != "_blank"
+            && !isModifierEvent(event)
     }
 
     private fun isModifierEvent(event: MouseEvent): Boolean {
