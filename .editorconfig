@@ -1,10 +1,6 @@
 
 root = true
 
-[kodando-**/*.{kt,js}]
-indent_size = 2
-indent_style = space
-
-[jest.config.js]
+[**/*.{kt,js,json}]
 indent_size = 2
 indent_style = space

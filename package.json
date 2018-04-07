@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "jest": "^23.0.0",
-    "jest-sourcemaps": "^1.0.1"
+    "jest-sourcemaps": "^1.0.1",
+    "shelljs": "^0.8.2"
   }
 }
