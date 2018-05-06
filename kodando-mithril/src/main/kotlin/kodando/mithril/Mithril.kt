@@ -33,7 +33,7 @@ external interface OnCreate<in TProps : Props> {
 
 external interface OnBeforeUpdate<in TProps : Props> {
     @JsName("onbeforeupdate")
-    fun onUpdate(vnode: VNode<TProps>, oldVNode: VNode<TProps>): Boolean
+    fun onBeforeUpdate(vnode: VNode<TProps>, oldVNode: VNode<TProps>): Boolean
 }
 
 external interface OnUpdate<in TProps : Props> {
@@ -41,12 +41,12 @@ external interface OnUpdate<in TProps : Props> {
     fun onUpdate(vnode: VNode<TProps>)
 }
 
-external interface BeforeRemove<in TProps : Props> {
+external interface OnBeforeRemove<in TProps : Props> {
     @JsName("onbeforeremove")
     fun onBeforeRemove(vnode: VNode<TProps>)
 }
 
-external interface BeforeRemoveAsync<in TProps : Props> {
+external interface OnBeforeRemoveAsync<in TProps : Props> {
     @JsName("onbeforeremove")
     fun onBeforeRemove(vnode: VNode<TProps>): Promise<*>
 }
