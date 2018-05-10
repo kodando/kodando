@@ -4,12 +4,12 @@ import kodando.jest.Spec
 import kodando.jest.expect
 import kodando.runtime.async.await
 import kodando.rxjs.Observable
-import kodando.rxjs.factory.fromEvent
-import kodando.rxjs.factory.fromPromise
-import kodando.rxjs.factory.of
-import kodando.rxjs.operator.combineAll
-import kodando.rxjs.operator.take
-import kodando.rxjs.operator.toArray
+import kodando.rxjs.observable.fromEvent
+import kodando.rxjs.observable.fromPromise
+import kodando.rxjs.observable.of
+import kodando.rxjs.operators.combineAll
+import kodando.rxjs.operators.take
+import kodando.rxjs.operators.toArray
 import org.w3c.dom.events.Event
 import kotlin.browser.document
 import kotlin.js.Promise
@@ -20,12 +20,14 @@ import kotlin.js.Promise
 
 object ObservableCreateSpec : Spec() {
     init {
-        describe("Observable.create") {
+        describe("Observable") {
             it("should be able to produce elements") byCheckingAfter {
-                val observable = Observable.create<Int> { observer ->
+                val observable = Observable<Int> { observer ->
                     observer.next(1)
                     observer.next(2)
                     observer.complete()
+
+                    null
                 }
 
                 val produced = await(observable.toArray().toPromise())
@@ -35,11 +37,11 @@ object ObservableCreateSpec : Spec() {
             }
         }
 
-        describe("Observable.createWithSubscription") {
+        describe("createWithSubscription") {
             it("should be able to produce and unsubscribe after") byCheckingAfter {
-                val source = Observable.of(1)
+                val source = of(1)
 
-                val observable = Observable.createWithSubscription<Int> { observer ->
+                val observable = Observable<Int> { observer ->
                     source.subscribe(observer)
                 }
 
@@ -50,26 +52,14 @@ object ObservableCreateSpec : Spec() {
             }
         }
 
-
-
-        describe("Observable.fromPromise") {
-            it("should return the promised value") byCheckingAfter {
-                val observable = Observable.fromPromise(Promise.resolve(1))
-
-                val produced = await(observable.toPromise())
-
-                expect(produced).toBe(1)
-            }
-        }
-
-        describe("Observable.fromEvent") {
+        describe("fromEvent") {
             it("should return the events of this target") byCheckingAfter {
                 val click = document.createEvent("Event")
 
                 click.initEvent("click", true, true)
 
                 val source = document.createElement("div")
-                val observable = Observable.fromEvent<Event>(source, "click")
+                val observable = fromEvent<Event>(source, "click")
 
                 val promise = observable.take(1).toPromise()
 
@@ -82,11 +72,11 @@ object ObservableCreateSpec : Spec() {
             }
         }
 
-        describe("Observable.combineAll") {
+        describe("combineAll") {
             it("should combine the observables into all") byCheckingAfter {
-                val one = Observable.of(1)
-                val two = Observable.of(2)
-                val combined = Observable.of(one, two).combineAll()
+                val one = of(1)
+                val two = of(2)
+                val combined = of(one, two).combineAll()
 
                 val produced = await(combined.toArray().toPromise())
                 val expected = arrayOf(arrayOf(1, 2))

@@ -4,13 +4,15 @@
 
 package kodando.rxjs
 
-open external class Subscriber<in T> : Subscription, Observer<T> {
+open external class Subscriber<in T>(observer: ObserverLike<T>) : Subscription, Observer<T> {
 
     constructor(observer: Observer<T>)
 
-    constructor(nextHandler: NextHandler<T>? = definedExternally,
-                error: ErrorHandler? = definedExternally,
-                complete: CompleteHandler? = definedExternally)
+    constructor(
+        nextHandler: NextHandler<T>? = definedExternally,
+        error: ErrorHandler? = definedExternally,
+        complete: CompleteHandler? = definedExternally
+    )
 
     override fun next(data: T)
     override fun error(error: Error)

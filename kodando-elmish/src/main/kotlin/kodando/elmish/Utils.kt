@@ -1,8 +1,8 @@
 package kodando.elmish
 
 import kodando.rxjs.Subject
-import kodando.rxjs.operator.scan
-import kodando.rxjs.operator.startWith
+import kodando.rxjs.operators.scan
+import kodando.rxjs.operators.startWith
 import kodando.rxjs.subscribeBy
 import kotlin.js.Json
 import kotlin.js.Promise

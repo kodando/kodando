@@ -2,7 +2,7 @@ package kodando.redurx
 
 import kodando.rxjs.BehaviorSubject
 import kodando.rxjs.Unsubscribable
-import kodando.rxjs.operator.scan
+import kodando.rxjs.operators.scan
 
 class Store<T> private constructor(initialState: T,
                                    reducer: Reducer<T>,

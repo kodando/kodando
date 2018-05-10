@@ -1,18 +1,17 @@
 package kodando.rxjs.tests.operator
 
 import kodando.jest.Spec
-import kodando.rxjs.Observable
-import kodando.rxjs.factory.defer
-import kodando.rxjs.factory.deferWhen
-import kodando.rxjs.factory.of
+import kodando.rxjs.observable.defer
+import kodando.rxjs.observable.deferWhen
+import kodando.rxjs.observable.of
 import kodando.rxjs.tests.expectations.shouldBeObservable
 import kotlin.js.Promise
 
 object DeferOperatorSpec : Spec() {
     init {
-        describe("Observable.defer") {
+        describe("the defer operator") {
             it("usage 1") byChecking {
-                val observable = defer { Observable.of(1) }
+                val observable = defer { of(1) }
 
                 observable.shouldBeObservable()
             }

@@ -1,4 +1,4 @@
-@file:JsModule("rxjs/AsyncSubject")
+@file:JsModule("rxjs")
 @file:JsNonModule
 
 package kodando.rxjs

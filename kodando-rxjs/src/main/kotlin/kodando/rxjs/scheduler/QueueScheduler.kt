@@ -1,8 +1,6 @@
-@file:JsModule("rxjs/scheduler/queue")
+@file:JsModule("rxjs")
 
 package kodando.rxjs.scheduler
-
-import kodando.rxjs.Scheduler
 
 @JsName("queue")
 external val queueScheduler: Scheduler

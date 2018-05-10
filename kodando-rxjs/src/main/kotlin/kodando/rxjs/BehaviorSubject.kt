@@ -1,4 +1,4 @@
-@file:JsModule("rxjs/BehaviorSubject")
+@file:JsModule("rxjs")
 @file:JsNonModule
 
 package kodando.rxjs

@@ -1,8 +1,6 @@
-@file:JsModule("rxjs/scheduler/animationFrame")
+@file:JsModule("rxjs")
 
 package kodando.rxjs.scheduler
-
-import kodando.rxjs.Scheduler
 
 @JsName("animationFrame")
 external val animationFrameScheduler: Scheduler

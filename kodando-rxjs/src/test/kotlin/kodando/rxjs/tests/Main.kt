@@ -2,7 +2,6 @@ package kodando.rxjs.tests
 
 import kodando.rxjs.tests.operator.ConcatOperatorSpec
 import kodando.rxjs.tests.operator.DeferOperatorSpec
-import kodando.rxjs.tests.operator.EmptyOperatorSpec
 import kodando.rxjs.tests.operator.MergeOperatorSpec
 
 /**
@@ -20,11 +19,12 @@ fun main(args: Array<String>) {
         ObservableEmptySpec,
         ObservableFromSpec,
         ObservableFromPromiseSpec,
+        ObservableExtensionsSpec,
 
         // operators
         ConcatOperatorSpec,
         DeferOperatorSpec,
-        EmptyOperatorSpec,
+        ObservableEmptySpec,
         MergeOperatorSpec
     )
 }

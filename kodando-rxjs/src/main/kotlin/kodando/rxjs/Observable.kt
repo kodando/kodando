@@ -1,24 +1,18 @@
-@file: JsModule("rxjs/Observable")
+@file: JsModule("rxjs")
 
 package kodando.rxjs
 
 import kotlin.js.Promise
 
-open external class Observable<out T>(publisher: (Observer<T>) -> Unsubscribable?) {
+open external class Observable<out T>(creator: (Observer<T>) -> Unsubscribable?) {
 
+    @JsName("subscribe")
     open fun subscribe(observer: Observer<T>): Unsubscribable
 
+    @JsName("pipe")
     fun <R> pipe(operator: OperatorFunction<T, R>): Observable<R>
+
+    @JsName("toPromise")
     fun toPromise(): Promise<T>
 
-    companion object : ObservableClass {
-
-        @JsName("create")
-        fun <T> create(producer: (Observer<T>) -> Unit): Observable<T>
-
-        @JsName("create")
-        fun <T> createWithSubscription(producer: (Observer<T>) -> Unsubscribable): Observable<T>
-
-    }
 }
-

@@ -10,7 +10,7 @@ import kotlin.js.Promise
 suspend fun <T> await(block: Promise<T>): T =
     suspendCoroutine { c ->
         block
-            .then({ data -> c.resume(data) })
+            .then { data -> c.resume(data) }
             .catch { error -> c.resumeWithException(AsyncException(error)) }
     }
 

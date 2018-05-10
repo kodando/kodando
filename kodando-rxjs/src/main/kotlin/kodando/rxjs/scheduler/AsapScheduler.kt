@@ -1,8 +1,6 @@
-@file:JsModule("rxjs/scheduler/asap")
+@file:JsModule("rxjs")
 
 package kodando.rxjs.scheduler
-
-import kodando.rxjs.Scheduler
 
 @JsName("asap")
 external val asapScheduler: Scheduler

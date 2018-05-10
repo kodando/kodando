@@ -1,6 +1,39 @@
 
 # CHANGELOG
 
+## May 09, 2018
+
+- **kodando-runtime**:
+    - [FIX] Cosmetic use of the `Promise.then`;
+    - [FIX] Added an extension method for chaining promises `Promise.thenNext`;
+    
+- **kodando-rxjs**:
+    - [BREAKING CHANGE] Upgraded to match the version `6.1.0`;
+    - [BREAKING CHANGE] Renamed package `kodando.rxjs.operator` to `kodando.rxjs.operators`;
+    - [BREAKING CHANGE] Removed the `ObservableClass`. Now you should use the same observable creators like in `Rxjs`;
+    - [NEW] Added the extension method `Observable<T>.subscribeWith` that creates an `ObserverLike<T>` to be configured:
+        ```kotlin
+        subscription = myObservable.subscribeWith {
+          next = {
+              console.log("NEXT ITEM", it)
+          }
+          error = {
+              console.log("PRODUCED ERROR", it)
+          }
+          complete = {
+              console.log("WHEN COMPLETED")
+          }
+        }
+        ```
+    - [NEW] Added the extension method `Observable<T>.tapWith` (same usage as the `subscribeWith`).
+    
+- **kodando-elmish**:
+    - [BREAKING CHANGE] Update to match the last `kodando-rxjs`;
+    
+- **kodando-redurx**:
+    - [BREAKING CHANGE] Update to match the last `kodando-rxjs`.
+
+
 ## May 06, 2018
 
 **Breaking change**:
