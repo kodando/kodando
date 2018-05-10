@@ -32,32 +32,45 @@
     
 - **kodando-redurx**:
     - [BREAKING CHANGE] Update to match the last `kodando-rxjs`.
+    
+### Project version
+
+- kodando-elmish:               `0.4.1`;
+- kodando-elmish-react:         `0.4.0`;
+- kodando-history:              `0.3.0`;
+- kodando-jest:                 `0.5.0`;
+- kodando-mithril:              `1.2.0`;
+- kodando-mithril-router-dom:   `4.3.0`;
+- kodando-react:                `0.5.0`;
+- kodando-react-dom:            `0.5.0`;
+- kodando-react-native:         `0.4.0`;
+- kodando-react-router-dom:     `0.4.0`;
+- kodando-redurx:               `0.4.1`;
+- kodando-runtime:              `0.4.1`;
+- kodando-rxjs:                 `0.6.0`;
 
 
 ## May 06, 2018
 
-**Breaking change**:
-
 - **all projects**: 
-    - Updated kotlin compiler to `1.2.41`;
+    - [BREAKING CHANGE] Updated kotlin compiler to `1.2.41`;
 - **kodando-mithril**:
-    - Renamed method `OnBeforeUpdate<TProps>.onUpdate` to `OnBeforeUpdate<TProps>.onBeforeUpdate`;
-    - Renamed interface `BeforeRemove<TProps>` to `OnBeforeRemove<TProps>`;
-    - Renamed interface `BeforeRemoveAsync<TProps>` to `OnBeforeRemoveAsync<TProps>`.
+    - [BREAKING CHANGE] Renamed method `OnBeforeUpdate<TProps>.onUpdate` to `OnBeforeUpdate<TProps>.onBeforeUpdate`;
+    - [BREAKING CHANGE] Renamed interface `BeforeRemove<TProps>` to `OnBeforeRemove<TProps>`;
+    - [BREAKING CHANGE] Renamed interface `BeforeRemoveAsync<TProps>` to `OnBeforeRemoveAsync<TProps>`.
 
-**Project version**:
+### Project version
 
-- kodando-elmish: `0.3.0` to `0.4.0`;
-- kodando-elmish-react: `0.3.0` to `0.4.0`;
-- kodando-history: `0.2.1` to `0.3.0`;
-- kodando-jest: `0.4.0` to `0.5.0`;
-- kodando-mithril: `1.1.3` to `1.2.0`;
-- kodando-mithril-router-dom: `4.2.3` to `4.3.0`;
-- kodando-react: `0.4.0` to `0.5.0`;
-- kodando-react-dom: `0.4.0` to `0.5.0`;
-- kodando-react-native: `0.3.0` to `0.4.0`;
-- kodando-react-router-dom: `0.3.1` to `0.4.0`;
-- kodando-redurx: `0.3.0` to `0.4.0`;
-- kodando-runtime: `0.3.1` to `0.4.0`;
-- kodando-rxjs: `0.4.1` to `0.5.0`;
-
+- kodando-elmish:               `0.4.0`;
+- kodando-elmish-react:         `0.4.0`;
+- kodando-history:              `0.3.0`;
+- kodando-jest:                 `0.5.0`;
+- kodando-mithril:              `1.2.0`;
+- kodando-mithril-router-dom:   `4.3.0`;
+- kodando-react:                `0.5.0`;
+- kodando-react-dom:            `0.5.0`;
+- kodando-react-native:         `0.4.0`;
+- kodando-react-router-dom:     `0.4.0`;
+- kodando-redurx:               `0.4.0`;
+- kodando-runtime:              `0.4.0`;
+- kodando-rxjs:                 `0.5.0`;
