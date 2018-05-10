@@ -1,6 +1,28 @@
 
 # CHANGELOG
 
+## May 10, 2018
+
+- **kodando-rxjs**:
+    - [NEW] Added operator `catchError`;
+    - [NEW] Added the extension methods `Observable<T>.subscribeNext` and `Observable<T>.tapNext`.
+    
+### Project version
+
+- kodando-elmish:               `0.4.1`;
+- kodando-elmish-react:         `0.4.0`;
+- kodando-history:              `0.3.0`;
+- kodando-jest:                 `0.5.0`;
+- kodando-mithril:              `1.2.0`;
+- kodando-mithril-router-dom:   `4.3.0`;
+- kodando-react:                `0.5.0`;
+- kodando-react-dom:            `0.5.0`;
+- kodando-react-native:         `0.4.0`;
+- kodando-react-router-dom:     `0.4.0`;
+- kodando-redurx:               `0.4.1`;
+- kodando-runtime:              `0.4.1`;
+- kodando-rxjs:                 `0.6.1`;
+
 ## May 09, 2018
 
 - **kodando-runtime**:
