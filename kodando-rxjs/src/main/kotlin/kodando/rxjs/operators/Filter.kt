@@ -6,8 +6,8 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val filter_: JsFunction =
-    fromModule("rxjs/operators") import "filter"
+  fromModule("rxjs/operators") import "filter"
 
 fun <T> Observable<T>.filter(predicate: (T) -> Boolean): Observable<T> {
-    return pipe(filter_.call(this, predicate))
+  return pipe(filter_.call(this, predicate))
 }

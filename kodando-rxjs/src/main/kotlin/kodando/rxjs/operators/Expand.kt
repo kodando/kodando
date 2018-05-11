@@ -7,11 +7,11 @@ import kodando.rxjs.import
 
 
 private val expand_: JsFunction =
-    fromModule("rxjs/operators") import "expand"
+  fromModule("rxjs/operators") import "expand"
 
 
 fun <T, TResult> Observable<T>.expand(
-    transformer: (T) -> Observable<TResult>): Observable<TResult> {
+  transformer: (T) -> Observable<TResult>): Observable<TResult> {
 
-    return pipe(expand_.call(this, transformer))
+  return pipe(expand_.call(this, transformer))
 }

@@ -6,5 +6,5 @@ import kodando.react.ReactProps
 class ReactView : View
 
 fun ReactProps.add(view: View) {
-    TODO()
+  TODO()
 }

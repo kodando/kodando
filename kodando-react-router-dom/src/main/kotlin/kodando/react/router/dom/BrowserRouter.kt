@@ -8,5 +8,5 @@ import kodando.react.*
 
 fun ReactProps.browserRouter(props: BrowserRouterProps = createProps(),
                              configure: Configurer<BrowserRouterProps>? = null) {
-    addComponent(Module.BrowserRouterClass, props.configureBy(configure))
+  addComponent(Module.BrowserRouterClass, props.configureBy(configure))
 }

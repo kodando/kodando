@@ -6,9 +6,9 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val concatAll_: JsFunction =
-    fromModule("rxjs/operators") import "concatAll"
+  fromModule("rxjs/operators") import "concatAll"
 
 
 fun <T> Observable<Observable<T>>.concatAll(): Observable<Array<T>> {
-    return pipe(concatAll_.call(this))
+  return pipe(concatAll_.call(this))
 }

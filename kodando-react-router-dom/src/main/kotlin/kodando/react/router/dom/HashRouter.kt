@@ -9,5 +9,5 @@ import kodando.react.*
 
 fun ReactProps.hashRouter(props: HashRouterProps = createProps(),
                           configure: Configurer<HashRouterProps>) {
-    addComponent(Module.HashRouterClass, props.configureBy(configure))
+  addComponent(Module.HashRouterClass, props.configureBy(configure))
 }

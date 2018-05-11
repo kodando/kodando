@@ -5,35 +5,35 @@ package kodando.react
 
 @JsName("Component")
 external abstract class Component<TProps : ReactProps, TState>(props: TProps = definedExternally, context: Any? = definedExternally) {
-    val props: TProps
-    var state: TState
-    open val context: Any?
+  val props: TProps
+  var state: TState
+  open val context: Any?
 
-    fun forceUpdate()
+  fun forceUpdate()
 
-    @JsName("setState")
-    fun setState(state: TState, callback: (() -> Unit)? = definedExternally)
+  @JsName("setState")
+  fun setState(state: TState, callback: (() -> Unit)? = definedExternally)
 
-    @JsName("setState")
-    fun setState(updater: (TState, TProps) -> TState)
+  @JsName("setState")
+  fun setState(updater: (TState, TProps) -> TState)
 
-    open fun componentWillMount()
+  open fun componentWillMount()
 
-    open fun componentDidMount()
+  open fun componentDidMount()
 
-    open fun componentWillReceiveProps(nextProps: TProps)
+  open fun componentWillReceiveProps(nextProps: TProps)
 
-    open fun shouldComponentUpdate(nextProps: TProps, nextState: TState): Boolean
+  open fun shouldComponentUpdate(nextProps: TProps, nextState: TState): Boolean
 
-    open fun componentWillUpdate(nextProps: TProps, nextState: TState)
+  open fun componentWillUpdate(nextProps: TProps, nextState: TState)
 
-    @JsName("render")
-    abstract fun render(): ReactNode?
+  @JsName("render")
+  abstract fun render(): ReactNode?
 
-    open fun componentDidUpdate(prevProps: TProps, prevState: TState)
+  open fun componentDidUpdate(prevProps: TProps, prevState: TState)
 
-    open fun componentWillUnmount()
+  open fun componentWillUnmount()
 
-    open fun componentDidCatch(error: Throwable, info: Any?)
+  open fun componentDidCatch(error: Throwable, info: Any?)
 
 }

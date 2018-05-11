@@ -8,13 +8,13 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val race_: JsFunction =
-    fromModule("rxjs") import "race"
+  fromModule("rxjs") import "race"
 
 
 fun <T> race(observables: Array<Observable<T>>): Observable<T> {
-    return race_.call(null, observables)
+  return race_.call(null, observables)
 }
 
 fun <T> race(vararg observables: Array<Observable<T>>): Observable<T> {
-    return race_.call(null, observables)
+  return race_.call(null, observables)
 }

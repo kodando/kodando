@@ -8,9 +8,9 @@ import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
 
 private val fromEvent_: JsFunction =
-    fromModule("rxjs") import "fromEvent"
+  fromModule("rxjs") import "fromEvent"
 
 
 fun <T : Event> fromEvent(target: EventTarget, eventName: String): Observable<T> {
-    return fromEvent_.call(null, target, eventName)
+  return fromEvent_.call(null, target, eventName)
 }

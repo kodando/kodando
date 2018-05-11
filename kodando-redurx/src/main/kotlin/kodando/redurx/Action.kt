@@ -1,6 +1,6 @@
 package kodando.redurx
 
 interface Action {
-    val type: String
+  val type: String
 }
 

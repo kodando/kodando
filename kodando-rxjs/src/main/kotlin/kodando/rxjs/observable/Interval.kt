@@ -9,9 +9,9 @@ import kodando.rxjs.import
 import kodando.rxjs.scheduler.Scheduler
 
 private val interval_: JsFunction =
-    fromModule("rxjs") import "interval"
+  fromModule("rxjs") import "interval"
 
 
 fun interval(period: Int, scheduler: Scheduler? = null): Observable<Int> {
-    return interval_.call(null, period, scheduler ?: undefined)
+  return interval_.call(null, period, scheduler ?: undefined)
 }

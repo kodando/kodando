@@ -9,9 +9,9 @@ import kodando.rxjs.import
 import kodando.rxjs.scheduler.Scheduler
 
 private val throwError: JsFunction =
-    fromModule("rxjs") import "throwError"
+  fromModule("rxjs") import "throwError"
 
 
 fun <T> throwError(error: Throwable, scheduler: Scheduler? = null): Observable<T> {
-    return throwError.call(null, error, scheduler ?: undefined)
+  return throwError.call(null, error, scheduler ?: undefined)
 }

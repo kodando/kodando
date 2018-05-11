@@ -6,19 +6,19 @@ import kodando.rxjs.scheduler.asyncScheduler
 import kodando.rxjs.tests.expectations.shouldBeObservable
 
 object ObservableIntervalSpec : Spec() {
-    init {
-        describe("interval") {
-            it("should accept period") byCheckingAfter {
-                val observable = interval(1000)
+  init {
+    describe("interval") {
+      it("should accept period") byCheckingAfter {
+        val observable = interval(1000)
 
-                observable.shouldBeObservable()
-            }
+        observable.shouldBeObservable()
+      }
 
-            it("should accept period and scheduler") byChecking {
-                val observable = interval(1000, scheduler = asyncScheduler)
+      it("should accept period and scheduler") byChecking {
+        val observable = interval(1000, scheduler = asyncScheduler)
 
-                observable.shouldBeObservable()
-            }
-        }
+        observable.shouldBeObservable()
+      }
     }
+  }
 }

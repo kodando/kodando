@@ -1,7 +1,8 @@
 package kodando.runtime
 
 import org.w3c.fetch.Response
-import kotlin.js.*
+import kotlin.js.Json
+import kotlin.js.Promise
 
 /**
  * Created by danfma on 28/01/2017.
@@ -14,12 +15,12 @@ external fun fetch(url: String): Promise<Response>
 external fun fetch(url: String, request: IFetchRequestInit): Promise<Response>
 
 external interface IFetchRequestInit {
-    val method: String
-    val body: Any?
-    val headers: Json?
+  val method: String
+  val body: Any?
+  val headers: Json?
 }
 
 class FetchRequestInit(
-    override val method: String,
-    override val body: Any? = null,
-    override val headers: Json? = undefined) : IFetchRequestInit
+  override val method: String,
+  override val body: Any? = null,
+  override val headers: Json? = undefined) : IFetchRequestInit

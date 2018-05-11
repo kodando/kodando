@@ -4,13 +4,13 @@ import kodando.runtime.Tuple2
 
 @JsName("WeakMap")
 open external class WeakMap<Key, Value>(vararg tuple2: Tuple2<Key, Value>) {
-    fun get(key: Key): Value?
+  fun get(key: Key): Value?
 
-    fun has(key: Key): Boolean
+  fun has(key: Key): Boolean
 
-    fun set(key: Key, value: Value)
+  fun set(key: Key, value: Value)
 
-    fun delete(key: Key): Array<Value>
+  fun delete(key: Key): Array<Value>
 
-    fun clear(): Unit
+  fun clear(): Unit
 }

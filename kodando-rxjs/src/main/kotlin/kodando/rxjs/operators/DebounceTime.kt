@@ -6,9 +6,9 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val debounceTime_: JsFunction =
-    fromModule("rxjs/operators") import "debounceTime"
+  fromModule("rxjs/operators") import "debounceTime"
 
 
 fun <T> Observable<T>.debounceTime(timeInMilliseconds: Int): Observable<T> {
-    return pipe(debounceTime_.call(this, timeInMilliseconds))
+  return pipe(debounceTime_.call(this, timeInMilliseconds))
 }

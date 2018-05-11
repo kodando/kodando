@@ -9,13 +9,13 @@ import kodando.rxjs.import
 import kodando.rxjs.scheduler.Scheduler
 
 private val empty_: JsFunction =
-    fromModule("rxjs") import "empty"
+  fromModule("rxjs") import "empty"
 
 
 fun <T> empty(): Observable<T> {
-    return empty_.call(null)
+  return empty_.call(null)
 }
 
 fun <T> emptyScheduled(scheduler: Scheduler): Observable<T> {
-    return empty_.call(null, scheduler)
+  return empty_.call(null, scheduler)
 }

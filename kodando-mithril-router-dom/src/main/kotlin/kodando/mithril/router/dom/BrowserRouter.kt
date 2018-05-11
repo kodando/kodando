@@ -6,12 +6,12 @@ import kodando.mithril.Applier
 import kodando.mithril.Props
 
 val lazilyBrowserHistory by lazy {
-    History.createBrowserHistory()
+  History.createBrowserHistory()
 }
 
 fun Props.browserHistory(history: BrowserHistoryInstance? = null, applier: Applier<Props>) {
-    router {
-        this.history = history ?: lazilyBrowserHistory
-        applier()
-    }
+  router {
+    this.history = history ?: lazilyBrowserHistory
+    applier()
+  }
 }

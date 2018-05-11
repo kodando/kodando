@@ -3,182 +3,182 @@
 package kodando.mithril.elements
 
 external interface HtmlElementProps : HtmlNodeProps {
-    var accept: String?
+  var accept: String?
 
-    var acceptCharset: String?
+  var acceptCharset: String?
 
-    @JsName("accesskey")
-    var accessKey: String?
+  @JsName("accesskey")
+  var accessKey: String?
 
-    var allowFullScreen: Boolean?
+  var allowFullScreen: Boolean?
 
-    var allowTransparency: Boolean?
+  var allowTransparency: Boolean?
 
-    var async: Boolean?
+  var async: Boolean?
 
-    var autoComplete: Boolean?
+  var autoComplete: Boolean?
 
-    var autoPlay: Boolean?
+  var autoPlay: Boolean?
 
-    var charSet: String?
+  var charSet: String?
 
-    var checked: Boolean?
+  var checked: Boolean?
 
-    var classID: String?
+  var classID: String?
 
-    var cols: Number?
+  var cols: Number?
 
-    var colSpan: Number?
+  var colSpan: Number?
 
-    var contentEditable: Boolean?
+  var contentEditable: Boolean?
 
-    var contextMenu: String?
+  var contextMenu: String?
 
-    var coords: String?
+  var coords: String?
 
-    var crossOrigin: String?
+  var crossOrigin: String?
 
-    var dataValue: String?
+  var dataValue: String?
 
-    var dateTime: String?
+  var dateTime: String?
 
-    var defaultChecked: Boolean?
+  var defaultChecked: Boolean?
 
-    var defaultValue: String?
+  var defaultValue: String?
 
-    var defer: Boolean?
+  var defer: Boolean?
 
-    var dir: String?
+  var dir: String?
 
-    var download: Any?
+  var download: Any?
 
-    var draggable: Boolean?
+  var draggable: Boolean?
 
-    var encType: String?
+  var encType: String?
 
-    var form: String?
+  var form: String?
 
-    var formAction: String?
+  var formAction: String?
 
-    var formEncType: String?
+  var formEncType: String?
 
-    var formMethod: String?
+  var formMethod: String?
 
-    var formNoValidate: Boolean?
+  var formNoValidate: Boolean?
 
-    var formTarget: String?
+  var formTarget: String?
 
-    var frameBorder: Any?
+  var frameBorder: Any?
 
-    var headers: String?
+  var headers: String?
 
-    var height: Any?
+  var height: Any?
 
-    var hidden: Boolean?
+  var hidden: Boolean?
 
-    var high: Number?
+  var high: Number?
 
-    var htmlFor: String?
+  var htmlFor: String?
 
-    var httpEquiv: String?
+  var httpEquiv: String?
 
-    var icon: String?
+  var icon: String?
 
-    var label: String?
+  var label: String?
 
-    var lang: String?
+  var lang: String?
 
-    var list: String?
+  var list: String?
 
-    var low: Number?
+  var low: Number?
 
-    var manifest: String?
+  var manifest: String?
 
-    var marginHeight: Number?
+  var marginHeight: Number?
 
-    var marginWidth: Number?
+  var marginWidth: Number?
 
-    var max: Any?
+  var max: Any?
 
-    var maxLength: Number?
+  var maxLength: Number?
 
-    var mediaGroup: String?
+  var mediaGroup: String?
 
-    var min: Any?
+  var min: Any?
 
-    var name: String?
+  var name: String?
 
-    var noValidate: Boolean?
-    var open: Boolean?
+  var noValidate: Boolean?
+  var open: Boolean?
 
-    var optimum: Number?
+  var optimum: Number?
 
-    var pattern: String?
+  var pattern: String?
 
-    var poster: String?
+  var poster: String?
 
-    var radioGroup: String?
+  var radioGroup: String?
 
-    var readOnly: Boolean?
+  var readOnly: Boolean?
 
-    var required: Boolean?
+  var required: Boolean?
 
-    var role: String?
+  var role: String?
 
-    var rows: Number?
+  var rows: Number?
 
-    var rowSpan: Number?
+  var rowSpan: Number?
 
-    var sandbox: String?
+  var sandbox: String?
 
-    var scope: String?
+  var scope: String?
 
-    var scoped: Boolean?
+  var scoped: Boolean?
 
-    var seamless: Boolean?
+  var seamless: Boolean?
 
-    var selected: Boolean?
+  var selected: Boolean?
 
-    var shape: String?
+  var shape: String?
 
-    var sizes: String?
+  var sizes: String?
 
-    var spellCheck: Boolean?
+  var spellCheck: Boolean?
 
-    var srcDoc: String?
+  var srcDoc: String?
 
-    var srcSet: String?
+  var srcSet: String?
 
-    var start: Number?
+  var start: Number?
 
-    var step: Any?
+  var step: Any?
 
-    var style: Css?
+  var style: Css?
 
-    var tabIndex: Number?
+  var tabIndex: Number?
 
-    var title: String?
+  var title: String?
 
-    var useMap: String?
+  var useMap: String?
 
-    var width: Any?
+  var width: Any?
 
-    var wmode: String?
+  var wmode: String?
 
 // Non-standard Attributes
 
-    var autoCapitalize: Boolean?
+  var autoCapitalize: Boolean?
 
-    var autoCorrect: Boolean?
+  var autoCorrect: Boolean?
 
-    var property: String?
+  var property: String?
 
-    var itemProp: String?
+  var itemProp: String?
 
-    var itemScope: Boolean?
+  var itemScope: Boolean?
 
-    var itemType: String?
+  var itemType: String?
 
-    var unselectable: Boolean?
+  var unselectable: Boolean?
 
 }

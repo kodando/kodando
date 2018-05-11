@@ -1,8 +1,8 @@
 package kodando.rxjs
 
 fun subscription(handler: () -> Unit) =
-    Subscription(handler)
+  Subscription(handler)
 
 inline fun <T> createObserverLike(): ObserverLike<T> {
-    return ObserverLikeImpl()
+  return ObserverLikeImpl()
 }

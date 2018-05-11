@@ -1,8 +1,8 @@
 package kodando.mithril.elements
 
 external interface HtmlFieldSetElementProps : HtmlElementProps {
-    var align: String?
-    var disabled: Boolean?
+  var align: String?
+  var disabled: Boolean?
 }
 
 

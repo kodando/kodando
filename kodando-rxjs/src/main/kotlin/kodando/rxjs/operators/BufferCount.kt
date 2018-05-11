@@ -7,8 +7,8 @@ import kodando.rxjs.import
 
 
 private val bufferCount_: JsFunction =
-    fromModule("rxjs/operators") import "bufferCount"
+  fromModule("rxjs/operators") import "bufferCount"
 
 fun <T> Observable<T>.bufferCount(bufferSize: Int, startBufferEvery: Int? = null): Observable<Array<T>> {
-    return pipe(bufferCount_.call(this, bufferSize, startBufferEvery))
+  return pipe(bufferCount_.call(this, bufferSize, startBufferEvery))
 }

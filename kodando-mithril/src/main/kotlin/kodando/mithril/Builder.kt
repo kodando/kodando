@@ -1,25 +1,25 @@
 package kodando.mithril
 
 fun root(applier: Applier<Props>): VNode<*>? {
-    val props = createProps(applier)
+  val props = createProps(applier)
 
-    return props.children.firstOrNull()
+  return props.children.firstOrNull()
 }
 
 fun Props.addChild(vararg children: VNode<*>?) {
-    if (this.children === undefined) {
-        this.children = children
-    } else {
-        this.children += children
-    }
+  if (this.children === undefined) {
+    this.children = children
+  } else {
+    this.children += children
+  }
 }
 
 fun <TViewProps : Props> Props.addChild(view: View<TViewProps>, applier: Applier<TViewProps>) {
-    addChild(
-        createElement(view, createProps(applier))
-    )
+  addChild(
+    createElement(view, createProps(applier))
+  )
 }
 
 fun Props.content(text: Any?) {
-    addChild("$text".unsafeCast<VNode<Nothing>>())
+  addChild("$text".unsafeCast<VNode<Nothing>>())
 }

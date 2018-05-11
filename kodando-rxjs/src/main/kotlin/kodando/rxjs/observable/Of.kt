@@ -6,8 +6,8 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val of_: JsFunction =
-    fromModule("rxjs") import "of"
+  fromModule("rxjs") import "of"
 
 fun <T> of(vararg values: T): Observable<T> {
-    return of_.apply(null, values)
+  return of_.apply(null, values)
 }

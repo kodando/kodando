@@ -9,13 +9,13 @@ import kodando.rxjs.import
 import kodando.rxjs.scheduler.Scheduler
 
 private val concat_: JsFunction =
-    fromModule("rxjs") import "concat"
+  fromModule("rxjs") import "concat"
 
 
 fun <T> concat(vararg observables: Observable<T>): Observable<T> {
-    return concat_.apply(null, observables)
+  return concat_.apply(null, observables)
 }
 
 fun <T> concat(vararg observables: Observable<T>, scheduler: Scheduler): Observable<T> {
-    return concat_.apply(null, observables + scheduler)
+  return concat_.apply(null, observables + scheduler)
 }

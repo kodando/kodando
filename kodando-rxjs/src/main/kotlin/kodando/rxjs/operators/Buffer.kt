@@ -7,8 +7,8 @@ import kodando.rxjs.import
 
 
 private val buffer_: JsFunction =
-    fromModule("rxjs/operators") import "buffer"
+  fromModule("rxjs/operators") import "buffer"
 
 fun <T> Observable<T>.buffer(notifier: Observable<*>): Observable<Array<T>> {
-    return pipe(buffer_.call(this, notifier))
+  return pipe(buffer_.call(this, notifier))
 }

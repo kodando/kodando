@@ -7,7 +7,7 @@ package kodando.runtime.unsafe
 fun <T> objectWithShapeOf(): T = js("({})")
 
 fun <T> objectWithShapeBy(setter: T.() -> Unit): T {
-    val obj = objectWithShapeOf<T>()
-    obj.setter()
-    return obj
+  val obj = objectWithShapeOf<T>()
+  obj.setter()
+  return obj
 }

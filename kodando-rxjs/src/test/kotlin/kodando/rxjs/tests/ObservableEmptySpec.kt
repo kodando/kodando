@@ -10,26 +10,26 @@ import kodando.rxjs.scheduler.asyncScheduler
 import kodando.rxjs.tests.expectations.shouldBeObservable
 
 object ObservableEmptySpec : Spec() {
-    init {
-        describe("empty") {
-            it("should return nothing") byCheckingAfter {
-                val observable = empty<Int>()
-                val produced = await(observable.toArray().toPromise())
+  init {
+    describe("empty") {
+      it("should return nothing") byCheckingAfter {
+        val observable = empty<Int>()
+        val produced = await(observable.toArray().toPromise())
 
-                expect(produced.size).toBe(0)
-            }
+        expect(produced.size).toBe(0)
+      }
 
-            it("usage 1") byChecking {
-                val observable = empty<Int>()
+      it("usage 1") byChecking {
+        val observable = empty<Int>()
 
-                observable.shouldBeObservable()
-            }
+        observable.shouldBeObservable()
+      }
 
-            it("usage 2") byChecking {
-                val observable = emptyScheduled<Int>(asyncScheduler)
+      it("usage 2") byChecking {
+        val observable = emptyScheduled<Int>(asyncScheduler)
 
-                observable.shouldBeObservable()
-            }
-        }
+        observable.shouldBeObservable()
+      }
     }
+  }
 }

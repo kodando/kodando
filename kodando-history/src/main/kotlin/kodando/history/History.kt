@@ -7,12 +7,12 @@ package kodando.history
 @JsModule("history")
 external object History {
 
-    fun createBrowserHistory(): BrowserHistoryInstance
+  fun createBrowserHistory(): BrowserHistoryInstance
 
-    fun createHashHistory(): HashHistoryInstance
+  fun createHashHistory(): HashHistoryInstance
 
-    fun createHashHistory(hashOptions: HashOptions): HashHistoryInstance
+  fun createHashHistory(hashOptions: HashOptions): HashHistoryInstance
 
-    fun createLocation(path: String, state: Any?, key: String?, currentLocation: Location): Location
+  fun createLocation(path: String, state: Any?, key: String?, currentLocation: Location): Location
 
 }

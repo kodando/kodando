@@ -8,15 +8,15 @@ import kotlin.js.Promise
  */
 
 suspend fun <T> await(block: Promise<T>): T =
-    suspendCoroutine { c ->
-        block
-            .then { data -> c.resume(data) }
-            .catch { error -> c.resumeWithException(AsyncException(error)) }
-    }
+  suspendCoroutine { c ->
+    block
+      .then { data -> c.resume(data) }
+      .catch { error -> c.resumeWithException(AsyncException(error)) }
+  }
 
 suspend fun <T> await(block: Future<T>): T =
-    suspendCoroutine { c ->
-        block
-            .continueWith { data -> c.resume(data) }
-            .catch { error -> c.resumeWithException(AsyncException(error)) }
-    }
+  suspendCoroutine { c ->
+    block
+      .continueWith { data -> c.resume(data) }
+      .catch { error -> c.resumeWithException(AsyncException(error)) }
+  }

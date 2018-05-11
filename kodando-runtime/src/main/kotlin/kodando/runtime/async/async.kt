@@ -2,7 +2,10 @@
 
 package kodando.runtime.async
 
-import kotlin.coroutines.experimental.*
+import kotlin.coroutines.experimental.Continuation
+import kotlin.coroutines.experimental.CoroutineContext
+import kotlin.coroutines.experimental.EmptyCoroutineContext
+import kotlin.coroutines.experimental.startCoroutine
 import kotlin.js.Promise
 
 /**
@@ -10,21 +13,21 @@ import kotlin.js.Promise
  */
 
 fun <T> async(block: suspend () -> T): Future<T> {
-    val promise = Promise<T> { resolve, reject ->
-        block.startCoroutine(completion = object : Continuation<T> {
-            override val context: CoroutineContext = EmptyCoroutineContext
+  val promise = Promise<T> { resolve, reject ->
+    block.startCoroutine(completion = object : Continuation<T> {
+      override val context: CoroutineContext = EmptyCoroutineContext
 
-            override fun resume(value: T) {
-                resolve(value)
-            }
+      override fun resume(value: T) {
+        resolve(value)
+      }
 
-            override fun resumeWithException(exception: Throwable) {
-                reject(exception)
-            }
-        })
-    }
+      override fun resumeWithException(exception: Throwable) {
+        reject(exception)
+      }
+    })
+  }
 
-    return Future(promise)
+  return Future(promise)
 }
 
 fun <T> asyncPromise(block: suspend () -> T) = async(block).toPromise()

@@ -9,22 +9,22 @@ import kodando.rxjs.tests.operator.MergeOperatorSpec
  */
 
 fun main(args: Array<String>) {
-    arrayOf(
-        // factories
-        ObservableCreateSpec,
-        ObservableBindCallbackSpec,
-        ObservableCombineLatestSpec,
-        ObservableIntervalSpec,
-        ObservableFromPromiseSpec,
-        ObservableEmptySpec,
-        ObservableFromSpec,
-        ObservableFromPromiseSpec,
-        ObservableExtensionsSpec,
+  arrayOf(
+    // factories
+    ObservableCreateSpec,
+    ObservableBindCallbackSpec,
+    ObservableCombineLatestSpec,
+    ObservableIntervalSpec,
+    ObservableFromPromiseSpec,
+    ObservableEmptySpec,
+    ObservableFromSpec,
+    ObservableFromPromiseSpec,
+    ObservableExtensionsSpec,
 
-        // operators
-        ConcatOperatorSpec,
-        DeferOperatorSpec,
-        ObservableEmptySpec,
-        MergeOperatorSpec
-    )
+    // operators
+    ConcatOperatorSpec,
+    DeferOperatorSpec,
+    ObservableEmptySpec,
+    MergeOperatorSpec
+  )
 }

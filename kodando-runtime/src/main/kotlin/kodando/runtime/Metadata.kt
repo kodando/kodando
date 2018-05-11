@@ -9,34 +9,34 @@ import kotlin.reflect.KProperty
 
 
 class Metadata<T : Any>(val type: JsClass<T>) {
-    constructor(clazz: KClass<T>) : this(clazz.js)
+  constructor(clazz: KClass<T>) : this(clazz.js)
 
-    fun <TProperty> decorateProperty(
-        property: KProperty<TProperty>,
-        vararg decorators: PropertyDecorator) {
+  fun <TProperty> decorateProperty(
+    property: KProperty<TProperty>,
+    vararg decorators: PropertyDecorator) {
 
-        val prototype = type.asDynamic().prototype
-        val propertyName = property.name
-        val propertyDescriptor = getOwnPropertyDescriptor(prototype, propertyName)
+    val prototype = type.asDynamic().prototype
+    val propertyName = property.name
+    val propertyDescriptor = getOwnPropertyDescriptor(prototype, propertyName)
 
-        decorate(decorators, prototype, propertyName, propertyDescriptor ?: undefined)
-    }
+    decorate(decorators, prototype, propertyName, propertyDescriptor ?: undefined)
+  }
 
-    fun decorateMethod(
-        memberName: String,
-        vararg decorators: MethodDecorator) {
+  fun decorateMethod(
+    memberName: String,
+    vararg decorators: MethodDecorator) {
 
-        val prototype = type.asDynamic().prototype
-        val propertyName = memberName
-        val propertyDescriptor = getOwnPropertyDescriptor(prototype, propertyName)
+    val prototype = type.asDynamic().prototype
+    val propertyName = memberName
+    val propertyDescriptor = getOwnPropertyDescriptor(prototype, propertyName)
 
-        decorate(decorators, prototype, propertyName, propertyDescriptor ?: undefined)
-    }
+    decorate(decorators, prototype, propertyName, propertyDescriptor ?: undefined)
+  }
 
-    companion object {
-        private val getOwnPropertyDescriptor: dynamic = js("Object.getOwnPropertyDescriptor")
+  companion object {
+    private val getOwnPropertyDescriptor: dynamic = js("Object.getOwnPropertyDescriptor")
 
-        private val decorate: dynamic = js("""
+    private val decorate: dynamic = js("""
 (function (decorators, target, key, desc) {
     var previousDescriptor = (desc && !desc.configurable) ? desc : null;
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,16 +57,16 @@ class Metadata<T : Any>(val type: JsClass<T>) {
 })
 		""")
 
-        private val metadata: dynamic = js("""
+    private val metadata: dynamic = js("""
 (function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 })
 		""")
-    }
+  }
 }
 
 fun <T : Any> metadataOf(type: KClass<T>, configurer: Metadata<T>.() -> Unit): Metadata<T> {
-    return Metadata(type).apply(configurer)
+  return Metadata(type).apply(configurer)
 }
 
 interface PropertyDecorator

@@ -6,9 +6,9 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val scalar_: JsFunction =
-    fromModule("rxjs") import "scalar"
+  fromModule("rxjs") import "scalar"
 
 
 fun <T> scalar(value: T): Observable<T> {
-    return scalar_.call(null, value)
+  return scalar_.call(null, value)
 }

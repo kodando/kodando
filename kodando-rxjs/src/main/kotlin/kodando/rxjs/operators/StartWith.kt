@@ -6,9 +6,9 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val startWith_: JsFunction =
-    fromModule("rxjs/operators") import "startWith"
+  fromModule("rxjs/operators") import "startWith"
 
 
 fun <T> Observable<T>.startWith(value: T): Observable<T> {
-    return pipe(startWith_.call(this, value))
+  return pipe(startWith_.call(this, value))
 }

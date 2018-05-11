@@ -5,8 +5,8 @@ import kodando.react.unsafelyCreateObject
 
 @JsName("createStyle")
 fun createStyle(): Style =
-    unsafelyCreateObject()
+  unsafelyCreateObject()
 
 @JsName("createStyleAndConfigure")
 fun createStyle(configure: Configurer<Style>): Style =
-    createStyle().also(configure)
+  createStyle().also(configure)

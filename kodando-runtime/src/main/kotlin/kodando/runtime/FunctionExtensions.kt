@@ -9,5 +9,5 @@ package kodando.runtime
 inline fun <T : Function<R>, R> T.invoke(): R = this.asDynamic()()
 
 inline fun <T : Function<R>, R> T.call(target: Any?, vararg data: Any): R =
-    this.asDynamic().apply(target, data)
+  this.asDynamic().apply(target, data)
 

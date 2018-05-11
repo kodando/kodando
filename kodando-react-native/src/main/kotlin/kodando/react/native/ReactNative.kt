@@ -8,22 +8,22 @@ import org.w3c.dom.Node
 
 
 external interface TextProps : ReactProps {
-    var style: Style?
+  var style: Style?
 }
 
 external interface ViewProps : ReactProps {
-    var style: Style?
-    var accessibilityLabel: Node?
-    var accessible: Boolean?
-    var hitSlop: HitSlop?
-    var nativeID: String?
+  var style: Style?
+  var accessibilityLabel: Node?
+  var accessible: Boolean?
+  var hitSlop: HitSlop?
+  var nativeID: String?
 }
 
 external interface ScrollViewProps : ReactProps
 
 external interface ImageProps : ReactProps {
-    var source: ImageSource
-    var style: Style?
+  var source: ImageSource
+  var style: Style?
 }
 
 external interface ImageSource

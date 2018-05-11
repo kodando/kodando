@@ -8,5 +8,5 @@ external interface ImportedModule : Json
 internal external fun fromModule(moduleName: String): ImportedModule
 
 inline infix fun <T> ImportedModule.import(name: String): T {
-    return this[name].unsafeCast<T>()
+  return this[name].unsafeCast<T>()
 }

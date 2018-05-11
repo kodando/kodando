@@ -1,8 +1,8 @@
 package kodando.rxjs
 
-    /**
-     * Created by danfma on 03/04/17.
-     */
+/**
+ * Created by danfma on 03/04/17.
+ */
 
 typealias NextHandler<T> = (T) -> Unit
 

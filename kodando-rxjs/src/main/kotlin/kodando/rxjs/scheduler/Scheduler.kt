@@ -4,5 +4,5 @@
 package kodando.rxjs.scheduler
 
 abstract external class Scheduler {
-    abstract fun now(): Double
+  abstract fun now(): Double
 }

@@ -3,6 +3,6 @@
 package kodando.mithril.elements
 
 interface HtmlSelectElementProps : HtmlInputElementProps {
-    var multiple: Boolean?
-    var size: Int?
+  var multiple: Boolean?
+  var size: Int?
 }

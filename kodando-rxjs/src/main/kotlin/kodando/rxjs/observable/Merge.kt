@@ -9,25 +9,25 @@ import kodando.rxjs.import
 import kodando.rxjs.scheduler.Scheduler
 
 private val merge_: JsFunction =
-    fromModule("rxjs") import "merge"
+  fromModule("rxjs") import "merge"
 
 
 fun <T> merge(vararg observables: Observable<T>): Observable<T> {
-    return merge_.apply(null, observables)
+  return merge_.apply(null, observables)
 }
 
 fun <T> merge(vararg observables: Observable<T>,
               concurrent: Int): Observable<T> {
-    return merge_.apply(null, arrayOf(*observables, concurrent))
+  return merge_.apply(null, arrayOf(*observables, concurrent))
 }
 
 fun <T> merge(vararg observables: Observable<T>,
               scheduler: Scheduler): Observable<T> {
-    return merge_.apply(null, arrayOf(*observables, scheduler))
+  return merge_.apply(null, arrayOf(*observables, scheduler))
 }
 
 fun <T> merge(vararg observables: Observable<T>,
               concurrent: Int,
               scheduler: Scheduler): Observable<T> {
-    return merge_.apply(null, arrayOf(*observables, concurrent, scheduler))
+  return merge_.apply(null, arrayOf(*observables, concurrent, scheduler))
 }

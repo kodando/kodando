@@ -6,12 +6,12 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val delayWhen_: JsFunction =
-    fromModule("rxjs/operators") import "delayWhen"
+  fromModule("rxjs/operators") import "delayWhen"
 
 
 fun <T> Observable<T>.delayWhen(
-    delayDurationSelector: (value: T) -> Observable<*>,
-    subscriptionDelay: Observable<*>? = null): Observable<T> {
+  delayDurationSelector: (value: T) -> Observable<*>,
+  subscriptionDelay: Observable<*>? = null): Observable<T> {
 
-    return pipe(delayWhen_.call(this, delayDurationSelector, subscriptionDelay))
+  return pipe(delayWhen_.call(this, delayDurationSelector, subscriptionDelay))
 }

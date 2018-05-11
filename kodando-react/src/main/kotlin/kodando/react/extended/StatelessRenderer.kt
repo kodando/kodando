@@ -5,20 +5,20 @@ import kodando.react.ReactProps
 import kodando.react.createElement
 
 abstract class StatelessRenderer<in TProps : ReactProps> {
-    private val renderer: (TProps) -> ReactNode?
+  private val renderer: (TProps) -> ReactNode?
 
-    init {
-        val self = this
+  init {
+    val self = this
 
-        renderer = { props: TProps -> self.render(props) }
-        renderer.asDynamic().displayName = this::class.simpleName
+    renderer = { props: TProps -> self.render(props) }
+    renderer.asDynamic().displayName = this::class.simpleName
 
-        console.log("Configured the renderer", renderer)
-    }
+    console.log("Configured the renderer", renderer)
+  }
 
-    protected abstract fun render(props: TProps): ReactNode?
+  protected abstract fun render(props: TProps): ReactNode?
 
-    operator fun invoke(props: TProps): ReactNode? {
-        return createElement(renderer, props)
-    }
+  operator fun invoke(props: TProps): ReactNode? {
+    return createElement(renderer, props)
+  }
 }

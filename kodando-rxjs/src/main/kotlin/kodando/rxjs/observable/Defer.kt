@@ -9,13 +9,13 @@ import kodando.rxjs.import
 import kotlin.js.Promise
 
 private val defer_: JsFunction =
-    fromModule("rxjs") import "defer"
+  fromModule("rxjs") import "defer"
 
 
 fun <T> defer(factory: () -> Observable<T>): Observable<T> {
-    return defer_.call(null, factory)
+  return defer_.call(null, factory)
 }
 
 fun <T> deferWhen(factory: () -> Promise<T>): Observable<T> {
-    return defer_.call(null, factory)
+  return defer_.call(null, factory)
 }

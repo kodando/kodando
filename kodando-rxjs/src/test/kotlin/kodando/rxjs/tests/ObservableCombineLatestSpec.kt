@@ -8,26 +8,26 @@ import kodando.rxjs.observable.combineLatest
 import kodando.rxjs.operators.toArray
 
 object ObservableCombineLatestSpec : Spec() {
-    init {
-        describe("combineLatest") {
-            it("usage 1") byCheckingAfter {
-                val a = Subject<Int>()
-                val b = Subject<Int>()
-                val c = combineLatest(a, b, { a, b -> a + b })
+  init {
+    describe("combineLatest") {
+      it("usage 1") byCheckingAfter {
+        val a = Subject<Int>()
+        val b = Subject<Int>()
+        val c = combineLatest(a, b, { a, b -> a + b })
 
-                val resultPromise = c.toArray().toPromise()
+        val resultPromise = c.toArray().toPromise()
 
-                a.next(1)
-                a.next(2)
-                a.complete()
+        a.next(1)
+        a.next(2)
+        a.complete()
 
-                b.next(2)
-                b.complete()
+        b.next(2)
+        b.complete()
 
-                val result = await(resultPromise)
+        val result = await(resultPromise)
 
-                expect(result).toEqual(arrayOf(4))
-            }
-        }
+        expect(result).toEqual(arrayOf(4))
+      }
     }
+  }
 }

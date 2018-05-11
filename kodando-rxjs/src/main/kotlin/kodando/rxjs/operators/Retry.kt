@@ -6,9 +6,9 @@ import kodando.rxjs.fromModule
 import kodando.rxjs.import
 
 private val retry_: JsFunction =
-    fromModule("rxjs/operators") import "retry"
+  fromModule("rxjs/operators") import "retry"
 
 
 fun <T> Observable<T>.retry(times: Int): Observable<T> {
-    return pipe(retry_.call(this, times))
+  return pipe(retry_.call(this, times))
 }
