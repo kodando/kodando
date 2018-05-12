@@ -1,5 +1,6 @@
-version '0.4.1'
+version '0.5.0'
 
 dependencies {
     compile project(":kodando-rxjs")
+    testCompile project(":kodando-jest")
 }

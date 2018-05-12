@@ -10,5 +10,5 @@ private val mergeAll_: JsFunction =
 
 
 fun <T> Observable<Observable<T>>.mergeAll(): Observable<T> {
-  return pipe(mergeAll_.call(this))
+  return pipe(mergeAll_.call(null))
 }

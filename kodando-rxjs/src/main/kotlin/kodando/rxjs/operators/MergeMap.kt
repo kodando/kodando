@@ -9,5 +9,5 @@ private val mergeMap_: JsFunction =
   fromModule("rxjs/operators") import "mergeMap"
 
 fun <T, TResult> Observable<T>.mergeMap(transformer: (T) -> Observable<TResult>): Observable<TResult> {
-  return pipe(mergeMap_.call(this, transformer))
+  return pipe(mergeMap_.call(null, transformer))
 }

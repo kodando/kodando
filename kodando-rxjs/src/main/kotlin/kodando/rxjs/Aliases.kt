@@ -6,7 +6,7 @@ package kodando.rxjs
 
 typealias NextHandler<T> = (T) -> Unit
 
-typealias ErrorHandler = (Any) -> Unit
+typealias ErrorHandler = (Throwable) -> Unit
 typealias CompleteHandler = () -> Unit
 typealias TeardownLogic = () -> Unit
 

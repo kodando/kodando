@@ -6,7 +6,7 @@ package kodando.rxjs
 open external class Subject<T> : Observable<T>, Observer<T> {
   override val closed: Boolean?
   override fun next(data: T)
-  override fun error(error: Error)
+  override fun error(error: Throwable)
   override fun complete()
   fun asObservable(): Observable<T>
 

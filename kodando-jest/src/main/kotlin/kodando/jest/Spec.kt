@@ -13,5 +13,15 @@ abstract class Spec {
   @JsName("test")
   fun test(description: String) = Test(description)
 
+  @JsName("beforeEach")
+  fun beforeEach(handler: Function<*>) {
+    kodando.jest.beforeEach(handler)
+  }
+
+  @JsName("afterEach")
+  fun afterEach(handler: Function<*>) {
+    kodando.jest.afterEach(handler)
+  }
+
 }
 

@@ -15,7 +15,7 @@ open external class Subscriber<in T>(observer: ObserverLike<T>) : Subscription, 
   )
 
   override fun next(data: T)
-  override fun error(error: Error)
+  override fun error(error: Throwable)
   override fun complete()
 
   companion object {

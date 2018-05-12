@@ -1,44 +1,47 @@
 package kodando.redurx
 
-import kodando.rxjs.BehaviorSubject
-import kodando.rxjs.Unsubscribable
+import kodando.rxjs.*
+import kodando.rxjs.observable.fromArray
+import kodando.rxjs.operators.merge
+import kodando.rxjs.operators.mergeMap
 import kodando.rxjs.operators.scan
 
-class Store<T> private constructor(initialState: T,
-                                   reducer: Reducer<T>,
-                                   middlewares: Array<out Middleware<T>>) : BehaviorSubject<T>(initialState) {
+class Store<T>(
+  initialState: T,
+  private val reducer: Reducer<T>,
+  private val actions: Observable<Action> = Actions,
+  private val actionObserver: Observer<Action> = Actions,
+  vararg val effects: Effect
+) : BehaviorSubject<T>(initialState) {
 
-  private var subscription: Unsubscribable? = null
+  private val subscription: Unsubscribable
 
   init {
-    val combinedReducer =
-      middlewares
-        .reversedArray()
-        .fold(reducer) { reducer, middleware -> middleware(this, reducer) }
+    val effectActions = fromArray(effects)
+      .tapWith {
+        next = {
+          it.activate(actions)
+        }
+      }
+      .mergeMap { it }
 
-    subscription = Actions
-      .scan(initialState, combinedReducer)
+    val combinedActions = actions.merge(effectActions)
+
+    subscription = combinedActions
+      .scan(initialState) { state, action -> tryReduce(state, action) }
       .subscribe(this)
   }
 
-  fun dispose() {
-    subscription?.unsubscribe()
-    subscription = null
-  }
-
   fun dispatch(action: Action) {
-    Actions.dispatch(action)
+    actionObserver.next(action)
   }
 
-  companion object {
-
-    fun <T> create(initialState: T,
-                   reducer: Reducer<T>,
-                   vararg middlewares: Middleware<T>): Store<T> {
-
-      return Store(initialState, reducer, middlewares)
+  private fun tryReduce(state: T, action: Action): T {
+    return try {
+      reducer(state, action)
+    } catch (e: Throwable) {
+      console.error("Error while processing action", action, "error", e)
+      state
     }
-
   }
-
 }

@@ -4,7 +4,6 @@ package kodando.jest
 
 import kotlin.js.Promise
 
-
 @JsName("describe")
 external fun describe(name: String, handler: () -> Unit)
 
@@ -19,3 +18,9 @@ external fun it(description: String, expectationHandler: () -> Any?)
 
 @JsName("it")
 external fun itAsync(description: String, expectationHandler: () -> Promise<*>)
+
+@JsName("beforeEach")
+external fun beforeEach(setup: Function<*>)
+
+@JsName("afterEach")
+external fun afterEach(setup: Function<*>)
