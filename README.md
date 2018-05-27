@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/kodando/kodando.png)](https://travis-ci.org/kodando/kodando)
+
 # Kodando
 
 Collection of kotlin binding libraries for existing javascript libraries.
