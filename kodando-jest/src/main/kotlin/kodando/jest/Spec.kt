@@ -10,6 +10,9 @@ abstract class Spec {
   @JsName("it")
   fun it(description: String) = It(description)
 
+  @JsName("fit")
+  fun fit(description: String) = Fit(description)
+
   @JsName("test")
   fun test(description: String) = Test(description)
 

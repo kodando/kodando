@@ -19,6 +19,12 @@ external fun it(description: String, expectationHandler: () -> Any?)
 @JsName("it")
 external fun itAsync(description: String, expectationHandler: () -> Promise<*>)
 
+@JsName("fit")
+external fun fit(description: String, expectationHandler: () -> Any?)
+
+@JsName("fit")
+external fun fitAsync(description: String, expectationHandler: () -> Promise<*>)
+
 @JsName("beforeEach")
 external fun beforeEach(setup: Function<*>)
 

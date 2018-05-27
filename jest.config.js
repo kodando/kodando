@@ -7,7 +7,12 @@ module.exports = {
     'kodando-redurx/build/js',
     'node_modules'
   ],
+  testEnvironment: "jest-sourcemaps/lib/jsdom-env",
   testMatch: [
     '**/js-tests/*.spec.js'
-  ]
+  ],
+  transform: {
+    "^.+\\.js$": "jest-sourcemaps/lib/transformer.js"
+  },
+  setupTestFrameworkScriptFile: "jest-sourcemaps/lib/testEnvSetup.js"
 };
