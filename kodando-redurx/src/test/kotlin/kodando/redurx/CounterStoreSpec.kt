@@ -11,7 +11,7 @@ import kodando.rxjs.operators.take
 class CounterStoreSpec : Spec() {
   init {
     describe("A CounterStore") {
-      val store = Store(0, ::reduceCounter, effects = *arrayOf(CounterEffects()))
+      val store = Store(0, ::reduceCounter, CounterEffects())
 
       it("should start with the initial state") byCheckingAfter {
         val counter = await(store.take(1).toPromise())
@@ -74,7 +74,7 @@ class CounterStoreSpec : Spec() {
     }
   }
 
-  class CounterEffects : Effect() {
+  class CounterEffects : Effect<Int>() {
     val twoIncrements = processingOfType<TwoIncrementsCounter> {
       it.switchMap {
         of(IncrementCounter(), IncrementCounter())
@@ -82,7 +82,7 @@ class CounterStoreSpec : Spec() {
     }
 
     val incrementLater = processingOfType<IncrementLater> {
-      it.switchMap { action ->
+      it.switchMap { (_, action) ->
         Observable<Action> { observer ->
           kodando.redurx.delay(action.time).then {
             observer.next(IncrementCounter())

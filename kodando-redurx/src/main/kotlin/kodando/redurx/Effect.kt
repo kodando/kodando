@@ -2,66 +2,53 @@ package kodando.redurx
 
 import kodando.rxjs.Observable
 import kodando.rxjs.Subject
-import kodando.rxjs.Unsubscribable
-import kodando.rxjs.operators.ofType
-import kodando.rxjs.operators.switchMap
-import kodando.rxjs.subscribeWith
+import kodando.rxjs.observable.fromArray
+import kodando.rxjs.operators.filter
+import kodando.rxjs.operators.mergeMap
+import kodando.rxjs.operators.tap
 import kotlin.reflect.KClass
 
-abstract class Effect : Subject<Action>() {
+typealias EffectProcessor<TState> = (Observable<Pair<TState, Action>>) -> Observable<Action>
+typealias EffectProcessorOfAction<TState, TAction> = (Observable<Pair<TState, TAction>>) -> Observable<Action>
 
-  private val actionSS = Subject<Observable<Action>>()
-  private val actionS = actionSS.switchMap { it }
-  private val subscriptions = mutableListOf<Unsubscribable>()
+abstract class Effect<TState> {
 
-  override fun complete() {
-    super.complete()
-    actionSS.complete()
-  }
+  private var processors = arrayOf<EffectProcessor<TState>>()
 
-  fun activate(actionSource: Observable<Action>) {
-    actionSS.next(actionSource)
+  fun watch(mutationS: Observable<Pair<TState, Action>>): Observable<Action> {
+    return fromArray(processors).mergeMap { it(mutationS) }
   }
 
   protected fun processing(
-    processor: (Observable<Action>) -> Observable<Action>
+    processor: EffectProcessor<TState>
   ): Observable<Action> {
 
     val subject = Subject<Action>()
 
-    subscriptions.add(
-      processor(actionS).subscribeWith {
-        next = {
-          next(it)
-          subject.next(it)
-        }
+    val enhancedProcessor: EffectProcessor<TState> = {
+      processor(it).tap(subject)
+    }
 
-        error = {
-          error(it)
-          subject.error(it)
-        }
-
-        complete = {
-          subject.complete()
-        }
-      }
-    )
+    processors += enhancedProcessor
 
     return subject
   }
 
   protected fun <TAction : Action> processingOfType(
     type: KClass<TAction>,
-    processor: (Observable<TAction>) -> Observable<Action>
+    processor: EffectProcessorOfAction<TState, TAction>
   ): Observable<Action> {
 
     return processing {
-      processor(it.ofType(type))
+      processor(
+        it.filter { type.isInstance(it.second) }
+          .unsafeCast<Observable<Pair<TState, TAction>>>()
+      )
     }
   }
 
   protected inline fun <reified TAction : Action> processingOfType(
-    noinline processor: (Observable<TAction>) -> Observable<Action>
+    noinline processor: EffectProcessorOfAction<TState, TAction>
   ): Observable<Action> {
 
     return processingOfType(TAction::class, processor)
