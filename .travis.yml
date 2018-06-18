@@ -29,7 +29,7 @@ cache:
 stages:
   - name: build
   - name: release
-    if: branch = release
+    if: branch = master
 
 jobs:
   include:
@@ -39,6 +39,6 @@ jobs:
         - yarn
         - yarn test
 
-    - stage: release
+    - stage: master
       script: 
         - .publish.sh
