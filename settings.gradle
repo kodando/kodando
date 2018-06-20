@@ -13,3 +13,7 @@ include 'kodando-elmish-react'
 include 'kodando-redurx'
 include 'kodando-mithril'
 include 'kodando-mithril-router-dom'
+include 'kodando-mobx'
+include 'kodando-mobx-react'
+include 'kodando-mobx-react-devtools'
+
