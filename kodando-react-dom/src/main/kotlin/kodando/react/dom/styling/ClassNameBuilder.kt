@@ -1,11 +1,8 @@
 package kodando.react.dom.styling
 
-class StyleBuilder(vararg initialClasses: String) {
+class ClassNameBuilder(private var classes: Array<out String>) {
 
-  var classes = arrayOf(*initialClasses)
-    private set
-
-  fun add(className: String?): StyleBuilder {
+  fun add(className: String?): ClassNameBuilder {
     if (className != null) {
       classes += className
     }
@@ -13,7 +10,7 @@ class StyleBuilder(vararg initialClasses: String) {
     return this
   }
 
-  fun add(className: String?, predicate: Boolean?): StyleBuilder {
+  fun add(className: String?, predicate: Boolean?): ClassNameBuilder {
     if (predicate == true) {
       add(className)
     }
@@ -26,3 +23,6 @@ class StyleBuilder(vararg initialClasses: String) {
   }
 
 }
+
+fun buildClassName(vararg classes: String) =
+  ClassNameBuilder(classes)
