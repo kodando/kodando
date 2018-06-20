@@ -1,84 +1,85 @@
 buildscript {
-    ext.kotlin_version = '1.2.41'
+  ext.kotlin_version = '1.2.41'
 
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
 
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
-    }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
+    classpath "gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.55"
+  }
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.8.0"
+  id "com.jfrog.bintray" version "1.8.0"
 }
 
 allprojects {
-    group 'br.danfma.kodando'
+  group 'br.danfma.kodando'
 
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
 }
 
 subprojects {
-    apply plugin: 'kotlin2js'
-    apply plugin: 'maven-publish'
-    apply plugin: 'com.jfrog.bintray'
+  apply plugin: 'kotlin2js'
+  apply plugin: 'maven-publish'
+  apply plugin: 'com.jfrog.bintray'
 
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+  dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+  }
+
+  kotlin {
+    experimental {
+      coroutines 'enable'
     }
+  }
 
-    kotlin {
-        experimental {
-            coroutines 'enable'
-        }
+  compileKotlin2Js {
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "${project.buildDir.path}/js/${project.name}.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+    kotlinOptions.moduleKind = 'commonjs'
+  }
+
+  compileTestKotlin2Js {
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}.spec.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+    kotlinOptions.moduleKind = 'commonjs'
+  }
+
+  publishing {
+    publications {
+      MyPublication(MavenPublication) {
+        from components.java
+        artifactId "${project.name}"
+      }
     }
+  }
 
-    compileKotlin2Js {
-        kotlinOptions.metaInfo = true
-        kotlinOptions.outputFile = "${project.buildDir.path}/js/${project.name}.js"
-        kotlinOptions.sourceMap = true
-        kotlinOptions.sourceMapEmbedSources = "always"
-        kotlinOptions.moduleKind = 'commonjs'
+  bintray {
+    user = project.hasProperty("bintrayUser") ? project.property("bintrayUser") : System.getenv("BINTRAY_USERNAME")
+    key = project.hasProperty("bintrayKey") ? project.property("bintrayKey") : System.getenv("BINTRAY_PASSKEY")
+    publications = ["MyPublication"]
+    publish = true
+
+    pkg {
+      repo = "kotlin-kodando"
+      name = "${project.name}"
+      userOrg = user
+      licenses = ["MIT"]
+      vcsUrl = "https://github.com/kodando/kodando.git"
+      labels = ["kotlin", "javascript", "kotlinjs", "bindings"]
+      publicDownloadNumbers = true
     }
-
-    compileTestKotlin2Js {
-        kotlinOptions.metaInfo = true
-        kotlinOptions.outputFile = "${project.buildDir.path}/js-tests/${project.name}.spec.js"
-        kotlinOptions.sourceMap = true
-        kotlinOptions.sourceMapEmbedSources = "always"
-        kotlinOptions.moduleKind = 'commonjs'
-    }
-
-    publishing {
-        publications {
-            MyPublication(MavenPublication) {
-                from components.java
-                artifactId "${project.name}"
-            }
-        }
-    }
-
-    bintray {
-        user = project.hasProperty("bintrayUser") ? project.property("bintrayUser") : System.getenv("BINTRAY_USERNAME")
-        key = project.hasProperty("bintrayKey") ? project.property("bintrayKey") : System.getenv("BINTRAY_PASSKEY")
-        publications = ["MyPublication"]
-        publish = true
-
-        pkg {
-            repo = "kotlin-kodando"
-            name = "${project.name}"
-            userOrg = user
-            licenses = ["MIT"]
-            vcsUrl = "https://github.com/kodando/kodando.git"
-            labels = ["kotlin", "javascript", "kotlinjs", "bindings"]
-            publicDownloadNumbers = true
-        }
-    }
+  }
 }
