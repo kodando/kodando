@@ -2,25 +2,7 @@ package kodando.react
 
 import kotlin.reflect.KClass
 
-typealias Configurer<T> = T.() -> Unit
-
-@JsName("unsafelyCreateObject")
-inline fun <T> unsafelyCreateObject() = js("({})").unsafeCast<T>()
-
-@JsName("createProps")
-inline fun <T : ReactProps> createProps(): T = unsafelyCreateObject()
-
-@JsName("createPropsAndConfigure")
-inline fun <T : ReactProps> createProps(configure: Configurer<T>): T = createProps<T>().also(configure)
-
-@JsName("configureBy")
-fun <T : ReactProps> T.configureBy(configure: Configurer<T>?): T {
-  if (configure != null) {
-    this.configure()
-  }
-
-  return this
-}
+private val noChildren = arrayOf<Any?>()
 
 private inline fun asReactChildren(child: Any?) =
   child.unsafeCast<ReactChildren?>()
@@ -37,9 +19,7 @@ fun addChild(target: ReactProps, child: Any?) {
   }
 }
 
-private val noChildren = arrayOf<Any?>()
-
-private fun extractChildren(props: ReactProps): Array<Any?> {
+internal fun popChildrenFrom(props: ReactProps): Array<Any?> {
   val children = props.children
 
   js("delete props.children")
@@ -49,28 +29,6 @@ private fun extractChildren(props: ReactProps): Array<Any?> {
     is Array<*> -> children.unsafeCast<Array<Any?>>()
     else -> arrayOf(children)
   }
-}
-
-@JsName("createElement")
-fun createElement(tagName: String, props: ReactProps): ReactNode? {
-  return React.createElement(tagName, props, *extractChildren(props))
-}
-
-@JsName("createElementByRenderer")
-fun <TProps : ReactProps> createElement(renderer: (TProps) -> ReactNode?, props: TProps): ReactNode? {
-  return React.createElement(renderer, props, *extractChildren(props))
-}
-
-@JsName("createComponent")
-fun <TProps : ReactProps> createComponent(componentType: JsClass<out Component<TProps, *>>, props: TProps): ReactNode? {
-  return React.createElement(componentType, props, *extractChildren(props))
-}
-
-@JsName("root")
-fun root(configure: Configurer<ReactProps>): ReactNode? {
-  return createProps<ReactProps>()
-    .apply(configure)
-    .firstChild()
 }
 
 @JsName("firstChild")
@@ -107,6 +65,18 @@ fun ReactProps.add(children: Array<out ReactNode?>) {
 @JsName("addChildren")
 fun ReactProps.add(children: ReactChildren?) {
   addChild(this, children)
+}
+
+@JsName("addView")
+fun <TProps : ReactProps> ReactProps.addView(
+  renderer: SimpleView<TProps>,
+  configurer: Configurer<TProps>? = null) {
+
+  add(
+    renderer(createProps<TProps> {
+      configurer?.invoke(this)
+    })
+  )
 }
 
 @JsName("addComponent")

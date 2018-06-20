@@ -4,7 +4,7 @@
 package kodando.react
 
 @JsName("Component")
-external abstract class Component<TProps : ReactProps, TState>(props: TProps = definedExternally, context: Any? = definedExternally) {
+abstract external class Component<TProps : ReactProps, TState>(props: TProps = definedExternally, context: Any? = definedExternally) {
   val props: TProps
   var state: TState
   open val context: Any?
