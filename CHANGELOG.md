@@ -1,3 +1,9 @@
+#### 1.2.1 (2018-06-22)
+
+##### Chores
+
+* **kodando:**  Updating package.json release:next script (d9d1b459)
+
 ### 1.2.0 (2018-06-22)
 
 ##### Breaking Changes
