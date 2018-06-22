@@ -4,7 +4,7 @@ module.exports = {
     'kodando-runtime/build/js',
     'kodando-jest/build/js',
     'kodando-rxjs/build/js',
-    'kodando-redurx/build/js',
+    'kodando-store/build/js',
     'node_modules'
   ],
   testEnvironment: "jest-sourcemaps/lib/jsdom-env",

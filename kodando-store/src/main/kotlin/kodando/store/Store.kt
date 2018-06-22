@@ -1,4 +1,4 @@
-package kodando.redurx
+package kodando.store
 
 import kodando.rxjs.BehaviorSubject
 import kodando.rxjs.Subject

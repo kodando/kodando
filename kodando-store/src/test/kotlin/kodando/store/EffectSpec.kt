@@ -1,4 +1,4 @@
-package kodando.redurx
+package kodando.store
 
 import kodando.jest.Spec
 import kodando.jest.expect

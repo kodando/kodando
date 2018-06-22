@@ -1,3 +1,3 @@
-package kodando.redurx
+package kodando.store
 
 internal object Init : BaseAction()

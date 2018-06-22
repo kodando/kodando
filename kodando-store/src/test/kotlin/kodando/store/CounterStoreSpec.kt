@@ -1,4 +1,4 @@
-package kodando.redurx
+package kodando.store
 
 import kodando.jest.Spec
 import kodando.jest.expect
@@ -84,7 +84,7 @@ class CounterStoreSpec : Spec() {
     val incrementLater = processingOfType<IncrementLater> {
       it.switchMap { (_, action) ->
         Observable<Action> { observer ->
-          kodando.redurx.delay(action.time).then {
+          kodando.store.delay(action.time).then {
             observer.next(IncrementCounter())
             observer.complete()
           }

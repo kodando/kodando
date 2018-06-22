@@ -1,4 +1,4 @@
-package kodando.redurx
+package kodando.store
 
 import kotlin.browser.window
 import kotlin.js.Promise

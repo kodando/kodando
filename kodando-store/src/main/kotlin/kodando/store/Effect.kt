@@ -1,4 +1,4 @@
-package kodando.redurx
+package kodando.store
 
 import kodando.rxjs.Observable
 import kodando.rxjs.Subject

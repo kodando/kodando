@@ -1,4 +1,4 @@
-package kodando.redurx
+package kodando.store
 
 interface Action {
   @JsName("type")
