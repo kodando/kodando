@@ -4,7 +4,8 @@
   "author": "Daniel Ferreira Monteiro Alves <danfma@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "changelog": "changelog -m",
+    "release:next": "changelog -m && git add CHANGELOG.md && git commit -m 'Updated CHANGELOG.md' && yarn version --minor && git push origin && git push origin --tags",
+    "release:minor": "changelog -p && git add CHANGELOG.md && git commit -m 'Updated CHANGELOG.md' && yarn version --patch && git push origin && git push origin --tags",
     "test": "jest"
   },
   "dependencies": {
