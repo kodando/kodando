@@ -5,7 +5,7 @@ import kodando.runtime.es2015.Symbol
 
 external interface ContextProviderProps : Props {
   var name: Symbol
-  var value: Any
+  var value: Any?
   var renderer: () -> VNode<*>?
 }
 
@@ -31,7 +31,7 @@ object ContextProvider
   }
 }
 
-fun <T : Any> Props.contextProvider(key: ContextKey<T>, contextValue: T, applier: Applier<Props>) {
+fun <T> Props.contextProvider(key: ContextKey<T>, contextValue: T, applier: Applier<Props>) {
   addChild(ContextProvider) {
     name = key.name
     value = contextValue
