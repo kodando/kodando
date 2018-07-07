@@ -4,6 +4,7 @@
   "author": "Daniel Ferreira Monteiro Alves <danfma@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "bintray": "nps bintray.publish",
     "up-major": "nps versioning.major",
     "up-minor": "nps versioning.minor",
     "up-patch": "nps versioning.patch",
