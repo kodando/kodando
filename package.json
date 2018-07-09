@@ -1,12 +1,12 @@
 {
   "name": "kodando-project",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "Daniel Ferreira Monteiro Alves <danfma@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "release:major": "changelog -m && git add CHANGELOG.md && git commit -m 'Updated CHANGELOG.md'",
-    "release:minor": "changelog -p && git add CHANGELOG.md && git commit -m 'Updated CHANGELOG.md'",
-    "release:revision": "changelog -p && git add CHANGELOG.md && git commit -m 'Updated CHANGELOG.md'",
+    "up-major": "nps versioning.major",
+    "up-minor": "nps versioning.minor",
+    "up-patch": "nps versioning.patch",
     "test": "jest"
   },
   "dependencies": {
@@ -20,6 +20,8 @@
     "generate-changelog": "^1.7.1",
     "jest": "^23.0.0",
     "jest-sourcemaps": "^1.0.1",
+    "nps": "^5.9.2",
+    "nps-utils": "^1.6.0",
     "shelljs": "^0.8.2"
   }
 }
