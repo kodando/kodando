@@ -5,7 +5,7 @@ import kodando.runtime.es2015.Symbol
 
 interface ContextConsumerProps : Props {
   var contextKey: Symbol
-  var renderer: (Any) -> VNode<*>?
+  var renderer: (Any?) -> VNode<*>?
 }
 
 object ContextConsumer : View<ContextConsumerProps> {
