@@ -1,3 +1,19 @@
+## 2.0.0 (2018-07-09)
+
+##### Build System / Dependencies
+
+* **kodando:**  Updating publish script. (196f97c1)
+
+##### Chores
+
+* **kodando:**
+  *  Updating `package.json`. (3ec44477)
+  *  Ignore idea directory (0b7ee968)
+
+##### Bug Fixes
+
+* **kodando-mithril:**  Removing context API restriction (d9bb42f9)
+
 #### 1.2.2 (2018-07-09)
 
 ##### Build System / Dependencies
