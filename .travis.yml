@@ -41,6 +41,4 @@ jobs:
 
     - stage: publish
       script: 
-        - ./gradlew build --console=plain
-        - yarn
-        - yarn bintray
+        - ./publish-all.sh
