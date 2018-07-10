@@ -3,7 +3,7 @@ const { exec, ls } = require("shelljs");
 ls("-d", "kodando-*")
   .forEach(directory => {
     try {
-      exec(`./publish.sh ${directory}`, { silent: true }, (code, output, err) => {
+      exec(`./publish.sh ${directory}`, (code, output, err) => {
         if (err) {
           console.log("COULD NOT PUBLISH", directory);
         } else {
