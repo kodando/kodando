@@ -1,3 +1,23 @@
+#### 2.0.3 (2018-07-10)
+
+##### Build System / Dependencies
+
+* **kodando:**
+  *  Fixing Travis build script. (4192bf06)
+  *  Updating publish script. (196f97c1)
+
+##### Chores
+
+* **kodando:**
+  *  Removing silent option when publish (c99d61a1)
+  *  Updating Travis scripts (deef3eba)
+  *  Updating `package.json`. (3ec44477)
+  *  Ignore idea directory (0b7ee968)
+
+##### Bug Fixes
+
+* **kodando-mithril:**  Removing context API restriction (d9bb42f9)
+
 #### 2.0.2 (2018-07-10)
 
 ##### Build System / Dependencies
