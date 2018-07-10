@@ -1,7 +1,9 @@
 #!/bin/bash
 
+./gradlew clean build
+set -o pipefail
+
 for PROJECT in $(ls -d kodando-*)
 do
-  echo "PUBLISHING $PROJECT"
-  ./publish.sh "$PROJECT" 2>/dev/null
+  ./gradlew -p ${PROJECT} -PbintrayUser=${BINTRAY_USERNAME} -PbintrayKey=${BINTRAY_PASSKEY} bintrayUpload
 done
