@@ -9,6 +9,9 @@ module.exports = {
       "gitadd": utils.series("git add package.json", "git add CHANGELOG.md"),
       "gitcommit": "git commit -m 'Updated version and changelog.'"
     },
+    "bintray": {
+      "publish": "node ./scripts/bintray-publish.js"
+    },
     "versioning": {
       "major": utils.series("nps hidden.up-major", "nps hidden.gitadd", "nps hidden.gitcommit"),
       "minor": utils.series("nps hidden.up-minor", "nps hidden.gitadd", "nps hidden.gitcommit"),
