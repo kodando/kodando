@@ -1,3 +1,20 @@
+#### 2.0.1 (2018-07-10)
+
+##### Build System / Dependencies
+
+* **kodando:**  Updating publish script. (196f97c1)
+
+##### Chores
+
+* **kodando:**
+  *  Updating Travis scripts (deef3eba)
+  *  Updating `package.json`. (3ec44477)
+  *  Ignore idea directory (0b7ee968)
+
+##### Bug Fixes
+
+* **kodando-mithril:**  Removing context API restriction (d9bb42f9)
+
 ## 2.0.0 (2018-07-09)
 
 ##### Build System / Dependencies
