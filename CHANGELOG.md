@@ -1,3 +1,35 @@
+#### 2.0.10 (2018-08-05)
+
+##### Build System / Dependencies
+
+* **kodando-mithril:**  Upgrade mithril version. (31bf6823)
+* **kodando:**
+  *  Trying to auto publish to bintray. (ba66e2ad)
+  *  Updating kotlin version (0376e606)
+  *  Fixing Travis build script. (4192bf06)
+  *  Updating publish script. (196f97c1)
+
+##### Chores
+
+* **kodando:**
+  *  Updating publish script (34cda49c)
+  *  Another try to publish (8470afdc)
+  *  Fixing publish-all script. (576eb4ef)
+  *  Ignoring Travis publish build. (147597e9)
+  *  Adjusting Travis publish script. (70718659)
+  *  Removing silent option when publish (c99d61a1)
+  *  Updating Travis scripts (deef3eba)
+  *  Updating `package.json`. (3ec44477)
+  *  Ignore idea directory (0b7ee968)
+
+##### Bug Fixes
+
+* **kodando-mithril:**  Removing context API restriction (d9bb42f9)
+
+##### Other Changes
+
+* **kodando-mithril:**  Adding Mithril support for class components. (723c9497)
+
 #### 2.0.9 (2018-08-05)
 
 ##### Build System / Dependencies
