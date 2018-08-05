@@ -4,7 +4,7 @@
 
 publish()
 {
-  ./gradlew -p $1 -PbintrayUser=${BINTRAY_USERNAME} -PbintrayKey=${BINTRAY_PASSKEY} bintrayUpload || echo "Could not publish $1"
+  ./gradlew -p $1 -PbintrayUser=${BINTRAY_USERNAME} -PbintrayKey=${BINTRAY_PASSKEY} bintrayUpload > /dev/null && echo "Published $1"
 }
 
 for PROJECT in $(ls -d kodando-*)
