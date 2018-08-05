@@ -40,5 +40,6 @@ jobs:
         - yarn test
 
     - stage: publish
-      script: 
+      script:
+        - ./gradlew clean build --console=plain
         - ./publish-all.sh
