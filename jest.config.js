@@ -5,6 +5,7 @@ module.exports = {
     'kodando-jest/build/js',
     'kodando-rxjs/build/js',
     'kodando-store/build/js',
+    'kodando-mithril/build/js',
     'node_modules'
   ],
   testEnvironment: "jest-sourcemaps/lib/jsdom-env",

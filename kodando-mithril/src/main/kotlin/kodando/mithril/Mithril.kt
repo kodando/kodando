@@ -2,6 +2,7 @@ package kodando.mithril
 
 import org.w3c.dom.Element
 import kotlin.js.*
+import kotlin.reflect.KClass
 
 external interface Props {
   var id: String?
@@ -60,6 +61,7 @@ external interface OnRemove<in TProps : Props> {
 private external object Mithril {
   fun render(element: Element, view: Any)
   fun mount(element: Element, view: View<*>)
+  fun mount(element: Element, view: JsClass<out View<*>>)
   fun route(element: Element, defaultRoute: String, routes: Json)
   fun redraw()
 }
@@ -77,6 +79,12 @@ private external fun m(view: View<*>, children: Any?): VNode<*>
 private external fun m(view: View<*>, json: Props, children: Any?): VNode<*>
 
 @JsModule("mithril")
+private external fun m(view: JsClass<out View<*>>, children: Any?): VNode<*>
+
+@JsModule("mithril")
+private external fun m(view: JsClass<out View<*>>, json: Props, children: Any?): VNode<*>
+
+@JsModule("mithril")
 private external fun m(child: VNode<*>, json: Props, children: Any?): VNode<*>
 
 typealias VNodeFactory = (VNode<*>) -> VNode<*>
@@ -87,6 +95,14 @@ fun render(element: Element, view: Any) {
 
 fun mount(element: Element, view: View<*>) {
   Mithril.mount(element, view)
+}
+
+fun mount(element: Element, view: JsClass<out View<*>>) {
+  Mithril.mount(element, view)
+}
+
+inline fun <TView : View<*>> mount(element: Element, view: KClass<TView>) {
+  mount(element, view.js)
 }
 
 fun route(element: Element, defaultRoute: String, map: Map<String, View<*>>) {
@@ -137,6 +153,16 @@ fun <TProps : Props> createElement(view: View<TProps>, props: TProps, vararg chi
   val (cleanProps, allChildren) = separateChildren(props, children)
 
   return m(view, cleanProps, allChildren)
+}
+
+fun createElement(viewClass: JsClass<out View<*>>, vararg children: Any?): VNode<*> {
+  return m(viewClass, children)
+}
+
+fun <TProps : Props> createElement(viewClass: JsClass<out View<TProps>>, props: TProps, vararg children: Any?): VNode<*> {
+  val (cleanProps, allChildren) = separateChildren(props, children)
+
+  return m(viewClass, cleanProps, allChildren)
 }
 
 fun <TProps : Props> createElement(vnode: VNode<*>, props: TProps, vararg children: Any?): VNode<*> {
