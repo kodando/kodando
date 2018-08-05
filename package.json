@@ -1,10 +1,9 @@
 {
   "name": "kodando-project",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "author": "Daniel Ferreira Monteiro Alves <danfma@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "bintray": "nps bintray.publish",
     "up-major": "nps versioning.major",
     "up-minor": "nps versioning.minor",
     "up-patch": "nps versioning.patch",
@@ -12,6 +11,7 @@
   },
   "dependencies": {
     "kotlin": "^1.2.20",
+    "mithril": "^1.1.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
