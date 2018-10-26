@@ -1,6 +1,8 @@
 package kodando.mobx
 
-import kotlin.coroutines.experimental.suspendCoroutine
+import kotlin.coroutines.suspendCoroutine
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
 import kotlin.js.*
 
 fun <T> observable(value: T) = BoxedPropertyProvider(value)

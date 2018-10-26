@@ -7,7 +7,7 @@ import kodando.runtime.Tuple2
  */
 
 @JsName("Map")
-external open class JsMap<Key, Value>(vararg tuple2: Tuple2<Key, Value>) {
+open external class JsMap<Key, Value>(vararg tuple2: Tuple2<Key, Value>) {
   val size: Int
 
   fun entries(): Array<Tuple2<Key, Value>>
