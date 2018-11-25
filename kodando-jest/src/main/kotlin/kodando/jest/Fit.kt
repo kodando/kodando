@@ -1,6 +1,6 @@
 package kodando.jest
 
-import kodando.runtime.async.asyncPromise
+import kodando.runtime.async.async
 
 class Fit(private val description: String) {
 
@@ -15,7 +15,7 @@ class Fit(private val description: String) {
   @JsName("byCheckingWhenDone")
   infix fun <T> byCheckingAfter(handler: suspend () -> T) {
     fitAsync(description) {
-      asyncPromise(handler)
+      async(handler)
     }
   }
 
