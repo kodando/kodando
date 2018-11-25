@@ -1,6 +1,6 @@
 package kodando.jest
 
-import kodando.runtime.async.asyncPromise
+import kodando.runtime.async.async
 
 class It(private val description: String) {
 
@@ -15,7 +15,7 @@ class It(private val description: String) {
   @JsName("byCheckingWhenDone")
   infix fun <T> byCheckingAfter(handler: suspend () -> T) {
     itAsync(description) {
-      asyncPromise(handler)
+      async(handler)
     }
   }
 
