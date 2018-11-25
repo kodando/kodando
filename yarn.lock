@@ -2101,9 +2101,13 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kotlin@^1.2.20:
-  version "1.2.50"
-  resolved "https://registry.yarnpkg.com/kotlin/-/kotlin-1.2.50.tgz#10e0db687fb016e0d047634c92888aa5b4541550"
+kotlin@^1.3.10:
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/kotlin/-/kotlin-1.3.10.tgz#4faf60df28d24080e561059cc49f7444f93cabc2"
+
+kotlinx-coroutines-core@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/kotlinx-coroutines-core/-/kotlinx-coroutines-core-1.0.1.tgz#dbc9d0687d92d3007672f08e21ad99eaa7b8b403"
 
 lazy-cache@^1.0.3:
   version "1.0.4"
