@@ -1,5 +1,6 @@
-version "0.7.0"
+version "0.8.0"
 
 dependencies {
-    compile project(":kodando-runtime")
+  compile project(":kodando-runtime")
+  compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.0.1"
 }

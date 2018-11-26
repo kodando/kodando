@@ -2,11 +2,11 @@ package kodando.rxjs.tests.operator
 
 import kodando.jest.Spec
 import kodando.jest.expect
-import kodando.runtime.async.await
 import kodando.rxjs.observable.concat
 import kodando.rxjs.observable.fromArray
 import kodando.rxjs.observable.of
 import kodando.rxjs.operators.toArray
+import kotlinx.coroutines.await
 
 object ConcatOperatorSpec : Spec() {
   init {
@@ -15,7 +15,7 @@ object ConcatOperatorSpec : Spec() {
         val one = of(1, 2, 3)
         val two = of(4, 5, 6)
         val result = concat(one, two)
-        val produced = await(result.toArray().toPromise())
+        val produced = result.toArray().toPromise().await()
 
         expect(produced).toEqual(arrayOf(1, 2, 3, 4, 5, 6))
       }
@@ -25,7 +25,7 @@ object ConcatOperatorSpec : Spec() {
         val two = fromArray(arrayOf(3, 4))
         val three = fromArray(arrayOf(5, 6))
         val result = concat(one, two, three)
-        val produced = await(result.toArray().toPromise())
+        val produced = result.toArray().toPromise().await()
 
         expect(produced).toEqual(arrayOf(1, 2, 3, 4, 5, 6))
       }
@@ -35,7 +35,7 @@ object ConcatOperatorSpec : Spec() {
         val two = fromArray(arrayOf(4, 5, 6))
 
         val result = concat(one, two)
-        val produced = await(result.toArray().toPromise())
+        val produced = result.toArray().toPromise().await()
 
         expect(produced).toEqual(arrayOf(1, 2, 3, 4, 5, 6))
       }

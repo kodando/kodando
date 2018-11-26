@@ -1,9 +1,9 @@
 package kodando.runtime.async
 
-import kotlin.coroutines.Continuation
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.promise
 import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.EmptyCoroutineContext
-import kotlin.coroutines.startCoroutine
 import kotlin.js.Promise
 
 /**
@@ -11,16 +11,11 @@ import kotlin.js.Promise
  */
 
 fun <T> async(block: suspend () -> T): Promise<T> {
-  return Promise { resolve, reject ->
-    block.startCoroutine(completion = object : Continuation<T> {
-      override val context: CoroutineContext = EmptyCoroutineContext
+  val scope = object : CoroutineScope {
+    override val coroutineContext: CoroutineContext = Job()
+  }
 
-      override fun resumeWith(result: Result<T>) {
-        result.fold(
-          { resolve(it) },
-          { reject(it) }
-        )
-      }
-    })
+  return scope.promise {
+    block()
   }
 }

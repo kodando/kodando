@@ -2,13 +2,13 @@ package kodando.rxjs.tests
 
 import kodando.jest.Spec
 import kodando.jest.expect
-import kodando.runtime.async.await
 import kodando.rxjs.Observable
 import kodando.rxjs.observable.fromEvent
 import kodando.rxjs.observable.of
 import kodando.rxjs.operators.combineAll
 import kodando.rxjs.operators.take
 import kodando.rxjs.operators.toArray
+import kotlinx.coroutines.await
 import org.w3c.dom.events.Event
 import kotlin.browser.document
 
@@ -28,7 +28,7 @@ object ObservableCreateSpec : Spec() {
           null
         }
 
-        val produced = await(observable.toArray().toPromise())
+        val produced = observable.toArray().toPromise().await()
         val expected = arrayOf(1, 2)
 
         expect(produced).toEqual(expected)
@@ -43,7 +43,7 @@ object ObservableCreateSpec : Spec() {
           source.subscribe(observer)
         }
 
-        val produced = await(observable.toArray().toPromise())
+        val produced = observable.toArray().toPromise().await()
         val expected = arrayOf(1)
 
         expect(produced).toEqual(expected)
@@ -63,7 +63,7 @@ object ObservableCreateSpec : Spec() {
 
         source.dispatchEvent(click)
 
-        val produced = await(promise)
+        val produced = promise.await()
         val expected = click
 
         expect(produced).toBe(expected)
@@ -76,7 +76,7 @@ object ObservableCreateSpec : Spec() {
         val two = of(2)
         val combined = of(one, two).combineAll()
 
-        val produced = await(combined.toArray().toPromise())
+        val produced = combined.toArray().toPromise().await()
         val expected = arrayOf(arrayOf(1, 2))
 
         expect(produced).toEqual(expected)

@@ -2,10 +2,10 @@ package kodando.rxjs.tests
 
 import kodando.jest.Spec
 import kodando.jest.expect
-import kodando.runtime.async.await
 import kodando.rxjs.observable.of
 import kodando.rxjs.observable.throwError
 import kodando.rxjs.subscribeWith
+import kotlinx.coroutines.await
 import kotlin.js.Promise
 
 object ObservableExtensionsSpec : Spec() {
@@ -14,7 +14,7 @@ object ObservableExtensionsSpec : Spec() {
       it("should be able use an object like subscription") byCheckingAfter {
         val observable = of(1)
 
-        val tracker = await(Promise<Tracker> { resolve, reject ->
+        val tracker = Promise<Tracker> { resolve, reject ->
           val tracker = Tracker()
 
           observable.subscribeWith {
@@ -32,7 +32,7 @@ object ObservableExtensionsSpec : Spec() {
               resolve(tracker)
             }
           }
-        })
+        }.await()
 
         expect(tracker.nextCalled).toBeTruthy()
         expect(tracker.errorCalled).toBeFalsy()
@@ -42,7 +42,7 @@ object ObservableExtensionsSpec : Spec() {
       it("should be able use an object like subscription to handle errors") byCheckingAfter {
         val observable = throwError<Tracker>(Exception())
 
-        val tracker = await(Promise<Tracker> { resolve, reject ->
+        val tracker = Promise<Tracker> { resolve, reject ->
           val tracker = Tracker()
 
           observable.subscribeWith {
@@ -60,7 +60,7 @@ object ObservableExtensionsSpec : Spec() {
               resolve(tracker)
             }
           }
-        })
+        }.await()
 
         expect(tracker.nextCalled).toBeFalsy()
         expect(tracker.errorCalled).toBeTruthy()

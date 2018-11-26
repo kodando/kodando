@@ -2,9 +2,9 @@ package kodando.rxjs.tests
 
 import kodando.jest.Spec
 import kodando.jest.expect
-import kodando.runtime.async.await
 import kodando.rxjs.observable.fromPromise
 import kodando.rxjs.tests.expectations.shouldBeObservable
+import kotlinx.coroutines.await
 import kotlin.js.Promise
 
 object ObservableFromPromiseSpec : Spec() {
@@ -12,7 +12,7 @@ object ObservableFromPromiseSpec : Spec() {
     describe("fromPromise") {
       ObservableCreateSpec.it("should return the promised value") byCheckingAfter {
         val observable = fromPromise(Promise.resolve(1))
-        val produced = await(observable.toPromise())
+        val produced = observable.toPromise().await()
 
         expect(produced).toBe(1)
       }
@@ -28,14 +28,14 @@ object ObservableFromPromiseSpec : Spec() {
 
         observable.shouldBeObservable()
 
-        val produced = await(observable.toPromise())
+        val produced = observable.toPromise().await()
 
         expect(produced).toBeTruthy()
       }
 
       it("should create a observable with the promised value") byCheckingAfter {
         val observable = fromPromise(Promise.resolve(1))
-        val produced = await(observable.toPromise())
+        val produced = observable.toPromise().await()
 
         expect(produced).toBe(1)
       }

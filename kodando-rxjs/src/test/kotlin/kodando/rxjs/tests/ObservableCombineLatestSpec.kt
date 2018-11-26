@@ -2,10 +2,10 @@ package kodando.rxjs.tests
 
 import kodando.jest.Spec
 import kodando.jest.expect
-import kodando.runtime.async.await
 import kodando.rxjs.Subject
 import kodando.rxjs.observable.combineLatest
 import kodando.rxjs.operators.toArray
+import kotlinx.coroutines.await
 
 object ObservableCombineLatestSpec : Spec() {
   init {
@@ -24,7 +24,7 @@ object ObservableCombineLatestSpec : Spec() {
         b.next(2)
         b.complete()
 
-        val result = await(resultPromise)
+        val result = resultPromise.await()
 
         expect(result).toEqual(arrayOf(4))
       }

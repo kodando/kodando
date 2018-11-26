@@ -2,19 +2,19 @@ package kodando.rxjs.tests
 
 import kodando.jest.Spec
 import kodando.jest.expect
-import kodando.runtime.async.await
 import kodando.rxjs.observable.empty
 import kodando.rxjs.observable.emptyScheduled
 import kodando.rxjs.operators.toArray
 import kodando.rxjs.scheduler.asyncScheduler
 import kodando.rxjs.tests.expectations.shouldBeObservable
+import kotlinx.coroutines.await
 
 object ObservableEmptySpec : Spec() {
   init {
     describe("empty") {
       it("should return nothing") byCheckingAfter {
         val observable = empty<Int>()
-        val produced = await(observable.toArray().toPromise())
+        val produced = observable.toArray().toPromise().await()
 
         expect(produced.size).toBe(0)
       }
