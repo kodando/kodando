@@ -2,10 +2,10 @@
 
 package kodando.runtime.async
 
-import kotlin.coroutines.experimental.Continuation
-import kotlin.coroutines.experimental.CoroutineContext
-import kotlin.coroutines.experimental.EmptyCoroutineContext
-import kotlin.coroutines.experimental.startCoroutine
+import kotlin.coroutines.Continuation
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
+import kotlin.coroutines.startCoroutine
 import kotlin.js.Promise
 
 /**
@@ -17,12 +17,15 @@ fun <T> async(block: suspend () -> T): Future<T> {
     block.startCoroutine(completion = object : Continuation<T> {
       override val context: CoroutineContext = EmptyCoroutineContext
 
-      override fun resume(value: T) {
-        resolve(value)
-      }
-
-      override fun resumeWithException(exception: Throwable) {
-        reject(exception)
+      override fun resumeWith(result: Result<T>) {
+        result.fold(
+          onSuccess = {
+            resolve(it)
+          },
+          onFailure = {
+            reject(it)
+          }
+        )
       }
     })
   }

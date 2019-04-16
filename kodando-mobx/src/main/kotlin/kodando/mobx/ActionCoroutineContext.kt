@@ -1,6 +1,6 @@
 package kodando.mobx
 
-import kotlin.coroutines.experimental.CoroutineContext
+import kotlin.coroutines.CoroutineContext
 
 class ActionCoroutineContext(override val actionName: String) : CoroutineContext, ActionContext {
   override fun <E : CoroutineContext.Element> get(key: CoroutineContext.Key<E>): E? = null

@@ -1,8 +1,8 @@
 package kodando.mobx
 
-import kotlin.coroutines.experimental.Continuation
-import kotlin.coroutines.experimental.CoroutineContext
-import kotlin.coroutines.experimental.startCoroutine
+import kotlin.coroutines.Continuation
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.startCoroutine
 import kotlin.js.Promise
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -16,12 +16,15 @@ class AsyncActionPropertyProvider<T, R>(private val action: SuspendableAsyncFunc
         this.action.startCoroutine(input, completion = object : Continuation<R> {
           override val context: CoroutineContext = ActionCoroutineContext(actionName)
 
-          override fun resume(value: R) {
-            resolve(value)
-          }
-
-          override fun resumeWithException(exception: Throwable) {
-            reject(exception)
+          override fun resumeWith(result: Result<R>) {
+            result.fold(
+              onSuccess = {
+                resolve(it)
+              },
+              onFailure = {
+                reject(it)
+              }
+            )
           }
         })
       }

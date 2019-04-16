@@ -1,6 +1,8 @@
 package kodando.runtime.async
 
-import kotlin.coroutines.experimental.suspendCoroutine
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
 
 /**

@@ -10,19 +10,19 @@
     "test": "jest"
   },
   "dependencies": {
-    "kotlin": "^1.2.20",
+    "kotlin": "^1.3.30",
     "mithril": "^1.1.6",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2",
-    "rxjs": "^6.1.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "generate-changelog": "^1.7.1",
-    "jest": "^23.0.0",
+    "jest": "^24.7.1",
     "jest-sourcemaps": "^1.0.1",
-    "nps": "^5.9.2",
-    "nps-utils": "^1.6.0",
-    "shelljs": "^0.8.2"
+    "nps": "^5.9.5",
+    "nps-utils": "^1.7.0",
+    "shelljs": "^0.8.3"
   }
 }

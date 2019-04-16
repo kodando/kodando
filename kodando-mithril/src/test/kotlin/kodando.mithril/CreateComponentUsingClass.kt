@@ -34,7 +34,6 @@ class CreateComponentUsingClassSpec : Spec() {
         }
       }
     }
-
   }
 
   private fun Props.counterByClass(count: Int, applier: Applier<CounterByClass.Props>) {
