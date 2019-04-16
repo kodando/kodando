@@ -19,6 +19,12 @@ external fun it(description: String, expectationHandler: () -> Any?)
 @JsName("it")
 external fun itAsync(description: String, expectationHandler: () -> Promise<*>)
 
+@JsName("xit")
+external fun xit(description: String, expectationHandler: () -> Any?)
+
+@JsName("xit")
+external fun xitAsync(description: String, expectationHandler: () -> Promise<*>)
+
 @JsName("fit")
 external fun fit(description: String, expectationHandler: () -> Any?)
 

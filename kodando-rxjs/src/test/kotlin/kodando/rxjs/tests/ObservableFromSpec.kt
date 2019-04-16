@@ -20,7 +20,7 @@ object ObservableFromSpec : Spec() {
       }
     }
 
-    describe("from(Observable)") {
+    describe("fromObservable") {
       it("should return the observable values") byCheckingAfter {
         val source = of(1)
         val observable = from(source)

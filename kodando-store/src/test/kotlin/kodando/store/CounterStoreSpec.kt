@@ -43,7 +43,7 @@ class CounterStoreSpec : Spec() {
         expect(counter).toBe(2)
       }
 
-      it("should process asynchronous effects") byCheckingAfter {
+      xit("should process asynchronous effects") byCheckingAfter {
         val timeout = 100
 
         store.dispatch(IncrementLater(timeout))

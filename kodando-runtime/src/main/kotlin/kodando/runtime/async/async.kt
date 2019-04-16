@@ -1,5 +1,3 @@
-@file:Suppress("EXPERIMENTAL_FEATURE_WARNING")
-
 package kodando.runtime.async
 
 import kotlin.coroutines.Continuation
@@ -11,7 +9,6 @@ import kotlin.js.Promise
 /**
  * Created by danfma on 17/01/2017.
  */
-
 fun <T> async(block: suspend () -> T): Future<T> {
   val promise = Promise<T> { resolve, reject ->
     block.startCoroutine(completion = object : Continuation<T> {

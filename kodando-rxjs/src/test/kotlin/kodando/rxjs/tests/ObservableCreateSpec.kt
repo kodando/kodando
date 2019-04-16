@@ -51,7 +51,7 @@ object ObservableCreateSpec : Spec() {
     }
 
     describe("fromEvent") {
-      it("should return the events of this target") byCheckingAfter {
+      xit("should return the events of this target") byCheckingAfter {
         val click = document.createEvent("Event")
 
         click.initEvent("click", true, true)

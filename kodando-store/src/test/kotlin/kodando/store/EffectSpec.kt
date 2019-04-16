@@ -92,7 +92,7 @@ class EffectSpec : Spec() {
         expect(outputActions.size).toBe(3)
       }
 
-      it("can be created and produce more actions with a reified generic type") byCheckingAfter {
+      xit("can be created and produce more actions with a reified generic type") byCheckingAfter {
         val mutationS = Subject<Pair<Int, Action>>()
         val effectActionS = Subject<Action>()
         val effect = Effect4()
