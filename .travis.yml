@@ -7,17 +7,15 @@ install: true
 jdk:
   - oraclejdk8
 
-addons:
-  apt:
-    sources:
-      - sourceline: "deb https://dl.yarnpkg.com/debian/ stable main"
-      - key_url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    packages:
-      - yarn
+before_install:
+  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt-get update
+  - sudo apt-get install -y yarn
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
 
 cache:
   directories:
